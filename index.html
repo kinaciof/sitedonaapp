@@ -80,11 +80,17 @@
           animation: {
             'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
             'marquee': 'marquee 30s linear infinite',
+            'wobble': 'wobble 2s ease-in-out infinite',
           },
           keyframes: {
             marquee: {
               '0%': { transform: 'translateX(0%)' },
               '100%': { transform: 'translateX(-50%)' },
+            },
+            wobble: {
+              '0%, 100%': { transform: 'rotate(0deg)' },
+              '25%': { transform: 'rotate(-4deg)' },
+              '75%': { transform: 'rotate(4deg)' },
             }
           }
         }
@@ -214,7 +220,7 @@
       <!-- Botão Secundário -->
       <a href="#"
         onclick="openWhatsApp('Olá, Krystiano! Tenho interesse nas soluções de Engenharia de Software e Automação de IA da Dona APP. Podemos agendar uma reunião técnica?')"
-        class="hidden md:flex items-center gap-2 px-5 py-2.5 bg-slate-800 hover:bg-slate-900 text-white text-sm font-bold rounded-full transition-all shadow-sm hover:shadow-md">
+        class="hidden md:flex items-center gap-2 px-5 py-2.5 bg-slate-800 hover:bg-slate-900 text-white text-sm font-bold rounded-xl transition-all shadow-sm hover:shadow-md animate-wobble">
         Agendar Reunião
         <i data-lucide="arrow-right" class="w-4 h-4"></i>
       </a>
