@@ -140,18 +140,40 @@ document.addEventListener('DOMContentLoaded', () => {
   updateSimulator();
 
   // Mobile Menu Toggle
-  const mobileBtn = document.getElementById('mobile-menu-btn');
-  const mobileMenu = document.getElementById('mobile-menu');
+  const mobileBtn = document.getElementById('mobileMenuBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+  
   if (mobileBtn && mobileMenu) {
-    mobileBtn.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
-    });
+    const line1 = document.getElementById('line1');
+    const line2 = document.getElementById('line2');
+    const line3 = document.getElementById('line3');
+
+    function toggleMenu() {
+      const isOpen = !mobileMenu.classList.contains('translate-x-full');
+      if (isOpen) {
+        // Close menu
+        mobileMenu.classList.add('translate-x-full');
+        line1.classList.remove('rotate-45', 'translate-y-[8px]');
+        line2.classList.remove('opacity-0');
+        line3.classList.remove('-rotate-45', '-translate-y-[8px]');
+      } else {
+        // Open menu
+        mobileMenu.classList.remove('translate-x-full');
+        line1.classList.add('rotate-45', 'translate-y-[8px]');
+        line2.classList.add('opacity-0');
+        line3.classList.add('-rotate-45', '-translate-y-[8px]');
+      }
+    }
+
+    mobileBtn.addEventListener('click', toggleMenu);
 
     // Fechar ao clicar em um link
     const mobileLinks = mobileMenu.querySelectorAll('a');
     mobileLinks.forEach(link => {
       link.addEventListener('click', () => {
-        mobileMenu.classList.add('hidden');
+        if (!mobileMenu.classList.contains('translate-x-full')) {
+           toggleMenu();
+        }
       });
     });
   }

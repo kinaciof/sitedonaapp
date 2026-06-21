@@ -153,20 +153,37 @@
         </a>
       </nav>
 
-      <!-- Botões CTA -->
-      <div class="hidden md:flex items-center gap-4">
+      <!-- Botões CTA & Mobile Toggle -->
+      <div class="flex items-center gap-3 sm:gap-4">
         <a href="#simulador"
-          class="flex items-center gap-2 px-5 py-2.5 bg-transparent border border-slate-700 hover:border-slate-500 hover:bg-slate-800 text-white text-sm font-bold rounded-xl transition-all shadow-[0_0_15px_rgba(255,255,255,0.05)]">
+          class="hidden md:flex items-center gap-2 px-5 py-2.5 bg-transparent border border-slate-700 hover:border-slate-500 hover:bg-slate-800 text-white text-sm font-bold rounded-xl transition-all shadow-[0_0_15px_rgba(255,255,255,0.05)]">
           Orçamento
         </a>
         <a href="#"
           onclick="openWhatsApp('Olá! Vim pelo site da Dona APP e gostaria de agendar uma reunião técnica para discutir um projeto.')"
-          class="flex items-center gap-2 px-5 py-2.5 bg-dona-600 hover:bg-dona-500 text-white text-sm font-bold rounded-xl transition-all shadow-[0_0_20px_rgba(79,70,229,0.5)] animate-wobble">
-          Agendar Reunião
+          class="flex items-center gap-2 px-4 sm:px-5 py-2 sm:py-2.5 bg-dona-600 hover:bg-dona-500 text-white text-xs sm:text-sm font-bold rounded-xl transition-all shadow-[0_0_20px_rgba(79,70,229,0.5)] animate-wobble">
+          <span class="hidden sm:inline">Agendar Reunião</span>
+          <span class="sm:hidden">Agendar</span>
         </a>
+        
+        <!-- Hamburger Menu -->
+        <button id="mobileMenuBtn" class="md:hidden flex flex-col justify-center items-center w-10 h-10 border border-slate-800 rounded-lg bg-slate-900/50 focus:outline-none z-50">
+          <span class="w-5 h-[2px] bg-white transition-transform duration-300 origin-center mb-1.5" id="line1"></span>
+          <span class="w-5 h-[2px] bg-white transition-opacity duration-300 mb-1.5" id="line2"></span>
+          <span class="w-5 h-[2px] bg-white transition-transform duration-300 origin-center" id="line3"></span>
+        </button>
       </div>
     </div>
   </header>
+
+  <!-- MOBILE MENU OVERLAY -->
+  <div id="mobileMenu" class="fixed inset-0 z-40 bg-slate-950/95 backdrop-blur-xl translate-x-full transition-transform duration-300 flex flex-col items-center justify-center gap-8 md:hidden">
+    <a href="#servicos" class="mobile-link text-xl font-bold text-slate-300 hover:text-white transition-colors">Engenharia e IA</a>
+    <a href="#processo" class="mobile-link text-xl font-bold text-slate-300 hover:text-white transition-colors">Processo</a>
+    <a href="#ecosistema" class="mobile-link text-xl font-bold text-slate-300 hover:text-white transition-colors">Projetos Próprios</a>
+    <a href="#projetos" class="mobile-link text-xl font-bold text-slate-300 hover:text-white transition-colors">Projetos Entregues</a>
+    <a href="#faq" class="mobile-link text-xl font-bold text-slate-300 hover:text-white transition-colors">FAQ</a>
+  </div>
 
   <!-- HERO SECTION -->
   <section data-aos="fade-up" class="pt-36 pb-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto text-center relative z-10">
