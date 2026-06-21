@@ -682,6 +682,34 @@
               </div>
             </div>
 
+            <!-- Passo 4: Modelo de Contratação -->
+            <div>
+              <div class="flex items-center gap-3 mb-4">
+                <div class="w-7 h-7 rounded-full bg-dona-600 text-white flex items-center justify-center font-bold text-xs">4</div>
+                <h3 class="text-lg font-bold text-slate-900">Modelo de Contratação</h3>
+              </div>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <label class="relative cursor-pointer">
+                  <input type="radio" name="modelo" value="saas" class="sr-only" onchange="updateSimulator()" checked>
+                  <div class="border border-slate-200 rounded-xl p-4 hover:border-dona-300 transition-all h-full relative">
+                    <i data-lucide="check-circle-2" class="w-5 h-5 absolute top-3 right-3 text-dona-600 opacity-0 transition-opacity check-icon"></i>
+                    <i data-lucide="cloud-cog" class="w-6 h-6 text-slate-400 mb-2"></i>
+                    <span class="block font-bold text-slate-800 text-sm">SaaS / Nuvem</span>
+                    <span class="block text-xs font-medium text-slate-500 mt-1">Infraestrutura, suporte e evoluções inclusos na mensalidade.</span>
+                  </div>
+                </label>
+                <label class="relative cursor-pointer">
+                  <input type="radio" name="modelo" value="codigo" class="sr-only" onchange="updateSimulator()">
+                  <div class="border border-slate-200 rounded-xl p-4 hover:border-dona-300 transition-all h-full relative">
+                    <i data-lucide="check-circle-2" class="w-5 h-5 absolute top-3 right-3 text-dona-600 opacity-0 transition-opacity check-icon"></i>
+                    <i data-lucide="code" class="w-6 h-6 text-slate-400 mb-2"></i>
+                    <span class="block font-bold text-slate-800 text-sm">Código Fonte</span>
+                    <span class="block text-xs font-medium text-slate-500 mt-1">Hospedagem, suporte e evoluções por sua própria conta.</span>
+                  </div>
+                </label>
+              </div>
+            </div>
+
           </div>
 
           <!-- DIREITA: RESULTADO -->
@@ -887,6 +915,7 @@
       let tamanho = document.querySelector('input[name="tamanho"]:checked')?.value || 'plataforma';
       let inteligencia = document.querySelector('input[name="inteligencia"]:checked')?.value || 'nenhuma';
       let acesso = document.querySelector('input[name="acesso"]:checked')?.value || 'privado';
+      let modelo = document.querySelector('input[name="modelo"]:checked')?.value || 'saas';
       const resultCard = document.getElementById('simulatorResult');
       
       // Cálculo de Preço Estimado
@@ -900,7 +929,9 @@
       if(acesso === 'publico') multiplier += 0.2; // +20% overhead de escala/segurança
 
       let finalPrice = basePrice * multiplier;
-      let priceFormatted = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL', maximumFractionDigits: 0 }).format(finalPrice);
+      let isSaas = (modelo === 'saas');
+      let displayPrice = isSaas ? (finalPrice / 60) : finalPrice;
+      let priceFormatted = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL', maximumFractionDigits: 0 }).format(displayPrice);
 
       let html = '';
       
@@ -921,10 +952,16 @@
       let mensalidadeText = "";
       if(acesso === 'privado') {
         infraText = "Infraestrutura Leve (Segurança corporativa sem alta concorrência).";
-        mensalidadeText = "Manutenção e Servidor com baixo custo mensal recorrente.";
       } else {
         infraText = "Infraestrutura Elástica (Preparada para picos severos de acesso).";
-        mensalidadeText = "Servidor escalonável + monitoramento intensivo na mensalidade.";
+      }
+
+      if(isSaas) {
+        mensalidadeText = (acesso === 'privado') 
+          ? "Manutenção, suporte e servidor inclusos na mensalidade."
+          : "Servidor escalonável + suporte intensivo garantidos na mensalidade.";
+      } else {
+        mensalidadeText = "Você assume as responsabilidades técnicas de hospedagem, evolução e manutenção do código fonte.";
       }
 
       html = `
@@ -935,15 +972,15 @@
         </div>
         
         <div class="mb-6">
-          <h5 class="font-bold text-slate-800 text-base mb-1">Impacto na Manutenção & Infra (Mensalidade)</h5>
+          <h5 class="font-bold text-slate-800 text-base mb-1">Impacto de Manutenção</h5>
           <p class="text-slate-600 text-sm font-medium leading-relaxed mb-1"><strong class="text-slate-700">Arquitetura de Dados:</strong> ${infraText}</p>
-          <p class="text-slate-600 text-sm font-medium leading-relaxed"><strong class="text-slate-700">O que a Dona APP assume:</strong> ${mensalidadeText}</p>
+          <p class="text-slate-600 text-sm font-medium leading-relaxed"><strong class="text-slate-700">Responsabilidade:</strong> ${mensalidadeText}</p>
         </div>
 
         <div class="pt-5 border-t border-slate-200">
-          <p class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-1">Estimativa de Investimento do Projeto</p>
+          <p class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-1">Estimativa de Investimento</p>
           <div class="flex items-baseline gap-2">
-            <span class="text-sm font-bold text-slate-500">A partir de</span>
+            <span class="text-sm font-bold text-slate-500">${isSaas ? 'Mensalidade a partir de' : 'A partir de'}</span>
             <span class="text-3xl font-extrabold text-slate-900">${priceFormatted}</span>
           </div>
         </div>
@@ -961,6 +998,7 @@
       const t = document.querySelector('input[name="tamanho"]:checked')?.value;
       const i = document.querySelector('input[name="inteligencia"]:checked')?.value;
       const a = document.querySelector('input[name="acesso"]:checked')?.value;
+      const m = document.querySelector('input[name="modelo"]:checked')?.value || 'saas';
       
       let basePrice = 0;
       if(t === 'simples') basePrice = 18000;
@@ -970,13 +1008,19 @@
       if(i === 'ia') multiplier += 0.3;
       if(a === 'publico') multiplier += 0.2;
       let finalPrice = basePrice * multiplier;
-      let priceFormatted = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL', maximumFractionDigits: 0 }).format(finalPrice);
+      
+      let isSaas = (m === 'saas');
+      let displayPrice = isSaas ? (finalPrice / 60) : finalPrice;
+      let priceFormatted = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL', maximumFractionDigits: 0 }).format(displayPrice);
 
       let tMap = { 'simples': 'Ideia Simples / MVP', 'plataforma': 'Plataforma Core', 'ecossistema': 'Ecossistema Complexo' };
       let iMap = { 'nenhuma': 'Engenharia Tradicional', 'ia': 'Automação com IA' };
       let aMap = { 'privado': 'Uso Interno/Privado', 'publico': 'Público/B2C' };
+      let mMap = { 'saas': 'SaaS (Infra Dona APP)', 'codigo': 'Código Fonte' };
       
-      let msg = `Olá! Acabei de simular meu projeto no site da Dona APP.\n\n*Meu Cenário:*\n- Volume: ${tMap[t]}\n- Inteligência: ${iMap[i]}\n- Acesso e Infra: ${aMap[a]}\n\n*Estimativa:* A partir de ${priceFormatted}\n\nGostaria de agendar uma reunião para iniciar o entendimento do meu projeto.`;
+      let priceLabel = isSaas ? 'Mensalidade Estimada' : 'Investimento do Projeto';
+      
+      let msg = `Olá! Acabei de simular meu projeto no site da Dona APP.\n\n*Meu Cenário:*\n- Volume: ${tMap[t]}\n- Inteligência: ${iMap[i]}\n- Acesso e Infra: ${aMap[a]}\n- Modelo: ${mMap[m]}\n\n*${priceLabel}:* A partir de ${priceFormatted}\n\nGostaria de agendar uma reunião para iniciar o entendimento do meu projeto.`;
       openWhatsApp(msg);
     }
 
