@@ -736,6 +736,72 @@
     </div>
   </section>
 
+  <!-- TABELA DE CUSTOS DE IA -->
+  <section id="custos-ia" class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-b border-slate-200">
+    <div class="text-center mb-16">
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-dona-100 text-dona-700 text-sm font-bold mb-4">
+        <i data-lucide="brain-circuit" class="w-4 h-4"></i>
+        Transparência de Consumo de IA (API)
+      </div>
+      <h2 class="text-3xl lg:text-4xl font-extrabold text-slate-900 mb-6">A Engenharia é nossa. O Motor é seu.</h2>
+      <p class="text-lg font-medium text-slate-600 max-w-4xl mx-auto leading-relaxed">
+        Em projetos com Inteligência Artificial, nós da Dona APP criamos todo o código: os Agentes, a técnica RAG (leitura da sua base), as integrações e as rotinas. Contudo, <strong>o faturamento de "pensamento" da IA (tokens) é pago à parte, direto ao provedor (OpenAI, Google, Anthropic, etc)</strong> de acordo com o seu volume de uso, garantindo que não haja ágio em cima da infraestrutura.
+      </p>
+      <p class="text-sm font-bold text-slate-500 mt-4">Nossa engenharia orquestra os modelos mais eficientes para reduzir esse custo ao máximo na sua operação:</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <!-- Claude Opus -->
+      <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm hover:shadow-md transition-shadow flex flex-col">
+        <h3 class="text-xl font-bold text-slate-900 mb-1">Claude Opus 4.8</h3>
+        <p class="text-sm text-slate-500 font-bold mb-6">Anthropic</p>
+        <div class="mb-4">
+          <span class="text-[10px] font-bold text-slate-400 uppercase tracking-wider block mb-1">Custo Estimado (1 Milhão Tokens)</span>
+          <span class="text-2xl font-extrabold text-slate-900">~US$ 15,00</span>
+        </div>
+        <p class="text-sm font-medium text-slate-600 mb-6 flex-grow"><strong>Vantagem:</strong> O modelo mais sofisticado do mercado em nível de coerência. Escrita perfeitamente humanizada, raciocínio profundo e ideal para auditoria de altíssima complexidade (ex: análise de petições jurídicas enormes).</p>
+        <div class="inline-block px-3 py-1 bg-slate-100 text-slate-600 text-[10px] font-bold rounded uppercase text-center">Uso: Operações Críticas</div>
+      </div>
+
+      <!-- Gemini Pro -->
+      <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm hover:shadow-md transition-shadow flex flex-col">
+        <h3 class="text-xl font-bold text-slate-900 mb-1">Gemini 3.1 Pro</h3>
+        <p class="text-sm text-slate-500 font-bold mb-6">Google Cloud</p>
+        <div class="mb-4">
+          <span class="text-[10px] font-bold text-slate-400 uppercase tracking-wider block mb-1">Custo Estimado (1 Milhão Tokens)</span>
+          <span class="text-2xl font-extrabold text-slate-900">~US$ 3,50</span>
+        </div>
+        <p class="text-sm font-medium text-slate-600 mb-6 flex-grow"><strong>Vantagem:</strong> O rei do contexto massivo. Capaz de engolir relatórios fiscais de milhares de páginas, ouvir horas de áudio e "assistir" a vídeos nativamente de uma única vez para cruzar dados sem esquecer detalhes.</p>
+        <div class="inline-block px-3 py-1 bg-slate-100 text-slate-600 text-[10px] font-bold rounded uppercase text-center">Uso: Big Data / Multimodal</div>
+      </div>
+
+      <!-- DeepSeek R1 -->
+      <div class="bg-white rounded-2xl p-6 border-2 border-dona-500 ring-4 ring-dona-50 shadow-lg hover:shadow-xl transition-shadow relative overflow-hidden flex flex-col">
+        <div class="absolute top-0 right-0 bg-dona-600 text-white text-[10px] font-bold px-3 py-1 rounded-bl-lg">Killer Cost-Benefit</div>
+        <h3 class="text-xl font-bold text-slate-900 mb-1">DeepSeek R1</h3>
+        <p class="text-sm text-slate-500 font-bold mb-6">DeepSeek Foundation</p>
+        <div class="mb-4">
+          <span class="text-[10px] font-bold text-slate-400 uppercase tracking-wider block mb-1">Custo Estimado (1 Milhão Tokens)</span>
+          <span class="text-2xl font-extrabold text-dona-600">~US$ 0,55</span>
+        </div>
+        <p class="text-sm font-medium text-slate-600 mb-6 flex-grow"><strong>Vantagem:</strong> Uma revolução global. Entrega capacidade de raciocínio matemático e lógico em nível similar ou superior às Big Techs, mas por uma fração absoluta do preço. Excepcional para sistemas em nuvem de escala agressiva.</p>
+        <div class="inline-block px-3 py-1 bg-dona-100 text-dona-700 text-[10px] font-bold rounded uppercase text-center">Uso: Escala / Raciocínio Lógico</div>
+      </div>
+
+      <!-- Modelos Leves -->
+      <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm hover:shadow-md transition-shadow flex flex-col">
+        <h3 class="text-xl font-bold text-slate-900 mb-1">Modelos "Flash"</h3>
+        <p class="text-sm text-slate-500 font-bold mb-6">GPT-4o Mini / Claude Haiku</p>
+        <div class="mb-4">
+          <span class="text-[10px] font-bold text-slate-400 uppercase tracking-wider block mb-1">Custo Estimado (1 Milhão Tokens)</span>
+          <span class="text-2xl font-extrabold text-emerald-600">~US$ 0,15</span>
+        </div>
+        <p class="text-sm font-medium text-slate-600 mb-6 flex-grow"><strong>Vantagem:</strong> Latência na casa dos milissegundos e custo praticamente irrisório. Nossa engenharia usa esses modelos sob o capô para tarefas de triagem massiva, extração de JSON, rotulagem e formatação de dados brutos.</p>
+        <div class="inline-block px-3 py-1 bg-emerald-50 text-emerald-700 text-[10px] font-bold rounded uppercase text-center">Uso: Roteamento / Tarefas Simples</div>
+      </div>
+    </div>
+  </section>
+
   <!-- DEPOIMENTOS -->
   <section id="depoimentos" class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
     <div class="text-center mb-16">
