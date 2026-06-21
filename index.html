@@ -4,19 +4,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dona APP | Boutique de Engenharia & Inteligência Artificial</title>
+  <title>Dona APP — Engenharia de Software & Inteligência Artificial</title>
 
   <!-- SEO & Meta Tags -->
   <meta name="description"
-    content="A Dona APP é uma boutique de engenharia de software especializada na criação de agentes de IA, automações corporativas complexas, aplicativos nativos e sistemas de alta performance.">
+    content="A Dona APP é uma empresa de engenharia de software especializada na criação de agentes de IA, automações corporativas complexas, aplicativos nativos e sistemas de alta performance.">
   <meta name="keywords"
     content="engenharia de software, automação de IA, desenvolvimento web, aplicativos iOS, agentes autônomos, sistemas corporativos">
   <meta name="author" content="Dona APP">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://donaapp.com.br">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%234f46e5'/%3E%3Csvg x='18' y='18' width='64' height='64' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M11.562 3.266a.5.5 0 0 1 .876 0L15.39 8.87a1 1 0 0 0 1.516.294L21.183 5.5a.5.5 0 0 1 .798.519l-2.834 10.246a1 1 0 0 1-.956.734H5.81a1 1 0 0 1-.957-.734L2.02 6.02a.5.5 0 0 1 .798-.519l4.276 3.664a1 1 0 0 0 1.516-.294z'/%3E%3Cpath d='M5 21h14'/%3E%3C/svg%3E%3C/svg%3E" />
 
   <!-- OpenGraph (Facebook, WhatsApp, LinkedIn) -->
-  <meta property="og:title" content="Dona APP | Boutique de Engenharia de Software e IA">
+  <meta property="og:title" content="Dona APP — Engenharia de Software e Inteligência Artificial">
   <meta property="og:description"
     content="Nós eliminamos gargalos operacionais desenvolvendo arquiteturas escaláveis, automações inteligentes e agentes autônomos de Inteligência Artificial.">
   <meta property="og:type" content="website">
@@ -28,7 +29,7 @@
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Dona APP | Boutique de Engenharia e IA">
+  <meta name="twitter:title" content="Dona APP — Engenharia de Software e IA">
   <meta name="twitter:description"
     content="Acelere sua operação com software de alta performance e automações de IA sob medida para o seu negócio B2B.">
   <meta name="twitter:image" content="https://donaapp.com.br/images/og-donaapp.png">
@@ -48,6 +49,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
     rel="stylesheet">
+
+  <!-- AOS (Animate On Scroll) -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -103,31 +107,69 @@
 
   <style>
     body {
-      background-color: #F8FAFC;
-      color: #1E293B;
+      background-color: #020617; /* slate-950 */
+      color: #e2e8f0; /* slate-200 */
       letter-spacing: -0.01em;
       font-weight: 400;
     }
 
+    /* Grid background from Dono da Oficina */
+    .bg-grid {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-image: linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+      background-size: 50px 50px;
+      z-index: -2;
+      pointer-events: none;
+    }
+
+    .bg-glow {
+      position: fixed;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(79, 70, 229, 0.15) 0%, rgba(0, 0, 0, 0) 70%);
+      top: -100px;
+      right: -100px;
+      z-index: -1;
+      pointer-events: none;
+      filter: blur(60px);
+    }
+
+    .bg-glow-2 {
+      position: fixed;
+      width: 800px;
+      height: 800px;
+      background: radial-gradient(circle, rgba(147, 51, 234, 0.1) 0%, rgba(0, 0, 0, 0) 70%);
+      bottom: -200px;
+      left: -200px;
+      z-index: -1;
+      pointer-events: none;
+      filter: blur(80px);
+    }
+
     .glass-nav {
-      background: rgba(255, 255, 255, 0.9);
+      background: rgba(2, 6, 23, 0.85);
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(226, 232, 240, 0.6);
+      border-bottom: 1px solid rgba(30, 41, 59, 0.6);
     }
 
     .bento-card {
-      background: #FFFFFF;
-      border: 1px solid rgba(226, 232, 240, 0.8);
+      background: #0f172a; /* slate-900 */
+      border: 1px solid rgba(30, 41, 59, 0.8);
       border-radius: 1.25rem;
-      box-shadow: 0 4px 15px -3px rgba(226, 232, 240, 0.5);
+      box-shadow: 0 4px 20px -3px rgba(0, 0, 0, 0.5);
       transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
     }
 
     .bento-card:hover {
       transform: translateY(-3px);
-      box-shadow: 0 12px 25px -5px rgba(226, 232, 240, 0.8);
-      border-color: rgba(203, 213, 225, 0.9);
+      box-shadow: 0 12px 30px -5px rgba(0, 0, 0, 0.7);
+      border-color: rgba(79, 70, 229, 0.5); /* glow border on hover */
     }
 
     ::-webkit-scrollbar {
@@ -135,16 +177,16 @@
     }
 
     ::-webkit-scrollbar-track {
-      background: #F8FAFC;
+      background: #020617;
     }
 
     ::-webkit-scrollbar-thumb {
-      background: #CBD5E1;
+      background: #334155;
       border-radius: 3px;
     }
 
     ::-webkit-scrollbar-thumb:hover {
-      background: #94A3B8;
+      background: #475569;
     }
 
     .gradient-text {
@@ -156,8 +198,8 @@
     /* Estilização para os inputs invisíveis da calculadora */
     input[type="radio"]:checked+div {
       border-color: #4f46e5;
-      background-color: #eef2ff;
-      box-shadow: 0 0 0 1px #4f46e5;
+      background-color: rgba(79, 70, 229, 0.15);
+      box-shadow: 0 0 0 1px #4f46e5, 0 0 15px rgba(79, 70, 229, 0.3);
     }
 
     input[type="radio"]:checked+div .check-icon {
@@ -174,7 +216,7 @@
       transform: translateX(-50%);
       height: 100%;
       width: 2px;
-      background: #e2e8f0;
+      background: #1e293b;
       z-index: 0;
     }
 
@@ -190,114 +232,137 @@
   </style>
 </head>
 
-<body class="antialiased">
+<body class="antialiased relative">
+  <div class="bg-grid"></div>
+  <div class="bg-glow"></div>
+  <div class="bg-glow-2"></div>
+
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX" height="0" width="0"
       style="display:none;visibility:hidden"></iframe></noscript>
 
   <!-- HEADER FLUTUANTE -->
   <header class="fixed w-full top-0 z-50 glass-nav transition-all duration-300">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+    <div class="max-w-[1400px] mx-auto px-6 h-[72px] flex items-center justify-between">
 
       <!-- Logo -->
-      <a href="#" class="flex items-center gap-3 group">
+      <a href="#" class="flex items-center gap-[10px] group">
         <div
-          class="w-10 h-10 bg-dona-600 rounded-xl flex items-center justify-center transition-transform group-hover:scale-105 shadow-md">
+          class="w-9 h-9 bg-dona-600 rounded-lg flex items-center justify-center transition-transform group-hover:scale-105 shadow-[0_0_10px_rgba(79,70,229,0.4)]">
           <i data-lucide="crown" class="text-white w-5 h-5"></i>
         </div>
-        <span class="font-extrabold text-xl tracking-tight text-slate-800">Dona APP</span>
+        <span class="font-bold text-[1.15rem] tracking-tight text-white">Dona APP</span>
       </a>
 
-      <!-- Navegação -->
-      <nav class="hidden md:flex items-center gap-6 lg:gap-8 font-semibold text-sm text-slate-600">
-        <a href="#servicos" class="hover:text-dona-600 transition-colors">Engenharia e IA</a>
-        <a href="#workflow" class="hover:text-dona-600 transition-colors">Processo</a>
-        <a href="#ecossistema" class="hover:text-dona-600 transition-colors">Nosso SaaS</a>
-        <a href="#experiencia" class="hover:text-dona-600 transition-colors">Projetos</a>
-        <a href="#simulador" class="hover:text-dona-600 transition-colors">Orçamento</a>
-        <a href="#faq" class="hover:text-dona-600 transition-colors">FAQ</a>
+      <!-- Navegação Desktop -->
+      <nav class="hidden md:flex items-center gap-8">
+        <a href="#servicos" class="group relative text-sm font-bold text-slate-300 hover:text-white transition-colors pb-1">
+          Engenharia e IA
+          <span class="absolute bottom-0 left-0 w-0 h-[2px] bg-dona-500 transition-all duration-300 group-hover:w-full"></span>
+        </a>
+        <a href="#processo" class="group relative text-sm font-bold text-slate-300 hover:text-white transition-colors pb-1">
+          Processo
+          <span class="absolute bottom-0 left-0 w-0 h-[2px] bg-dona-500 transition-all duration-300 group-hover:w-full"></span>
+        </a>
+        <a href="#ecosistema" class="group relative text-sm font-bold text-slate-300 hover:text-white transition-colors pb-1">
+          Projetos Próprios
+          <span class="absolute bottom-0 left-0 w-0 h-[2px] bg-dona-500 transition-all duration-300 group-hover:w-full"></span>
+        </a>
+        <a href="#projetos" class="group relative text-sm font-bold text-slate-300 hover:text-white transition-colors pb-1">
+          Projetos Entregues
+          <span class="absolute bottom-0 left-0 w-0 h-[2px] bg-dona-500 transition-all duration-300 group-hover:w-full"></span>
+        </a>
+        <a href="#faq" class="group relative text-sm font-bold text-slate-300 hover:text-white transition-colors pb-1">
+          FAQ
+          <span class="absolute bottom-0 left-0 w-0 h-[2px] bg-dona-500 transition-all duration-300 group-hover:w-full"></span>
+        </a>
       </nav>
 
-      <!-- Botão Secundário -->
-      <a href="#"
-        onclick="openWhatsApp('Olá, Krystiano! Tenho interesse nas soluções de Engenharia de Software e Automação de IA da Dona APP. Podemos agendar uma reunião técnica?')"
-        class="hidden md:flex items-center gap-2 px-5 py-2.5 bg-slate-800 hover:bg-slate-900 text-white text-sm font-bold rounded-xl transition-all shadow-sm hover:shadow-md animate-wobble">
-        Agendar Reunião
-      </a>
+      <!-- Botões CTA -->
+      <div class="hidden md:flex items-center gap-4">
+        <a href="#simulador"
+          class="flex items-center gap-2 px-5 py-2.5 bg-transparent border border-slate-700 hover:border-slate-500 hover:bg-slate-800 text-white text-sm font-bold rounded-xl transition-all shadow-[0_0_15px_rgba(255,255,255,0.05)]">
+          Orçamento
+        </a>
+        <a href="#"
+          onclick="openWhatsApp('Olá! Vim pelo site da Dona APP e gostaria de agendar uma reunião técnica para discutir um projeto.')"
+          class="flex items-center gap-2 px-5 py-2.5 bg-dona-600 hover:bg-dona-500 text-white text-sm font-bold rounded-xl transition-all shadow-[0_0_20px_rgba(79,70,229,0.5)] animate-wobble">
+          Agendar Reunião
+        </a>
+      </div>
     </div>
   </header>
 
   <!-- HERO SECTION -->
-  <section class="pt-36 pb-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto text-center">
+  <section data-aos="fade-up" class="pt-36 pb-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto text-center relative z-10">
     <div
-      class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-dona-200 text-dona-700 text-xs font-bold shadow-sm mb-8">
-      <i data-lucide="bot" class="w-3.5 h-3.5 text-dona-600"></i>
-      Boutique de Engenharia & Inteligência Artificial
+      class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-800/50 border border-slate-700 backdrop-blur-sm text-dona-400 text-xs font-bold shadow-sm mb-8">
+      <i data-lucide="bot" class="w-3.5 h-3.5 text-dona-500"></i>
+      Engenharia de Software & Inteligência Artificial
     </div>
 
     <h1
-      class="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 mb-6 max-w-5xl mx-auto leading-tight">
+      class="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-white mb-6 max-w-5xl mx-auto leading-tight">
       Transformamos gargalos operacionais em <span class="gradient-text">agentes de inteligência artificial.</span>
     </h1>
 
-    <p class="text-lg md:text-xl text-slate-600 mb-10 max-w-3xl mx-auto font-medium leading-relaxed">
+    <p class="text-lg md:text-xl text-slate-400 mb-10 max-w-3xl mx-auto font-medium leading-relaxed">
       A Dona APP é o braço técnico que desenvolve, automatiza e escala seu negócio com IAs generativas, agentes
       autônomos e sistemas corporativos de altíssima performance.
     </p>
 
     <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-      <button
-        onclick="openWhatsApp('Olá, Krystiano! Gostaria de discutir um projeto de automação corporativa com a engenharia da Dona APP. Como podemos agendar um kick-off técnico?')"
-        class="group relative flex items-center justify-center gap-2 px-7 py-3.5 bg-dona-600 text-white text-base font-bold rounded-full hover:bg-dona-700 transition-all w-full sm:w-auto shadow-md">
-        <i data-lucide="calendar-check" class="w-5 h-5"></i>
-        Agendar Reunião Técnica
-      </button>
       <a href="#simulador"
-        class="flex items-center justify-center gap-2 px-7 py-3.5 bg-white text-slate-700 border border-slate-200 text-base font-bold rounded-full hover:bg-slate-50 transition-all w-full sm:w-auto shadow-sm">
+        class="group relative flex items-center justify-center gap-2 px-7 py-3.5 bg-slate-800/80 backdrop-blur-md text-white border border-slate-700 text-base font-bold rounded-xl hover:bg-slate-700 transition-all w-full sm:w-auto shadow-sm">
         <i data-lucide="calculator" class="w-5 h-5"></i>
         Fazer Orçamento
       </a>
+      <button
+        onclick="openWhatsApp('Olá! Vim pelo site da Dona APP e gostaria de agendar uma reunião técnica para discutir um projeto.')"
+        class="flex items-center justify-center gap-2 px-7 py-3.5 bg-dona-600 text-white text-base font-bold rounded-xl hover:bg-dona-500 transition-all w-full sm:w-auto shadow-[0_0_25px_rgba(79,70,229,0.6)] animate-wobble">
+        <i data-lucide="calendar-check" class="w-5 h-5"></i>
+        Agendar Reunião Técnica
+      </button>
     </div>
   </section>
 
   <!-- SOBERANIA EM INFRAESTRUTURA -->
-  <section class="py-10 border-y border-slate-200 bg-white overflow-hidden">
+  <section data-aos="fade-up" class="py-10 border-y border-slate-800/50 bg-slate-900/50 backdrop-blur-sm overflow-hidden">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative">
-      <p class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-6">Nossos LLMs e sistemas rodam nos
+      <p class="text-xs font-bold text-slate-500 uppercase tracking-widest mb-6">Nossos LLMs e sistemas rodam nos
         backbones mais robustos do planeta</p>
 
-      <!-- Carrossel Marquee com Máscaras Laterais -->
-      <div
-        class="relative w-full overflow-hidden before:absolute before:left-0 before:top-0 before:z-10 before:h-full before:w-16 before:bg-gradient-to-r before:from-white before:to-transparent after:absolute after:right-0 after:top-0 after:z-10 after:h-full after:w-16 after:bg-gradient-to-l after:from-white after:to-transparent">
+      <!-- Carrossel Marquee -->
+      <div class="relative w-full overflow-hidden">
 
         <!-- Track animada com o dobro de itens para loop infinito -->
         <div
           class="flex w-max animate-marquee items-center gap-16 opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
-          <div class="flex items-center gap-2 font-bold text-lg text-slate-800"><i data-lucide="cloud"
+          <div class="flex items-center gap-2 font-bold text-lg text-slate-300"><i data-lucide="cloud"
               class="w-6 h-6"></i> Microsoft Azure</div>
-          <div class="flex items-center gap-2 font-bold text-lg text-slate-800"><i data-lucide="server"
+          <div class="flex items-center gap-2 font-bold text-lg text-slate-300"><i data-lucide="server"
               class="w-6 h-6"></i> Google Cloud</div>
-          <div class="flex items-center gap-2 font-bold text-lg text-slate-800"><i data-lucide="database"
+          <div class="flex items-center gap-2 font-bold text-lg text-slate-300"><i data-lucide="database"
               class="w-6 h-6"></i> Amazon AWS</div>
-          <div class="flex items-center gap-2 font-bold text-lg text-slate-800"><i data-lucide="hard-drive"
+          <div class="flex items-center gap-2 font-bold text-lg text-slate-300"><i data-lucide="hard-drive"
               class="w-6 h-6"></i> Oracle Cloud</div>
-          <div class="flex items-center gap-2 font-bold text-lg text-slate-800"><i data-lucide="sparkles"
-              class="w-6 h-6"></i> Gemini 3.1 Pro</div>
-          <div class="flex items-center gap-2 font-bold text-lg text-slate-800"><i data-lucide="cpu"
-              class="w-6 h-6"></i> Claude OPUS 4.8</div>
-          <div class="flex items-center gap-2 font-bold text-lg text-slate-800"><i data-lucide="bot"
-              class="w-6 h-6"></i> DeepSeek R1</div>
+          <div class="flex items-center gap-2 font-bold text-lg text-slate-300"><i data-lucide="sparkles"
+              class="w-6 h-6 text-dona-400"></i> Gemini 3.1 Pro</div>
+          <div class="flex items-center gap-2 font-bold text-lg text-slate-300"><i data-lucide="cpu"
+              class="w-6 h-6 text-dona-400"></i> Claude OPUS 4.8</div>
+          <div class="flex items-center gap-2 font-bold text-lg text-slate-300"><i data-lucide="bot"
+              class="w-6 h-6 text-dona-400"></i> DeepSeek R1</div>
 
           <!-- Duplicatas para o Loop -->
-          <div class="flex items-center gap-2 font-bold text-lg text-slate-800"><i data-lucide="cloud"
+          <div class="flex items-center gap-2 font-bold text-lg text-slate-300"><i data-lucide="cloud"
               class="w-6 h-6"></i> Microsoft Azure</div>
-          <div class="flex items-center gap-2 font-bold text-lg text-slate-800"><i data-lucide="server"
+          <div class="flex items-center gap-2 font-bold text-lg text-slate-300"><i data-lucide="server"
               class="w-6 h-6"></i> Google Cloud</div>
-          <div class="flex items-center gap-2 font-bold text-lg text-slate-800"><i data-lucide="database"
+          <div class="flex items-center gap-2 font-bold text-lg text-slate-300"><i data-lucide="database"
               class="w-6 h-6"></i> Amazon AWS</div>
-          <div class="flex items-center gap-2 font-bold text-lg text-slate-800"><i data-lucide="hard-drive"
+          <div class="flex items-center gap-2 font-bold text-lg text-slate-300"><i data-lucide="hard-drive"
               class="w-6 h-6"></i> Oracle Cloud</div>
-          <div class="flex items-center gap-2 font-bold text-lg text-slate-800"><i data-lucide="sparkles"
-              class="w-6 h-6"></i> Gemini 3.1 Pro</div>
+          <div class="flex items-center gap-2 font-bold text-lg text-slate-300"><i data-lucide="sparkles"
+              class="w-6 h-6 text-dona-400"></i> Gemini 3.1 Pro</div>
           <div class="flex items-center gap-2 font-bold text-lg text-slate-800"><i data-lucide="cpu"
               class="w-6 h-6"></i> Claude OPUS 4.8</div>
           <div class="flex items-center gap-2 font-bold text-lg text-slate-800"><i data-lucide="bot"
@@ -308,10 +373,10 @@
   </section>
 
   <!-- BENTO GRID DE SERVIÇOS -->
-  <section id="servicos" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+  <section data-aos="fade-up" id="servicos" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
     <div class="text-center mb-12">
-      <h2 class="text-3xl font-extrabold text-slate-900 mb-3">Nossos Serviços Core</h2>
-      <p class="text-lg font-medium text-slate-600">A tecnologia perfeita para escalar sua operação sem inchar sua folha
+      <h2 class="text-3xl font-extrabold text-white mb-3">Nossos Serviços Core</h2>
+      <p class="text-lg font-medium text-slate-400">A tecnologia perfeita para escalar sua operação sem inchar sua folha
         de pagamento.</p>
     </div>
 
@@ -319,16 +384,16 @@
 
       <!-- Bloco 1 (Grande/Destaque IA) -->
       <div
-        class="bento-card col-span-1 md:col-span-2 lg:col-span-2 row-span-2 p-8 flex flex-col justify-between relative overflow-hidden group border-2 border-dona-200 hover:border-dona-400">
+        class="bento-card col-span-1 md:col-span-2 lg:col-span-2 row-span-2 p-8 flex flex-col justify-between relative overflow-hidden group border-2 border-slate-700 hover:border-dona-500">
         <div
-          class="absolute top-0 right-0 w-80 h-80 bg-dona-100 rounded-full blur-[80px] opacity-70 transition-opacity">
+          class="absolute top-0 right-0 w-80 h-80 bg-dona-600/20 rounded-full blur-[80px] opacity-70 transition-opacity">
         </div>
         <div class="z-10">
-          <div class="w-14 h-14 bg-dona-600 shadow-glow rounded-xl flex items-center justify-center mb-6 text-white">
+          <div class="w-14 h-14 bg-dona-600 shadow-[0_0_15px_rgba(79,70,229,0.5)] rounded-xl flex items-center justify-center mb-6 text-white">
             <i data-lucide="bot" class="w-7 h-7"></i>
           </div>
-          <h3 class="text-2xl font-bold text-slate-900 mb-3">Automação de Processos & Agentes IA</h3>
-          <p class="text-slate-600 font-medium text-base leading-relaxed mb-4">O carro-chefe da Dona APP. Criamos fluxos
+          <h3 class="text-2xl font-bold text-white mb-3">Automação de Processos & Agentes IA</h3>
+          <p class="text-slate-400 font-medium text-base leading-relaxed mb-4">O carro-chefe da Dona APP. Criamos fluxos
             de trabalho que pensam. Substituímos processos manuais repetitivos por agentes autônomos treinados com a
             documentação do seu negócio.</p>
           <ul class="text-sm font-semibold text-slate-500 space-y-2">
@@ -339,12 +404,12 @@
         </div>
         <div class="mt-6 flex gap-2 flex-wrap z-10">
           <span
-            class="px-3 py-1 bg-white border border-slate-200 text-slate-700 rounded-md text-xs font-bold shadow-sm">OpenAI
+            class="px-3 py-1 bg-slate-800 border border-slate-700 text-slate-300 rounded-md text-xs font-bold shadow-sm">OpenAI
             API</span>
           <span
-            class="px-3 py-1 bg-white border border-slate-200 text-slate-700 rounded-md text-xs font-bold shadow-sm">Python</span>
+            class="px-3 py-1 bg-slate-800 border border-slate-700 text-slate-300 rounded-md text-xs font-bold shadow-sm">Python</span>
           <span
-            class="px-3 py-1 bg-white border border-slate-200 text-slate-700 rounded-md text-xs font-bold shadow-sm">Vector
+            class="px-3 py-1 bg-slate-800 border border-slate-700 text-slate-300 rounded-md text-xs font-bold shadow-sm">Vector
             DBs</span>
         </div>
       </div>
@@ -353,12 +418,12 @@
       <div class="bento-card col-span-1 md:col-span-2 lg:col-span-2 row-span-1 p-8 flex flex-col justify-center">
         <div class="flex items-start gap-5">
           <div
-            class="w-12 h-12 shrink-0 bg-blue-50 text-blue-600 border border-blue-100 rounded-xl flex items-center justify-center">
+            class="w-12 h-12 shrink-0 bg-slate-800 text-blue-400 border border-slate-700 rounded-xl flex items-center justify-center shadow-[0_0_15px_rgba(59,130,246,0.3)]">
             <i data-lucide="globe" class="w-6 h-6"></i>
           </div>
           <div>
-            <h3 class="text-xl font-bold text-slate-900 mb-2">Sistemas Web & Plataformas</h3>
-            <p class="text-slate-600 text-sm font-medium leading-relaxed">Arquiteturas elásticas em nuvem desenhadas
+            <h3 class="text-xl font-bold text-white mb-2">Sistemas Web & Plataformas</h3>
+            <p class="text-slate-400 text-sm font-medium leading-relaxed">Arquiteturas elásticas em nuvem desenhadas
               para alta concorrência. Construímos painéis administrativos, ERPs customizados e interfaces limpas
               baseadas no feeling exato do seu cliente final.</p>
           </div>
@@ -368,23 +433,23 @@
       <!-- Bloco 3 (Nativo) -->
       <div class="bento-card col-span-1 md:col-span-1 lg:col-span-1 row-span-1 p-8 flex flex-col">
         <div
-          class="w-12 h-12 bg-emerald-50 border border-emerald-100 rounded-xl flex items-center justify-center mb-4 text-emerald-600 shrink-0">
+          class="w-12 h-12 bg-slate-800 border border-slate-700 rounded-xl flex items-center justify-center mb-4 text-emerald-400 shrink-0 shadow-[0_0_15px_rgba(16,185,129,0.3)]">
           <i data-lucide="smartphone" class="w-6 h-6"></i>
         </div>
-        <h3 class="text-lg font-bold text-slate-900 mb-2">Apps Nativos</h3>
-        <p class="text-slate-600 font-medium text-sm flex-grow">iOS e Android integrados aos sensores do hardware e
+        <h3 class="text-lg font-bold text-white mb-2">Apps Nativos</h3>
+        <p class="text-slate-400 font-medium text-sm flex-grow">iOS e Android integrados aos sensores do hardware e
           publicáveis nas lojas oficiais.</p>
       </div>
 
       <!-- Bloco 4 (Windows Offline) -->
       <div
-        class="bento-card col-span-1 md:col-span-1 lg:col-span-1 row-span-1 p-8 flex flex-col bg-slate-900 text-white border-slate-800 shadow-xl">
+        class="bento-card col-span-1 md:col-span-1 lg:col-span-1 row-span-1 p-8 flex flex-col bg-slate-900 border-slate-800 shadow-[0_4px_20px_-3px_rgba(0,0,0,0.8)]">
         <div
-          class="w-12 h-12 bg-slate-800 border border-slate-700 rounded-xl flex items-center justify-center mb-4 text-white shrink-0">
+          class="w-12 h-12 bg-slate-800 border border-slate-700 rounded-xl flex items-center justify-center mb-4 text-white shrink-0 shadow-[0_0_15px_rgba(255,255,255,0.1)]">
           <i data-lucide="monitor" class="w-6 h-6"></i>
         </div>
         <h3 class="text-lg font-bold text-white mb-2">Windows Offline</h3>
-        <p class="text-slate-400 font-medium text-sm flex-grow">Sistemas soberanos para fábricas ou áreas agrícolas
+        <p class="text-slate-500 font-medium text-sm flex-grow">Sistemas soberanos para fábricas ou áreas agrícolas
           imunes a quedas de internet.</p>
       </div>
 
@@ -392,79 +457,72 @@
   </section>
 
   <!-- WORKFLOW / COMO TRABALHAMOS -->
-  <section id="workflow" class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto bg-slate-50 border-y border-slate-200">
-    <div class="text-center mb-16">
+  <section data-aos="fade-up" id="processo" class="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto bg-slate-900/40 border-y border-slate-800/50 backdrop-blur-sm">
+    <div class="text-center mb-10">
       <div
-        class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-200 text-slate-700 text-sm font-bold mb-4">
-        <i data-lucide="git-merge" class="w-4 h-4"></i>
+        class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-800 text-slate-300 border border-slate-700 text-xs font-bold mb-3 shadow-sm">
+        <i data-lucide="git-merge" class="w-3.5 h-3.5"></i>
         O Processo Dona APP
       </div>
-      <h2 class="text-3xl font-extrabold text-slate-900 mb-4">Como Funciona o Nosso Trabalho</h2>
-      <p class="text-lg font-medium text-slate-600 max-w-2xl mx-auto">
+      <h2 class="text-3xl font-extrabold text-white mb-3">Como Funciona o Nosso Trabalho</h2>
+      <p class="text-base font-medium text-slate-400 max-w-2xl mx-auto">
         Processo claro e transparente. Você acompanha cada etapa visual e estratégica antes mesmo de qualquer código ser
-        escrito ou contrato ser assinado.
+        escrito ou contrato assinado.
       </p>
     </div>
 
-    <div class="grid grid-cols-1 lg:grid-cols-4 gap-8 relative workflow-line">
+    <div class="grid grid-cols-1 lg:grid-cols-4 gap-6 relative workflow-line">
 
       <!-- Passo 1 -->
       <div
-        class="relative z-10 bg-white rounded-3xl p-8 border border-slate-200 shadow-sm flex flex-col items-center text-center">
+        class="relative z-10 bg-slate-900/90 rounded-2xl p-6 border border-slate-800 shadow-[0_4px_20px_-3px_rgba(0,0,0,0.8)] flex flex-col items-center text-center">
         <div
-          class="w-16 h-16 bg-slate-900 rounded-2xl flex items-center justify-center text-white font-extrabold text-xl shadow-lg mb-6 ring-8 ring-slate-50">
+          class="w-12 h-12 bg-slate-800 rounded-xl flex items-center justify-center text-white font-extrabold text-lg mb-4 ring-4 ring-slate-950 shadow-[0_0_15px_rgba(255,255,255,0.05)]">
           1
         </div>
-        <h3 class="text-lg font-bold text-slate-900 mb-3">Reunião de Diagnóstico</h3>
-        <p class="text-sm font-medium text-slate-600">
-          Fazemos uma reunião imersiva inicial. Mergulhamos no seu fluxo de trabalho, entendemos suas dores operacionais
-          e definimos a melhor abordagem tecnológica — seja através de engenharia robusta tradicional ou aplicando
-          automação e Inteligência Artificial sob medida para o seu caso.
+        <h3 class="text-base font-bold text-white mb-2">Reunião de Diagnóstico</h3>
+        <p class="text-[13px] font-medium text-slate-400">
+          Fazemos uma imersão inicial para entender suas dores operacionais e definir a melhor abordagem técnica — com engenharia tradicional ou automação via IA sob medida.
         </p>
       </div>
 
       <!-- Passo 2 -->
       <div
-        class="relative z-10 bg-white rounded-3xl p-8 border border-slate-200 shadow-sm flex flex-col items-center text-center">
+        class="relative z-10 bg-slate-900/90 rounded-2xl p-6 border border-slate-800 shadow-[0_4px_20px_-3px_rgba(0,0,0,0.8)] flex flex-col items-center text-center">
         <div
-          class="w-16 h-16 bg-dona-100 rounded-2xl flex items-center justify-center text-dona-600 font-extrabold text-xl shadow-sm mb-6 ring-8 ring-slate-50">
-          <i data-lucide="pen-tool" class="w-7 h-7"></i>
+          class="w-12 h-12 bg-dona-600/20 rounded-xl flex items-center justify-center text-dona-400 font-extrabold text-lg mb-4 ring-4 ring-slate-950 shadow-[0_0_15px_rgba(79,70,229,0.3)] border border-dona-500/30">
+          <i data-lucide="pen-tool" class="w-5 h-5"></i>
         </div>
-        <h3 class="text-lg font-bold text-slate-900 mb-3">Mockup em 15 Dias</h3>
-        <p class="text-sm font-medium text-slate-600">
-          Apresentamos um <strong>protótipo visual completo</strong> do seu projeto em até 15 dias. São telas de
-          navegação simulada (sem lógica e sem banco de dados) para alinhar a expectativa estritamente no visual e no
-          UX.
+        <h3 class="text-base font-bold text-white mb-2">Mockup em 15 Dias</h3>
+        <p class="text-[13px] font-medium text-slate-400">
+          Apresentamos um <strong>protótipo visual completo</strong> em até 15 dias. Telas de navegação simulada para alinhamento estrito do visual e UX, antes de qualquer código.
         </p>
       </div>
 
       <!-- Passo 3 -->
       <div
-        class="relative z-10 bg-white rounded-3xl p-8 border border-slate-200 shadow-sm flex flex-col items-center text-center">
+        class="relative z-10 bg-slate-900/90 rounded-2xl p-6 border border-slate-800 shadow-[0_4px_20px_-3px_rgba(0,0,0,0.8)] flex flex-col items-center text-center">
         <div
-          class="w-16 h-16 bg-amber-100 rounded-2xl flex items-center justify-center text-amber-600 font-extrabold text-xl shadow-sm mb-6 ring-8 ring-slate-50">
-          <i data-lucide="scale" class="w-7 h-7"></i>
+          class="w-12 h-12 bg-amber-500/20 rounded-xl flex items-center justify-center text-amber-500 font-extrabold text-lg mb-4 ring-4 ring-slate-950 shadow-[0_0_15px_rgba(245,158,11,0.3)] border border-amber-500/30">
+          <i data-lucide="scale" class="w-5 h-5"></i>
         </div>
-        <h3 class="text-lg font-bold text-slate-900 mb-3">Escopo e Precificação</h3>
-        <p class="text-sm font-medium text-slate-600">
-          Com o Mockup validado por você, fechamos a engenharia exata necessária e apresentamos as opções de negócios
-          ideais: <strong>Mensalidade (SaaS)</strong> ou <strong>Projeto Fechado (Código Fonte Próprio)</strong>.
+        <h3 class="text-base font-bold text-white mb-2">Escopo e Precificação</h3>
+        <p class="text-[13px] font-medium text-slate-400">
+          Com o protótipo validado, definimos a engenharia necessária e apresentamos os modelos: <strong>Mensalidade (SaaS)</strong> ou <strong>Projeto Fechado (Código Fonte)</strong>.
         </p>
       </div>
 
       <!-- Passo 4 -->
       <div
-        class="relative z-10 bg-white rounded-3xl p-8 border border-dona-200 shadow-md flex flex-col items-center text-center ring-1 ring-dona-600">
+        class="relative z-10 bg-slate-900/90 rounded-2xl p-6 border border-dona-500/50 shadow-[0_4px_30px_-3px_rgba(79,70,229,0.2)] flex flex-col items-center text-center ring-1 ring-dona-600/50">
         <div
-          class="w-16 h-16 bg-dona-600 rounded-2xl flex items-center justify-center text-white font-extrabold text-xl shadow-lg shadow-dona-600/30 mb-6 ring-8 ring-slate-50">
-          <i data-lucide="file-signature" class="w-7 h-7"></i>
+          class="w-12 h-12 bg-dona-600 rounded-xl flex items-center justify-center text-white font-extrabold text-lg shadow-[0_0_20px_rgba(79,70,229,0.6)] mb-4 ring-4 ring-slate-950">
+          <i data-lucide="file-signature" class="w-5 h-5"></i>
         </div>
-        <h3 class="text-lg font-bold text-slate-900 mb-3">Proposta e Kick-off</h3>
-        <div class="text-sm font-medium text-slate-600 text-left w-full space-y-3 border-t border-slate-100 pt-3 mt-1">
-          <p><span class="font-bold text-slate-800 block">🔹 Modelo Mensalidade:</span> Primeira paga na aprovação e a
-            cada 30 dias continuamente (reajustes anuais negociáveis).</p>
-          <p><span class="font-bold text-slate-800 block">🔹 Projeto Fechado:</span> Entrada de 30% no start técnico, e
-            o saldo integral faturado apenas na entrega final do código.</p>
+        <h3 class="text-base font-bold text-white mb-2">Proposta e Kick-off</h3>
+        <div class="text-[13px] font-medium text-slate-400 text-left w-full space-y-2">
+          <p><span class="font-bold text-slate-200">🔹 SaaS:</span> 1ª parcela na aprovação e renovação a cada 30 dias.</p>
+          <p><span class="font-bold text-slate-200">🔹 Código Fonte:</span> 30% no kick-off e saldo apenas na entrega final.</p>
         </div>
       </div>
 
@@ -472,78 +530,123 @@
   </section>
 
   <!-- ECOSSISTEMA DONA APP -->
-  <section id="ecossistema"
-    class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto bg-white rounded-3xl border border-slate-200 shadow-sm my-20">
-    <div class="flex flex-col lg:flex-row items-center gap-14 p-4">
+  <section data-aos="fade-up" id="ecosistema"
+    class="py-10 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto bg-slate-900/80 backdrop-blur-md rounded-[24px] border border-slate-800 shadow-[0_8px_30px_-5px_rgba(0,0,0,0.8)] my-12">
+    <div class="flex flex-col lg:flex-row items-center gap-10 p-2">
       <div class="lg:w-1/2">
         <div
-          class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-50 border border-orange-200 text-orange-700 text-xs font-bold mb-4">
+          class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-800/80 border border-slate-700 text-dona-400 text-xs font-bold mb-4">
           <i data-lucide="cpu" class="w-3.5 h-3.5"></i>
-          SaaS Proprietário
+          Software & SaaS
         </div>
-        <h2 class="text-3xl lg:text-4xl font-extrabold text-slate-900 mb-6 leading-tight">Ecossistema: <br /><span
-            class="text-orange-600">Dono da Oficina</span></h2>
+        
+        <h2 class="text-3xl font-extrabold text-white mb-4">Projetos Próprios</h2>
+        
+        <!-- Logo Dono da Oficina -->
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-12 h-12 bg-orange-500 rounded-xl flex items-center justify-center shadow-[0_0_15px_rgba(249,115,22,0.4)]">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M11.562 3.266a.5.5 0 0 1 .876 0L15.39 8.87a1 1 0 0 0 1.516.294L21.183 5.5a.5.5 0 0 1 .798.519l-2.834 10.246a1 1 0 0 1-.956.734H5.81a1 1 0 0 1-.957-.734L2.02 6.02a.5.5 0 0 1 .798-.519l4.276 3.664a1 1 0 0 0 1.516-.294z" />
+              <path d="M5 21h14" />
+            </svg>
+          </div>
+          <h3 class="text-2xl font-extrabold text-white">Dono da Oficina</h3>
+        </div>
 
-        <p class="text-lg font-semibold text-slate-700 mb-6 leading-relaxed">
-          <strong class="text-slate-800">A Dona APP é uma autêntica boutique de engenharia de software;</strong> nós
+        <p class="text-base font-semibold text-slate-300 mb-4 leading-relaxed">
+          <strong class="text-white">A Dona APP é uma empresa de engenharia de software e IA;</strong> nós
           respiramos código operando nossos próprios sistemas B2B diariamente.
         </p>
-        <p class="text-base font-medium text-slate-600 mb-8 leading-relaxed">
+        <p class="text-sm font-medium text-slate-400 mb-6 leading-relaxed">
           O <strong>Dono da Oficina</strong> é nosso software proprietário de gestão automotiva, onde validamos na
           prática integrações complexas de IA, arquiteturas em nuvem e UX corporativo antes de aplicarmos a mesma
           solidez no seu projeto.
         </p>
 
-        <ul class="space-y-4 mb-8">
-          <li class="flex items-center gap-3">
-            <div class="w-6 h-6 rounded-md bg-orange-100 text-orange-600 flex items-center justify-center shrink-0">
-              <i data-lucide="check" class="w-4 h-4"></i>
-            </div>
-            <span class="text-slate-800 text-base font-bold">Centenas de oficinas ativas pelo Brasil.</span>
-          </li>
-          <li class="flex items-center gap-3">
-            <div class="w-6 h-6 rounded-md bg-orange-100 text-orange-600 flex items-center justify-center shrink-0">
-              <i data-lucide="check" class="w-4 h-4"></i>
-            </div>
-            <span class="text-slate-800 text-base font-bold">Uptime blindado e fluxos 100% automatizados.</span>
-          </li>
-        </ul>
-
         <a href="https://donodaoficina.com.br" target="_blank"
-          class="inline-flex items-center gap-2 px-6 py-3 bg-white border-2 border-slate-200 text-slate-800 font-bold rounded-full hover:border-orange-600 hover:text-orange-600 transition-colors shadow-sm">
+          class="inline-flex items-center gap-2 px-5 py-2.5 text-sm bg-slate-800 border border-slate-700 text-white font-bold rounded-full hover:bg-orange-600 hover:border-orange-500 transition-colors shadow-[0_0_10px_rgba(0,0,0,0.5)] hover:shadow-[0_0_15px_rgba(249,115,22,0.4)]">
           Acessar a Plataforma
-          <i data-lucide="external-link" class="w-4 h-4"></i>
+          <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
         </a>
       </div>
 
       <div class="lg:w-1/2 w-full">
         <!-- Mockup de Navegador Elegante para o GIF -->
         <div
-          class="relative mx-auto w-full max-w-[550px] rounded-xl shadow-2xl overflow-hidden border border-slate-300 bg-white">
-          <div class="h-10 bg-slate-100 flex items-center px-4 border-b border-slate-200">
+          class="relative mx-auto w-full max-w-[480px] rounded-xl shadow-[0_0_20px_rgba(0,0,0,0.8)] overflow-hidden border border-slate-700 bg-slate-950">
+          <div class="h-10 bg-slate-900 flex items-center px-4 border-b border-slate-800">
             <div class="flex gap-2">
-              <div class="w-3 h-3 rounded-full bg-red-400"></div>
-              <div class="w-3 h-3 rounded-full bg-amber-400"></div>
-              <div class="w-3 h-3 rounded-full bg-emerald-400"></div>
+              <div class="w-3 h-3 rounded-full bg-red-500/80"></div>
+              <div class="w-3 h-3 rounded-full bg-amber-500/80"></div>
+              <div class="w-3 h-3 rounded-full bg-emerald-500/80"></div>
             </div>
-            <div class="mx-auto w-1/2 h-5 bg-white rounded flex items-center justify-center opacity-50">
-              <span class="text-[10px] font-bold text-slate-500">donodaoficina.com.br</span>
+            <div class="mx-auto w-1/2 h-5 bg-slate-800 rounded flex items-center justify-center opacity-70">
+              <span class="text-[10px] font-bold text-slate-400">donodaoficina.com.br</span>
             </div>
           </div>
           <img src="images/hero-dashboard.gif" alt="Dashboard do Dono da Oficina Operando"
-            class="w-full h-auto block" />
+            class="w-full h-auto block opacity-90" />
+        </div>
+      </div>
+    </div>
+
+    <!-- Em Desenvolvimento / Outros Projetos -->
+    <div class="mt-10 pt-6 border-t border-slate-800/50">
+      <div class="flex items-center gap-2 mb-4">
+        <div class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></div>
+        <h4 class="text-xs font-bold text-slate-400 uppercase tracking-widest">No laboratório (Em Desenvolvimento)</h4>
+      </div>
+      
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+        <!-- Dono da Oficina (Ativo) -->
+        <div class="flex flex-col p-4 bg-slate-800/30 rounded-xl border border-slate-700/60 hover:bg-slate-800/50 transition-colors">
+          <div class="w-8 h-8 bg-orange-500 rounded-lg flex items-center justify-center shadow-lg mb-3">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M11.562 3.266a.5.5 0 0 1 .876 0L15.39 8.87a1 1 0 0 0 1.516.294L21.183 5.5a.5.5 0 0 1 .798.519l-2.834 10.246a1 1 0 0 1-.956.734H5.81a1 1 0 0 1-.957-.734L2.02 6.02a.5.5 0 0 1 .798-.519l4.276 3.664a1 1 0 0 0 1.516-.294z" />
+              <path d="M5 21h14" />
+            </svg>
+          </div>
+          <span class="text-xs font-bold text-white mb-1">Dono da Oficina</span>
+          <span class="text-[10px] font-semibold text-emerald-400">Em Produção</span>
+        </div>
+
+        <!-- Projeto Ofuscado 1 -->
+        <div class="flex flex-col p-4 bg-slate-900/50 rounded-xl border border-slate-800/60 opacity-60 grayscale hover:grayscale-0 transition-all select-none">
+          <div class="w-8 h-8 bg-indigo-500/20 rounded-lg flex items-center justify-center mb-3 backdrop-blur-md border border-indigo-500/30">
+            <i data-lucide="building-2" class="text-indigo-400 w-4 h-4"></i>
+          </div>
+          <div class="w-16 h-2 bg-slate-700/50 rounded-full mb-1.5"></div>
+          <span class="text-[10px] font-semibold text-amber-500/80">Alpha Fechado</span>
+        </div>
+
+        <!-- Projeto Ofuscado 2 -->
+        <div class="flex flex-col p-4 bg-slate-900/50 rounded-xl border border-slate-800/60 opacity-60 grayscale hover:grayscale-0 transition-all select-none">
+          <div class="w-8 h-8 bg-emerald-500/20 rounded-lg flex items-center justify-center mb-3 backdrop-blur-md border border-emerald-500/30">
+            <i data-lucide="line-chart" class="text-emerald-400 w-4 h-4"></i>
+          </div>
+          <div class="w-20 h-2 bg-slate-700/50 rounded-full mb-1.5"></div>
+          <span class="text-[10px] font-semibold text-amber-500/80">Pesquisa</span>
+        </div>
+
+        <!-- Projeto Ofuscado 3 -->
+        <div class="flex flex-col p-4 bg-slate-900/50 rounded-xl border border-slate-800/60 opacity-60 grayscale hover:grayscale-0 transition-all select-none">
+          <div class="w-8 h-8 bg-rose-500/20 rounded-lg flex items-center justify-center mb-3 backdrop-blur-md border border-rose-500/30">
+            <i data-lucide="bot" class="text-rose-400 w-4 h-4"></i>
+          </div>
+          <div class="w-12 h-2 bg-slate-700/50 rounded-full mb-1.5"></div>
+          <span class="text-[10px] font-semibold text-amber-500/80">Ideação</span>
         </div>
       </div>
     </div>
   </section>
 
   <!-- EXPERIÊNCIA ADQUIRIDA (PROJETOS) -->
-  <section id="experiencia" class="py-24 bg-slate-50 border-t border-slate-200">
+  <section data-aos="fade-up" id="projetos" class="py-24 bg-slate-950/50 border-t border-slate-800/50 backdrop-blur-sm">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-16">
-        <h2 class="text-3xl font-extrabold text-slate-900 mb-4">Experiência Adquirida</h2>
-        <p class="text-lg font-medium text-slate-600 max-w-3xl mx-auto">
-          Exemplos do nosso refinamento técnico com foco em automação. Estes sistemas <strong>não são comercializados
+        <h2 class="text-3xl font-extrabold text-white mb-4">Experiência Adquirida</h2>
+        <p class="text-lg font-medium text-slate-400 max-w-3xl mx-auto">
+          Exemplos do nosso refinamento técnico com foco em automação. Estes sistemas <strong class="text-slate-200">não são comercializados
             pela Dona APP</strong>; eles representam nossa experiência técnica construindo sob demanda para clientes
           isolados.
         </p>
@@ -552,165 +655,164 @@
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
         <!-- Projeto IA 1 -->
-        <div class="bento-card p-6 flex flex-col h-full hover:border-dona-300 group">
+        <div class="bento-card p-6 flex flex-col h-full hover:border-dona-500 group">
           <div class="flex items-center gap-4 mb-4">
             <div
-              class="w-12 h-12 rounded-xl bg-dona-50 text-dona-600 flex items-center justify-center shrink-0 group-hover:bg-dona-600 group-hover:text-white transition-colors">
+              class="w-12 h-12 rounded-xl bg-dona-500/20 text-dona-400 border border-dona-500/30 flex items-center justify-center shrink-0 group-hover:bg-dona-600 group-hover:text-white transition-colors shadow-[0_0_10px_rgba(79,70,229,0.2)]">
               <i data-lucide="headset" class="w-6 h-6"></i>
             </div>
-            <h3 class="text-lg font-bold text-slate-900">Agentes de Atendimento de Alta Resolução</h3>
+            <h3 class="text-lg font-bold text-white">Agentes de Atendimento de Alta Resolução</h3>
           </div>
-          <p class="text-slate-600 text-sm font-medium leading-relaxed mb-6 flex-grow">Bot baseado em inteligência
+          <p class="text-slate-400 text-sm font-medium leading-relaxed mb-6 flex-grow">Bot baseado em inteligência
             artificial (LLM + RAG) que leu todo o manual de condutas e PDFs de uma transportadora, realizando a triagem
             autônoma de clientes 24/7 via WhatsApp.</p>
           <div class="flex gap-2">
-            <span class="px-2 py-1 bg-slate-100 text-slate-600 text-[10px] font-bold rounded">LLM RAG</span>
-            <span class="px-2 py-1 bg-slate-100 text-slate-600 text-[10px] font-bold rounded">WhatsApp API</span>
+            <span class="px-2 py-1 bg-slate-800 border border-slate-700 text-slate-300 text-[10px] font-bold rounded">LLM RAG</span>
+            <span class="px-2 py-1 bg-slate-800 border border-slate-700 text-slate-300 text-[10px] font-bold rounded">WhatsApp API</span>
           </div>
         </div>
 
         <!-- Projeto IA 2 -->
-        <div class="bento-card p-6 flex flex-col h-full hover:border-dona-300 group">
+        <div class="bento-card p-6 flex flex-col h-full hover:border-teal-500 group">
           <div class="flex items-center gap-4 mb-4">
             <div
-              class="w-12 h-12 rounded-xl bg-teal-50 text-teal-600 flex items-center justify-center shrink-0 group-hover:bg-teal-600 group-hover:text-white transition-colors">
+              class="w-12 h-12 rounded-xl bg-teal-500/20 text-teal-400 border border-teal-500/30 flex items-center justify-center shrink-0 group-hover:bg-teal-600 group-hover:text-white transition-colors shadow-[0_0_10px_rgba(20,184,166,0.2)]">
               <i data-lucide="file-search" class="w-6 h-6"></i>
             </div>
-            <h3 class="text-lg font-bold text-slate-900">Triagem Jurídica e Visão Computacional</h3>
+            <h3 class="text-lg font-bold text-white">Triagem Jurídica e Visão Computacional</h3>
           </div>
-          <p class="text-slate-600 text-sm font-medium leading-relaxed mb-6 flex-grow">Sistema de OCR dotado de visão
+          <p class="text-slate-400 text-sm font-medium leading-relaxed mb-6 flex-grow">Sistema de OCR dotado de visão
             computacional que digere milhares de peças judiciais por minuto, separando processos urgentes, extraindo
             CNPJs e despachando para a equipe correta.</p>
           <div class="flex gap-2">
-            <span class="px-2 py-1 bg-slate-100 text-slate-600 text-[10px] font-bold rounded">Vision AI</span>
-            <span class="px-2 py-1 bg-slate-100 text-slate-600 text-[10px] font-bold rounded">Python</span>
+            <span class="px-2 py-1 bg-slate-800 border border-slate-700 text-slate-300 text-[10px] font-bold rounded">Vision AI</span>
+            <span class="px-2 py-1 bg-slate-800 border border-slate-700 text-slate-300 text-[10px] font-bold rounded">Python</span>
           </div>
         </div>
 
         <!-- Projeto IA 3 -->
-        <div class="bento-card p-6 flex flex-col h-full hover:border-dona-300 group">
+        <div class="bento-card p-6 flex flex-col h-full hover:border-blue-500 group">
           <div class="flex items-center gap-4 mb-4">
             <div
-              class="w-12 h-12 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center shrink-0 group-hover:bg-blue-600 group-hover:text-white transition-colors">
+              class="w-12 h-12 rounded-xl bg-blue-500/20 text-blue-400 border border-blue-500/30 flex items-center justify-center shrink-0 group-hover:bg-blue-600 group-hover:text-white transition-colors shadow-[0_0_10px_rgba(59,130,246,0.2)]">
               <i data-lucide="bar-chart-3" class="w-6 h-6"></i>
             </div>
-            <h3 class="text-lg font-bold text-slate-900">Análise Preditiva de Supply Chain</h3>
+            <h3 class="text-lg font-bold text-white">Análise Preditiva de Supply Chain</h3>
           </div>
-          <p class="text-slate-600 text-sm font-medium leading-relaxed mb-6 flex-grow">Motor preditivo para rede de
+          <p class="text-slate-400 text-sm font-medium leading-relaxed mb-6 flex-grow">Motor preditivo para rede de
             farmácias que analisa histórico de 10 anos de vendas cruzado com temperatura e dados climáticos para prever
             demandas de xaropes e medicamentos.</p>
           <div class="flex gap-2">
-            <span class="px-2 py-1 bg-slate-100 text-slate-600 text-[10px] font-bold rounded">Machine Learning</span>
-            <span class="px-2 py-1 bg-slate-100 text-slate-600 text-[10px] font-bold rounded">AWS</span>
+            <span class="px-2 py-1 bg-slate-800 border border-slate-700 text-slate-300 text-[10px] font-bold rounded">Machine Learning</span>
+            <span class="px-2 py-1 bg-slate-800 border border-slate-700 text-slate-300 text-[10px] font-bold rounded">AWS</span>
           </div>
         </div>
 
         <!-- Projeto IA 4 -->
-        <div class="bento-card p-6 flex flex-col h-full hover:border-dona-300 group">
+        <div class="bento-card p-6 flex flex-col h-full hover:border-rose-500 group">
           <div class="flex items-center gap-4 mb-4">
             <div
-              class="w-12 h-12 rounded-xl bg-rose-50 text-rose-600 flex items-center justify-center shrink-0 group-hover:bg-rose-600 group-hover:text-white transition-colors">
+              class="w-12 h-12 rounded-xl bg-rose-500/20 text-rose-400 border border-rose-500/30 flex items-center justify-center shrink-0 group-hover:bg-rose-600 group-hover:text-white transition-colors shadow-[0_0_10px_rgba(244,63,94,0.2)]">
               <i data-lucide="scan-face" class="w-6 h-6"></i>
             </div>
-            <h3 class="text-lg font-bold text-slate-900">Onboarding Biométrico Antifraude</h3>
+            <h3 class="text-lg font-bold text-white">Onboarding Biométrico Antifraude</h3>
           </div>
-          <p class="text-slate-600 text-sm font-medium leading-relaxed mb-6 flex-grow">Módulo nativo em aplicativo
+          <p class="text-slate-400 text-sm font-medium leading-relaxed mb-6 flex-grow">Módulo nativo em aplicativo
             financeiro que realiza reconhecimento facial com prova de vivacidade (Liveness) em menos de 1 segundo para
             aprovação instantânea de contas.</p>
           <div class="flex gap-2">
-            <span class="px-2 py-1 bg-slate-100 text-slate-600 text-[10px] font-bold rounded">Computer Vision</span>
-            <span class="px-2 py-1 bg-slate-100 text-slate-600 text-[10px] font-bold rounded">Swift / Kotlin</span>
+            <span class="px-2 py-1 bg-slate-800 border border-slate-700 text-slate-300 text-[10px] font-bold rounded">Computer Vision</span>
+            <span class="px-2 py-1 bg-slate-800 border border-slate-700 text-slate-300 text-[10px] font-bold rounded">Swift / Kotlin</span>
           </div>
         </div>
 
         <!-- Projeto IA 5 -->
-        <div class="bento-card p-6 flex flex-col h-full hover:border-dona-300 group">
+        <div class="bento-card p-6 flex flex-col h-full hover:border-orange-500 group">
           <div class="flex items-center gap-4 mb-4">
             <div
-              class="w-12 h-12 rounded-xl bg-orange-50 text-orange-600 flex items-center justify-center shrink-0 group-hover:bg-orange-600 group-hover:text-white transition-colors">
+              class="w-12 h-12 rounded-xl bg-orange-500/20 text-orange-400 border border-orange-500/30 flex items-center justify-center shrink-0 group-hover:bg-orange-600 group-hover:text-white transition-colors shadow-[0_0_10px_rgba(249,115,22,0.2)]">
               <i data-lucide="file-warning" class="w-6 h-6"></i>
             </div>
-            <h3 class="text-lg font-bold text-slate-900">Auditoria Fiscal Autônoma</h3>
+            <h3 class="text-lg font-bold text-white">Auditoria Fiscal Autônoma</h3>
           </div>
-          <p class="text-slate-600 text-sm font-medium leading-relaxed mb-6 flex-grow">Robô fiscal que lê notas fiscais
+          <p class="text-slate-400 text-sm font-medium leading-relaxed mb-6 flex-grow">Robô fiscal que lê notas fiscais
             eletrônicas geradas durante o dia em diferentes filiais e cruza NCMs de impostos reportando automaticamente
             falhas de tributação antes do fisco.</p>
           <div class="flex gap-2">
-            <span class="px-2 py-1 bg-slate-100 text-slate-600 text-[10px] font-bold rounded">Automação
-              Server-Side</span>
-            <span class="px-2 py-1 bg-slate-100 text-slate-600 text-[10px] font-bold rounded">Cron Jobs</span>
+            <span class="px-2 py-1 bg-slate-800 border border-slate-700 text-slate-300 text-[10px] font-bold rounded">Automação Server-Side</span>
+            <span class="px-2 py-1 bg-slate-800 border border-slate-700 text-slate-300 text-[10px] font-bold rounded">Cron Jobs</span>
           </div>
         </div>
 
         <!-- Projeto IA 6 -->
-        <div class="bento-card p-6 flex flex-col h-full hover:border-dona-300 group">
+        <div class="bento-card p-6 flex flex-col h-full hover:border-purple-500 group">
           <div class="flex items-center gap-4 mb-4">
             <div
-              class="w-12 h-12 rounded-xl bg-purple-50 text-purple-600 flex items-center justify-center shrink-0 group-hover:bg-purple-600 group-hover:text-white transition-colors">
+              class="w-12 h-12 rounded-xl bg-purple-500/20 text-purple-400 border border-purple-500/30 flex items-center justify-center shrink-0 group-hover:bg-purple-600 group-hover:text-white transition-colors shadow-[0_0_10px_rgba(168,85,247,0.2)]">
               <i data-lucide="sparkles" class="w-6 h-6"></i>
             </div>
-            <h3 class="text-lg font-bold text-slate-900">Motor de Recomendação Dinâmica</h3>
+            <h3 class="text-lg font-bold text-white">Motor de Recomendação Dinâmica</h3>
           </div>
-          <p class="text-slate-600 text-sm font-medium leading-relaxed mb-6 flex-grow">Integração backend em e-commerce
+          <p class="text-slate-400 text-sm font-medium leading-relaxed mb-6 flex-grow">Integração backend em e-commerce
             de grande porte que aprende o comportamento de cliques de clientes anônimos para alterar o grid de produtos
             dinamicamente e elevar a conversão.</p>
           <div class="flex gap-2">
-            <span class="px-2 py-1 bg-slate-100 text-slate-600 text-[10px] font-bold rounded">AI Recommendation</span>
-            <span class="px-2 py-1 bg-slate-100 text-slate-600 text-[10px] font-bold rounded">Redis</span>
+            <span class="px-2 py-1 bg-slate-800 border border-slate-700 text-slate-300 text-[10px] font-bold rounded">AI Recommendation</span>
+            <span class="px-2 py-1 bg-slate-800 border border-slate-700 text-slate-300 text-[10px] font-bold rounded">Redis</span>
           </div>
         </div>
 
         <!-- Projeto 7 -->
-        <div class="bento-card p-6 flex flex-col h-full hover:border-dona-300 group">
+        <div class="bento-card p-6 flex flex-col h-full hover:border-indigo-500 group">
           <div class="flex items-center gap-4 mb-4">
             <div
-              class="w-12 h-12 rounded-xl bg-indigo-50 text-indigo-600 flex items-center justify-center shrink-0 group-hover:bg-indigo-600 group-hover:text-white transition-colors">
+              class="w-12 h-12 rounded-xl bg-indigo-500/20 text-indigo-400 border border-indigo-500/30 flex items-center justify-center shrink-0 group-hover:bg-indigo-600 group-hover:text-white transition-colors shadow-[0_0_10px_rgba(99,102,241,0.2)]">
               <i data-lucide="map-pin" class="w-6 h-6"></i>
             </div>
-            <h3 class="text-lg font-bold text-slate-900">Controle de Frotas Offline</h3>
+            <h3 class="text-lg font-bold text-white">Controle de Frotas Offline</h3>
           </div>
-          <p class="text-slate-600 text-sm font-medium leading-relaxed mb-6 flex-grow">Aplicativo nativo para vistoria
+          <p class="text-slate-400 text-sm font-medium leading-relaxed mb-6 flex-grow">Aplicativo nativo para vistoria
             de caminhões em pátios sem sinal. Sincroniza fotos em alta resolução em background quando a conexão retorna
             à sede.</p>
           <div class="flex gap-2">
-            <span class="px-2 py-1 bg-slate-100 text-slate-600 text-[10px] font-bold rounded">React Native</span>
-            <span class="px-2 py-1 bg-slate-100 text-slate-600 text-[10px] font-bold rounded">SQLite</span>
+            <span class="px-2 py-1 bg-slate-800 border border-slate-700 text-slate-300 text-[10px] font-bold rounded">React Native</span>
+            <span class="px-2 py-1 bg-slate-800 border border-slate-700 text-slate-300 text-[10px] font-bold rounded">SQLite</span>
           </div>
         </div>
 
         <!-- Projeto 8 -->
-        <div class="bento-card p-6 flex flex-col h-full hover:border-dona-300 group">
+        <div class="bento-card p-6 flex flex-col h-full hover:border-emerald-500 group">
           <div class="flex items-center gap-4 mb-4">
             <div
-              class="w-12 h-12 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center shrink-0 group-hover:bg-emerald-600 group-hover:text-white transition-colors">
+              class="w-12 h-12 rounded-xl bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 flex items-center justify-center shrink-0 group-hover:bg-emerald-600 group-hover:text-white transition-colors shadow-[0_0_10px_rgba(16,185,129,0.2)]">
               <i data-lucide="tractor" class="w-6 h-6"></i>
             </div>
-            <h3 class="text-lg font-bold text-slate-900">ERP Agrícola Desktop</h3>
+            <h3 class="text-lg font-bold text-white">ERP Agrícola Desktop</h3>
           </div>
-          <p class="text-slate-600 text-sm font-medium leading-relaxed mb-6 flex-grow">Sistema nativo Windows para
+          <p class="text-slate-400 text-sm font-medium leading-relaxed mb-6 flex-grow">Sistema nativo Windows para
             fazendas no interior remoto. Controle integral de safra rodando direto na máquina local, garantindo
             soberania total contra falhas de internet.</p>
           <div class="flex gap-2">
-            <span class="px-2 py-1 bg-slate-100 text-slate-600 text-[10px] font-bold rounded">Electron</span>
-            <span class="px-2 py-1 bg-slate-100 text-slate-600 text-[10px] font-bold rounded">LocalDB</span>
+            <span class="px-2 py-1 bg-slate-800 border border-slate-700 text-slate-300 text-[10px] font-bold rounded">Electron</span>
+            <span class="px-2 py-1 bg-slate-800 border border-slate-700 text-slate-300 text-[10px] font-bold rounded">LocalDB</span>
           </div>
         </div>
 
         <!-- Projeto 9 -->
-        <div class="bento-card p-6 flex flex-col h-full hover:border-dona-300 group">
+        <div class="bento-card p-6 flex flex-col h-full hover:border-sky-500 group">
           <div class="flex items-center gap-4 mb-4">
             <div
-              class="w-12 h-12 rounded-xl bg-sky-50 text-sky-600 flex items-center justify-center shrink-0 group-hover:bg-sky-600 group-hover:text-white transition-colors">
+              class="w-12 h-12 rounded-xl bg-sky-500/20 text-sky-400 border border-sky-500/30 flex items-center justify-center shrink-0 group-hover:bg-sky-600 group-hover:text-white transition-colors shadow-[0_0_10px_rgba(14,165,233,0.2)]">
               <i data-lucide="stethoscope" class="w-6 h-6"></i>
             </div>
-            <h3 class="text-lg font-bold text-slate-900">Telemedicina Criptografada</h3>
+            <h3 class="text-lg font-bold text-white">Telemedicina Criptografada</h3>
           </div>
-          <p class="text-slate-600 text-sm font-medium leading-relaxed mb-6 flex-grow">Consultas por vídeo seguras
+          <p class="text-slate-400 text-sm font-medium leading-relaxed mb-6 flex-grow">Consultas por vídeo seguras
             através da infraestrutura web, gerando prontuários únicos altamente performáticos com emissão de prescrição
             digital.</p>
           <div class="flex gap-2">
-            <span class="px-2 py-1 bg-slate-100 text-slate-600 text-[10px] font-bold rounded">WebRTC</span>
-            <span class="px-2 py-1 bg-slate-100 text-slate-600 text-[10px] font-bold rounded">Next.js</span>
+            <span class="px-2 py-1 bg-slate-800 border border-slate-700 text-slate-300 text-[10px] font-bold rounded">WebRTC</span>
+            <span class="px-2 py-1 bg-slate-800 border border-slate-700 text-slate-300 text-[10px] font-bold rounded">Next.js</span>
           </div>
         </div>
 
@@ -719,20 +821,20 @@
   </section>
 
   <!-- KILLER FEATURE: SIMULADOR DE ORÇAMENTO INTELIGENTE -->
-  <section id="simulador" class="py-24 px-4 sm:px-6 lg:px-8 bg-white border-y border-slate-200">
+  <section data-aos="fade-up" id="simulador" class="py-24 px-4 sm:px-6 lg:px-8 bg-slate-900/50 border-y border-slate-800/50 backdrop-blur-md">
     <div class="max-w-6xl mx-auto">
       <div class="text-center mb-16">
         <div
-          class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-100 text-slate-700 text-sm font-bold mb-4">
+          class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-800 border border-slate-700 text-slate-300 text-sm font-bold mb-4 shadow-sm">
           <i data-lucide="calculator" class="w-4 h-4"></i>
           Montador de Engenharia
         </div>
-        <h2 class="text-3xl lg:text-4xl font-extrabold text-slate-900 mb-4">Dimensionador de Projeto</h2>
-        <p class="text-lg font-medium text-slate-600">Simule o esforço humano em horas e o perfil da infraestrutura
+        <h2 class="text-3xl lg:text-4xl font-extrabold text-white mb-4">Dimensionador de Projeto</h2>
+        <p class="text-lg font-medium text-slate-400">Simule o esforço humano em horas e o perfil da infraestrutura
           necessária para a sua ideia.</p>
       </div>
 
-      <div class="bg-white border border-slate-200 rounded-3xl p-6 md:p-10 shadow-2xl shadow-slate-200/50">
+      <div class="bg-slate-900 border border-slate-800 rounded-3xl p-6 md:p-10 shadow-[0_8px_30px_-5px_rgba(0,0,0,0.8)]">
 
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
 
@@ -742,46 +844,46 @@
             <div>
               <div class="flex items-center gap-3 mb-4">
                 <div
-                  class="w-7 h-7 rounded-full bg-dona-600 text-white flex items-center justify-center font-bold text-xs">
+                  class="w-7 h-7 rounded-full bg-dona-600 text-white flex items-center justify-center font-bold text-xs shadow-[0_0_10px_rgba(79,70,229,0.5)]">
                   1</div>
-                <h3 class="text-lg font-bold text-slate-900">Qual é o volume de desenvolvimento?</h3>
+                <h3 class="text-lg font-bold text-white">Qual é o volume de desenvolvimento?</h3>
               </div>
               <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
                 <label class="relative block cursor-pointer">
                   <input type="radio" name="tamanho" value="simples" class="sr-only" onchange="updateSimulator()">
                   <div
-                    class="border border-slate-200 rounded-xl p-4 hover:border-dona-300 transition-all flex flex-col items-center text-center h-full relative">
+                    class="border border-slate-700 rounded-xl p-4 hover:border-dona-500 transition-all flex flex-col items-center text-center h-full relative">
                     <i data-lucide="check-circle-2"
-                      class="w-5 h-5 absolute top-3 right-3 text-dona-600 opacity-0 transition-opacity check-icon"></i>
-                    <i data-lucide="zap" class="w-6 h-6 text-slate-400 mb-2"></i>
-                    <span class="block font-bold text-slate-800 text-sm leading-tight">Ideia Simples / Automação
+                      class="w-5 h-5 absolute top-3 right-3 text-dona-400 opacity-0 transition-opacity check-icon"></i>
+                    <i data-lucide="zap" class="w-6 h-6 text-slate-500 mb-2"></i>
+                    <span class="block font-bold text-slate-200 text-sm leading-tight">Ideia Simples / Automação
                       Pontual</span>
-                    <span class="block text-[11px] font-medium text-slate-500 mt-2">Estimativa base: ~80h a 160h.</span>
+                    <span class="block text-[11px] font-medium text-slate-400 mt-2">Estimativa base: ~80h a 160h.</span>
                   </div>
                 </label>
                 <label class="relative block cursor-pointer">
                   <input type="radio" name="tamanho" value="plataforma" class="sr-only" onchange="updateSimulator()"
                     checked>
                   <div
-                    class="border border-slate-200 rounded-xl p-4 hover:border-dona-300 transition-all flex flex-col items-center text-center h-full relative">
+                    class="border border-slate-700 rounded-xl p-4 hover:border-dona-500 transition-all flex flex-col items-center text-center h-full relative">
                     <i data-lucide="check-circle-2"
-                      class="w-5 h-5 absolute top-3 right-3 text-dona-600 opacity-0 transition-opacity check-icon"></i>
-                    <i data-lucide="layers" class="w-6 h-6 text-slate-400 mb-2"></i>
-                    <span class="block font-bold text-slate-800 text-sm leading-tight">Plataforma Core / MVP
+                      class="w-5 h-5 absolute top-3 right-3 text-dona-400 opacity-0 transition-opacity check-icon"></i>
+                    <i data-lucide="layers" class="w-6 h-6 text-slate-500 mb-2"></i>
+                    <span class="block font-bold text-slate-200 text-sm leading-tight">Plataforma Core / MVP
                       Robusto</span>
-                    <span class="block text-[11px] font-medium text-slate-500 mt-2">Estimativa: ~200h a 400h. Módulos
+                    <span class="block text-[11px] font-medium text-slate-400 mt-2">Estimativa: ~200h a 400h. Módulos
                       integrados.</span>
                   </div>
                 </label>
                 <label class="relative block cursor-pointer">
                   <input type="radio" name="tamanho" value="ecossistema" class="sr-only" onchange="updateSimulator()">
                   <div
-                    class="border border-slate-200 rounded-xl p-4 hover:border-dona-300 transition-all flex flex-col items-center text-center h-full relative">
+                    class="border border-slate-700 rounded-xl p-4 hover:border-dona-500 transition-all flex flex-col items-center text-center h-full relative">
                     <i data-lucide="check-circle-2"
-                      class="w-5 h-5 absolute top-3 right-3 text-dona-600 opacity-0 transition-opacity check-icon"></i>
-                    <i data-lucide="boxes" class="w-6 h-6 text-slate-400 mb-2"></i>
-                    <span class="block font-bold text-slate-800 text-sm leading-tight">Ecossistema Complexo</span>
-                    <span class="block text-[11px] font-medium text-slate-500 mt-2">Estimativa: +500h. Sistemas
+                      class="w-5 h-5 absolute top-3 right-3 text-dona-400 opacity-0 transition-opacity check-icon"></i>
+                    <i data-lucide="boxes" class="w-6 h-6 text-slate-500 mb-2"></i>
+                    <span class="block font-bold text-slate-200 text-sm leading-tight">Ecossistema Complexo</span>
+                    <span class="block text-[11px] font-medium text-slate-400 mt-2">Estimativa: +500h. Sistemas
                       interconectados.</span>
                   </div>
                 </label>
@@ -793,30 +895,30 @@
               <div>
                 <div class="flex items-center gap-3 mb-4">
                   <div
-                    class="w-7 h-7 rounded-full bg-dona-600 text-white flex items-center justify-center font-bold text-xs">
+                    class="w-7 h-7 rounded-full bg-dona-600 text-white flex items-center justify-center font-bold text-xs shadow-[0_0_10px_rgba(79,70,229,0.5)]">
                     2</div>
-                  <h3 class="text-base font-bold text-slate-900">Camada de Inteligência?</h3>
+                  <h3 class="text-base font-bold text-white">Camada de Inteligência?</h3>
                 </div>
                 <div class="grid grid-cols-2 gap-3">
                   <label class="relative cursor-pointer">
                     <input type="radio" name="inteligencia" value="nenhuma" class="sr-only" onchange="updateSimulator()"
                       checked>
                     <div
-                      class="border border-slate-200 rounded-xl p-3 text-center hover:border-dona-300 transition-all h-full relative">
+                      class="border border-slate-700 rounded-xl p-3 text-center hover:border-dona-500 transition-all h-full relative">
                       <i data-lucide="check-circle-2"
-                        class="w-4 h-4 absolute top-2 right-2 text-dona-600 opacity-0 transition-opacity check-icon"></i>
-                      <span class="block font-bold text-slate-800 text-xs mt-2 leading-tight">Engenharia Pura</span>
-                      <span class="block text-[10px] font-medium text-slate-500 mt-1">Sem IA</span>
+                        class="w-4 h-4 absolute top-2 right-2 text-dona-400 opacity-0 transition-opacity check-icon"></i>
+                      <span class="block font-bold text-slate-200 text-xs mt-2 leading-tight">Engenharia Pura</span>
+                      <span class="block text-[10px] font-medium text-slate-400 mt-1">Sem IA</span>
                     </div>
                   </label>
                   <label class="relative cursor-pointer">
                     <input type="radio" name="inteligencia" value="ia" class="sr-only" onchange="updateSimulator()">
                     <div
-                      class="border border-slate-200 rounded-xl p-3 text-center hover:border-dona-300 transition-all h-full relative">
+                      class="border border-slate-700 rounded-xl p-3 text-center hover:border-dona-500 transition-all h-full relative">
                       <i data-lucide="check-circle-2"
-                        class="w-4 h-4 absolute top-2 right-2 text-dona-600 opacity-0 transition-opacity check-icon"></i>
-                      <span class="block font-bold text-slate-800 text-xs mt-2 leading-tight">Com Automação IA</span>
-                      <span class="block text-[10px] font-medium text-slate-500 mt-1">Agentes Treinados</span>
+                        class="w-4 h-4 absolute top-2 right-2 text-dona-400 opacity-0 transition-opacity check-icon"></i>
+                      <span class="block font-bold text-slate-200 text-xs mt-2 leading-tight">Com Automação IA</span>
+                      <span class="block text-[10px] font-medium text-slate-400 mt-1">Agentes Treinados</span>
                     </div>
                   </label>
                 </div>
@@ -826,32 +928,32 @@
               <div>
                 <div class="flex items-center gap-3 mb-4">
                   <div
-                    class="w-7 h-7 rounded-full bg-dona-600 text-white flex items-center justify-center font-bold text-xs">
+                    class="w-7 h-7 rounded-full bg-dona-600 text-white flex items-center justify-center font-bold text-xs shadow-[0_0_10px_rgba(79,70,229,0.5)]">
                     3</div>
-                  <h3 class="text-base font-bold text-slate-900">Perfil de Acesso e Infra</h3>
+                  <h3 class="text-base font-bold text-white">Perfil de Acesso e Infra</h3>
                 </div>
                 <div class="grid grid-cols-2 gap-3">
                   <label class="relative cursor-pointer">
                     <input type="radio" name="acesso" value="privado" class="sr-only" onchange="updateSimulator()"
                       checked>
                     <div
-                      class="border border-slate-200 rounded-xl p-3 text-center hover:border-dona-300 transition-all h-full relative">
+                      class="border border-slate-700 rounded-xl p-3 text-center hover:border-dona-500 transition-all h-full relative">
                       <i data-lucide="check-circle-2"
-                        class="w-4 h-4 absolute top-2 right-2 text-dona-600 opacity-0 transition-opacity check-icon"></i>
-                      <i data-lucide="lock" class="w-4 h-4 mx-auto text-slate-400 mb-1 mt-1"></i>
-                      <span class="block font-bold text-slate-800 text-xs leading-tight">Privado/Interno</span>
-                      <span class="block text-[10px] font-medium text-slate-500 mt-1">Segurança e Carga leve</span>
+                        class="w-4 h-4 absolute top-2 right-2 text-dona-400 opacity-0 transition-opacity check-icon"></i>
+                      <i data-lucide="lock" class="w-4 h-4 mx-auto text-slate-500 mb-1 mt-1"></i>
+                      <span class="block font-bold text-slate-200 text-xs leading-tight">Privado/Interno</span>
+                      <span class="block text-[10px] font-medium text-slate-400 mt-1">Segurança e Carga leve</span>
                     </div>
                   </label>
                   <label class="relative cursor-pointer">
                     <input type="radio" name="acesso" value="publico" class="sr-only" onchange="updateSimulator()">
                     <div
-                      class="border border-slate-200 rounded-xl p-3 text-center hover:border-dona-300 transition-all h-full relative">
+                      class="border border-slate-700 rounded-xl p-3 text-center hover:border-dona-500 transition-all h-full relative">
                       <i data-lucide="check-circle-2"
-                        class="w-4 h-4 absolute top-2 right-2 text-dona-600 opacity-0 transition-opacity check-icon"></i>
-                      <i data-lucide="users-2" class="w-4 h-4 mx-auto text-slate-400 mb-1 mt-1"></i>
-                      <span class="block font-bold text-slate-800 text-xs leading-tight">Público/B2C</span>
-                      <span class="block text-[10px] font-medium text-slate-500 mt-1">Alta concorrência</span>
+                        class="w-4 h-4 absolute top-2 right-2 text-dona-400 opacity-0 transition-opacity check-icon"></i>
+                      <i data-lucide="users-2" class="w-4 h-4 mx-auto text-slate-500 mb-1 mt-1"></i>
+                      <span class="block font-bold text-slate-200 text-xs leading-tight">Público/B2C</span>
+                      <span class="block text-[10px] font-medium text-slate-400 mt-1">Alta concorrência</span>
                     </div>
                   </label>
                 </div>
@@ -862,36 +964,36 @@
             <div>
               <div class="flex items-center gap-3 mb-4">
                 <div
-                  class="w-7 h-7 rounded-full bg-dona-600 text-white flex items-center justify-center font-bold text-xs">
+                  class="w-7 h-7 rounded-full bg-dona-600 text-white flex items-center justify-center font-bold text-xs shadow-[0_0_10px_rgba(79,70,229,0.5)]">
                   4</div>
-                <h3 class="text-lg font-bold text-slate-900">Modelo de Contratação</h3>
+                <h3 class="text-lg font-bold text-white">Modelo de Contratação</h3>
               </div>
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <label class="relative cursor-pointer">
                   <input type="radio" name="modelo" value="saas" class="sr-only" onchange="updateSimulator()" checked>
                   <div
-                    class="border border-slate-200 rounded-xl p-4 hover:border-dona-300 transition-all h-full relative">
+                    class="border border-slate-700 rounded-xl p-4 hover:border-dona-500 transition-all h-full relative">
                     <i data-lucide="check-circle-2"
-                      class="w-5 h-5 absolute top-3 right-3 text-dona-600 opacity-0 transition-opacity check-icon"></i>
+                      class="w-5 h-5 absolute top-3 right-3 text-dona-400 opacity-0 transition-opacity check-icon"></i>
                     <div class="flex items-center gap-3 mb-2">
-                      <i data-lucide="cloud-cog" class="w-5 h-5 text-slate-400"></i>
-                      <span class="font-bold text-slate-800 text-sm">SaaS / Nuvem</span>
+                      <i data-lucide="cloud-cog" class="w-5 h-5 text-slate-500"></i>
+                      <span class="font-bold text-slate-200 text-sm">SaaS / Nuvem</span>
                     </div>
-                    <span class="block text-xs font-medium text-slate-500">Infraestrutura, suporte e evoluções inclusos
+                    <span class="block text-xs font-medium text-slate-400">Infraestrutura, suporte e evoluções inclusos
                       na mensalidade.</span>
                   </div>
                 </label>
                 <label class="relative cursor-pointer">
                   <input type="radio" name="modelo" value="codigo" class="sr-only" onchange="updateSimulator()">
                   <div
-                    class="border border-slate-200 rounded-xl p-4 hover:border-dona-300 transition-all h-full relative">
+                    class="border border-slate-700 rounded-xl p-4 hover:border-dona-500 transition-all h-full relative">
                     <i data-lucide="check-circle-2"
-                      class="w-5 h-5 absolute top-3 right-3 text-dona-600 opacity-0 transition-opacity check-icon"></i>
+                      class="w-5 h-5 absolute top-3 right-3 text-dona-400 opacity-0 transition-opacity check-icon"></i>
                     <div class="flex items-center gap-3 mb-2">
-                      <i data-lucide="code" class="w-5 h-5 text-slate-400"></i>
-                      <span class="font-bold text-slate-800 text-sm">Código Fonte</span>
+                      <i data-lucide="code" class="w-5 h-5 text-slate-500"></i>
+                      <span class="font-bold text-slate-200 text-sm">Código Fonte</span>
                     </div>
-                    <span class="block text-xs font-medium text-slate-500">Hospedagem, suporte e evoluções por sua
+                    <span class="block text-xs font-medium text-slate-400">Hospedagem, suporte e evoluções por sua
                       própria conta.</span>
                   </div>
                 </label>
@@ -902,11 +1004,11 @@
 
           <!-- DIREITA: RESULTADO -->
           <div class="flex flex-col h-full">
-            <div class="bg-slate-50 rounded-2xl p-6 md:p-8 border border-slate-200 flex-grow relative overflow-hidden">
+            <div class="bg-slate-950 rounded-2xl p-6 md:p-8 border border-slate-800 flex-grow relative overflow-hidden shadow-[inset_0_2px_20px_rgba(0,0,0,0.5)]">
               <!-- Elemento decorativo de fundo -->
-              <i data-lucide="server-cog" class="w-32 h-32 absolute -bottom-5 -right-5 text-slate-200/50"></i>
+              <i data-lucide="server-cog" class="w-32 h-32 absolute -bottom-5 -right-5 text-slate-800/30"></i>
 
-              <h4 class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-5 pb-3 border-b border-slate-200">
+              <h4 class="text-xs font-bold text-slate-500 uppercase tracking-wider mb-5 pb-3 border-b border-slate-800">
                 Parecer Técnico e Comercial</h4>
 
               <div id="simulatorResult" class="transition-all duration-300 z-10 relative">
@@ -915,7 +1017,7 @@
             </div>
 
             <button onclick="submitSimulator()"
-              class="w-full mt-6 flex items-center justify-center gap-3 px-8 py-4 bg-slate-900 text-white text-base font-bold rounded-xl hover:bg-slate-800 transition-all shadow-md">
+              class="w-full mt-6 flex items-center justify-center gap-3 px-8 py-4 bg-dona-600 text-white text-base font-bold rounded-xl hover:bg-dona-500 transition-all shadow-[0_0_15px_rgba(79,70,229,0.4)] hover:shadow-[0_0_25px_rgba(79,70,229,0.6)]">
               <i data-lucide="message-circle" class="w-5 h-5"></i>
               Iniciar Entendimento via WhatsApp
             </button>
@@ -927,17 +1029,17 @@
   </section>
 
   <!-- TABELA DE CUSTOS DE IA -->
-  <section id="custos-ia" class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-b border-slate-200">
+  <section data-aos="fade-up" id="custos-ia" class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-b border-slate-800/50">
     <div class="text-center mb-16">
       <div
-        class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-dona-100 text-dona-700 text-sm font-bold mb-4">
+        class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-dona-500/20 border border-dona-500/30 text-dona-400 text-sm font-bold mb-4 shadow-[0_0_10px_rgba(79,70,229,0.2)]">
         <i data-lucide="brain-circuit" class="w-4 h-4"></i>
         Transparência de Consumo de IA (API)
       </div>
-      <h2 class="text-3xl lg:text-4xl font-extrabold text-slate-900 mb-6">A Engenharia é nossa. O Motor é seu.</h2>
-      <p class="text-lg font-medium text-slate-600 max-w-4xl mx-auto leading-relaxed">
+      <h2 class="text-3xl lg:text-4xl font-extrabold text-white mb-6">A Engenharia é nossa. O Motor é seu.</h2>
+      <p class="text-lg font-medium text-slate-400 max-w-4xl mx-auto leading-relaxed">
         Em projetos com Inteligência Artificial, nós da Dona APP criamos todo o código: os Agentes, a técnica RAG
-        (leitura da sua base), as integrações e as rotinas. Contudo, <strong>o faturamento de "pensamento" da IA
+        (leitura da sua base), as integrações e as rotinas. Contudo, <strong class="text-slate-200">o faturamento de "pensamento" da IA
           (tokens) é pago à parte, direto ao provedor (OpenAI, Google, Anthropic, etc)</strong> de acordo com o seu
         volume de uso, garantindo que não haja ágio em cima da infraestrutura.
       </p>
@@ -948,75 +1050,75 @@
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
       <!-- Claude Opus -->
       <div
-        class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm hover:shadow-md transition-shadow flex flex-col">
-        <h3 class="text-xl font-bold text-slate-900 mb-1">Claude Opus 4.8</h3>
+        class="bg-slate-900 rounded-2xl p-6 border border-slate-800 shadow-sm hover:border-dona-500 transition-all flex flex-col">
+        <h3 class="text-xl font-bold text-white mb-1">Claude Opus 4.8</h3>
         <p class="text-sm text-slate-500 font-bold mb-6">Anthropic</p>
         <div class="mb-4">
-          <span class="text-[10px] font-bold text-slate-400 uppercase tracking-wider block mb-1">Custo Estimado (1
+          <span class="text-[10px] font-bold text-slate-500 uppercase tracking-wider block mb-1">Custo Estimado (1
             Milhão Tokens)</span>
-          <span class="text-2xl font-extrabold text-slate-900">~US$ 15,00</span>
+          <span class="text-2xl font-extrabold text-white">~US$ 15,00</span>
         </div>
-        <p class="text-sm font-medium text-slate-600 mb-6 flex-grow"><strong>Vantagem:</strong> O modelo mais
+        <p class="text-sm font-medium text-slate-400 mb-6 flex-grow"><strong class="text-slate-300">Vantagem:</strong> O modelo mais
           sofisticado do mercado em nível de coerência. Escrita perfeitamente humanizada, raciocínio profundo e ideal
           para auditoria de altíssima complexidade (ex: análise de petições jurídicas enormes).</p>
         <div
-          class="inline-block px-3 py-1 bg-slate-100 text-slate-600 text-[10px] font-bold rounded uppercase text-center">
+          class="inline-block px-3 py-1 bg-slate-800 border border-slate-700 text-slate-300 text-[10px] font-bold rounded uppercase text-center">
           Uso: Operações Críticas</div>
       </div>
 
       <!-- Gemini Pro -->
       <div
-        class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm hover:shadow-md transition-shadow flex flex-col">
-        <h3 class="text-xl font-bold text-slate-900 mb-1">Gemini 3.1 Pro</h3>
+        class="bg-slate-900 rounded-2xl p-6 border border-slate-800 shadow-sm hover:border-dona-500 transition-all flex flex-col">
+        <h3 class="text-xl font-bold text-white mb-1">Gemini 3.1 Pro</h3>
         <p class="text-sm text-slate-500 font-bold mb-6">Google Cloud</p>
         <div class="mb-4">
-          <span class="text-[10px] font-bold text-slate-400 uppercase tracking-wider block mb-1">Custo Estimado (1
+          <span class="text-[10px] font-bold text-slate-500 uppercase tracking-wider block mb-1">Custo Estimado (1
             Milhão Tokens)</span>
-          <span class="text-2xl font-extrabold text-slate-900">~US$ 3,50</span>
+          <span class="text-2xl font-extrabold text-white">~US$ 3,50</span>
         </div>
-        <p class="text-sm font-medium text-slate-600 mb-6 flex-grow"><strong>Vantagem:</strong> O rei do contexto
+        <p class="text-sm font-medium text-slate-400 mb-6 flex-grow"><strong class="text-slate-300">Vantagem:</strong> O rei do contexto
           massivo. Capaz de engolir relatórios fiscais de milhares de páginas, ouvir horas de áudio e "assistir" a
           vídeos nativamente de uma única vez para cruzar dados sem esquecer detalhes.</p>
         <div
-          class="inline-block px-3 py-1 bg-slate-100 text-slate-600 text-[10px] font-bold rounded uppercase text-center">
+          class="inline-block px-3 py-1 bg-slate-800 border border-slate-700 text-slate-300 text-[10px] font-bold rounded uppercase text-center">
           Uso: Big Data / Multimodal</div>
       </div>
 
       <!-- DeepSeek R1 -->
       <div
-        class="bg-white rounded-2xl p-6 border-2 border-dona-500 ring-4 ring-dona-50 shadow-lg hover:shadow-xl transition-shadow relative overflow-hidden flex flex-col">
+        class="bg-slate-900 rounded-2xl p-6 border-2 border-dona-500 shadow-[0_0_20px_rgba(79,70,229,0.2)] hover:shadow-[0_0_30px_rgba(79,70,229,0.4)] transition-all relative overflow-hidden flex flex-col">
         <div class="absolute top-0 right-0 bg-dona-600 text-white text-[10px] font-bold px-3 py-1 rounded-bl-lg">Killer
           Cost-Benefit</div>
-        <h3 class="text-xl font-bold text-slate-900 mb-1">DeepSeek R1</h3>
+        <h3 class="text-xl font-bold text-white mb-1">DeepSeek R1</h3>
         <p class="text-sm text-slate-500 font-bold mb-6">DeepSeek Foundation</p>
         <div class="mb-4">
-          <span class="text-[10px] font-bold text-slate-400 uppercase tracking-wider block mb-1">Custo Estimado (1
+          <span class="text-[10px] font-bold text-slate-500 uppercase tracking-wider block mb-1">Custo Estimado (1
             Milhão Tokens)</span>
-          <span class="text-2xl font-extrabold text-dona-600">~US$ 0,55</span>
+          <span class="text-2xl font-extrabold text-dona-400">~US$ 0,55</span>
         </div>
-        <p class="text-sm font-medium text-slate-600 mb-6 flex-grow"><strong>Vantagem:</strong> Uma revolução global.
+        <p class="text-sm font-medium text-slate-400 mb-6 flex-grow"><strong class="text-slate-300">Vantagem:</strong> Uma revolução global.
           Entrega capacidade de raciocínio matemático e lógico em nível similar ou superior às Big Techs, mas por uma
           fração absoluta do preço. Excepcional para sistemas em nuvem de escala agressiva.</p>
         <div
-          class="inline-block px-3 py-1 bg-dona-100 text-dona-700 text-[10px] font-bold rounded uppercase text-center">
+          class="inline-block px-3 py-1 bg-dona-500/20 text-dona-400 border border-dona-500/30 text-[10px] font-bold rounded uppercase text-center">
           Uso: Escala / Raciocínio Lógico</div>
       </div>
 
       <!-- Modelos Leves -->
       <div
-        class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm hover:shadow-md transition-shadow flex flex-col">
-        <h3 class="text-xl font-bold text-slate-900 mb-1">Modelos "Flash"</h3>
+        class="bg-slate-900 rounded-2xl p-6 border border-slate-800 shadow-sm hover:border-dona-500 transition-all flex flex-col">
+        <h3 class="text-xl font-bold text-white mb-1">Modelos "Flash"</h3>
         <p class="text-sm text-slate-500 font-bold mb-6">GPT-4o Mini / Claude Haiku</p>
         <div class="mb-4">
-          <span class="text-[10px] font-bold text-slate-400 uppercase tracking-wider block mb-1">Custo Estimado (1
+          <span class="text-[10px] font-bold text-slate-500 uppercase tracking-wider block mb-1">Custo Estimado (1
             Milhão Tokens)</span>
-          <span class="text-2xl font-extrabold text-emerald-600">~US$ 0,15</span>
+          <span class="text-2xl font-extrabold text-emerald-400">~US$ 0,15</span>
         </div>
-        <p class="text-sm font-medium text-slate-600 mb-6 flex-grow"><strong>Vantagem:</strong> Latência na casa dos
+        <p class="text-sm font-medium text-slate-400 mb-6 flex-grow"><strong class="text-slate-300">Vantagem:</strong> Latência na casa dos
           milissegundos e custo praticamente irrisório. Nossa engenharia usa esses modelos sob o capô para tarefas de
           triagem massiva, extração de JSON, rotulagem e formatação de dados brutos.</p>
         <div
-          class="inline-block px-3 py-1 bg-emerald-50 text-emerald-700 text-[10px] font-bold rounded uppercase text-center">
+          class="inline-block px-3 py-1 bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 text-[10px] font-bold rounded uppercase text-center">
           Uso: Roteamento / Tarefas Simples</div>
       </div>
     </div>
@@ -1024,159 +1126,160 @@
     <!-- O que é 1 milhão de tokens na prática -->
     <div class="mt-20">
       <div class="text-center mb-10">
-        <h3 class="text-2xl font-extrabold text-slate-900 mb-4">Mas afinal, o que é 1 Milhão de Tokens na prática?</h3>
-        <p class="text-base font-medium text-slate-600 max-w-3xl mx-auto">
+        <h3 class="text-2xl font-extrabold text-white mb-4">Mas afinal, o que é 1 Milhão de Tokens na prática?</h3>
+        <p class="text-base font-medium text-slate-400 max-w-3xl mx-auto">
           Para tirar o "tecniquês" da mesa, traduzimos 1 Milhão de Tokens em tarefas do mundo real. Veja o custo
-          estimado de execução para <strong>uma única transação/tarefa</strong> em cada cérebro de IA:
+          estimado de execução para <strong class="text-slate-200">uma única transação/tarefa</strong> em cada cérebro de IA:
         </p>
       </div>
 
-      <div class="overflow-x-auto rounded-2xl border border-slate-200 shadow-sm bg-white">
+      <div class="overflow-x-auto rounded-2xl border border-slate-800 shadow-sm bg-slate-900">
         <table class="w-full text-left border-collapse min-w-[800px]">
           <thead>
-            <tr class="bg-slate-50 border-b border-slate-200 text-sm">
-              <th class="p-5 font-bold text-slate-900">Exemplo de Tarefa Real</th>
-              <th class="p-5 font-bold text-slate-900">Tokens Exigidos<br /><span
+            <tr class="bg-slate-950 border-b border-slate-800 text-sm">
+              <th class="p-5 font-bold text-slate-200">Exemplo de Tarefa Real</th>
+              <th class="p-5 font-bold text-slate-200">Tokens Exigidos<br /><span
                   class="text-xs font-medium text-slate-500">(Estimativa)</span></th>
-              <th class="p-5 font-bold text-slate-900">Claude Opus 4.8<br /><span
+              <th class="p-5 font-bold text-slate-200">Claude Opus 4.8<br /><span
                   class="text-xs font-medium text-slate-500">Qualidade Crítica</span></th>
-              <th class="p-5 font-bold text-slate-900">Gemini 3.1 Pro<br /><span
+              <th class="p-5 font-bold text-slate-200">Gemini 3.1 Pro<br /><span
                   class="text-xs font-medium text-slate-500">Contexto Longo</span></th>
-              <th class="p-5 font-bold text-slate-900">DeepSeek R1<br /><span
+              <th class="p-5 font-bold text-slate-200">DeepSeek R1<br /><span
                   class="text-xs font-medium text-slate-500">Custo-Benefício</span></th>
-              <th class="p-5 font-bold text-slate-900">Flash (Haiku/Mini)<br /><span
+              <th class="p-5 font-bold text-slate-200">Flash (Haiku/Mini)<br /><span
                   class="text-xs font-medium text-slate-500">Velocidade Bruta</span></th>
             </tr>
           </thead>
           <tbody class="text-sm">
-            <tr class="border-b border-slate-100 hover:bg-slate-50 transition-colors">
+            <tr class="border-b border-slate-800 hover:bg-slate-800/50 transition-colors">
               <td class="p-5">
-                <div class="font-bold text-slate-800">Leitura de PDF Denso (50 págs)</div>
-                <div class="text-xs text-slate-500 font-medium">IA lendo o arquivo para resumir ou cruzar dados.</div>
+                <div class="font-bold text-white">Leitura de PDF Denso (50 págs)</div>
+                <div class="text-xs text-slate-400 font-medium">IA lendo o arquivo para resumir ou cruzar dados.</div>
               </td>
-              <td class="p-5 font-bold text-slate-600">~25.000 tokens</td>
-              <td class="p-5 font-medium text-slate-700">US$ 0,37<br /><span class="text-[10px] text-slate-400">por
+              <td class="p-5 font-bold text-slate-400">~25.000 tokens</td>
+              <td class="p-5 font-medium text-slate-300">US$ 0,37<br /><span class="text-[10px] text-slate-500">por
                   PDF</span></td>
-              <td class="p-5 font-medium text-slate-700">US$ 0,08<br /><span class="text-[10px] text-slate-400">por
+              <td class="p-5 font-medium text-slate-300">US$ 0,08<br /><span class="text-[10px] text-slate-500">por
                   PDF</span></td>
-              <td class="p-5 font-bold text-dona-600">US$ 0,01<br /><span class="text-[10px] text-dona-400">por
+              <td class="p-5 font-bold text-dona-400">US$ 0,01<br /><span class="text-[10px] text-dona-500">por
                   PDF</span></td>
-              <td class="p-5 font-medium text-slate-700">US$ 0,003<br /><span class="text-[10px] text-slate-400">por
+              <td class="p-5 font-medium text-slate-300">US$ 0,003<br /><span class="text-[10px] text-slate-500">por
                   PDF</span></td>
             </tr>
-            <tr class="border-b border-slate-100 hover:bg-slate-50 transition-colors">
+            <tr class="border-b border-slate-800 hover:bg-slate-800/50 transition-colors">
               <td class="p-5">
-                <div class="font-bold text-slate-800">Alerta Analítico (Banco de Dados)</div>
-                <div class="text-xs text-slate-500 font-medium">IA injetando dados diários de vendas para gerar
+                <div class="font-bold text-white">Alerta Analítico (Banco de Dados)</div>
+                <div class="text-xs text-slate-400 font-medium">IA injetando dados diários de vendas para gerar
                   insights.</div>
               </td>
-              <td class="p-5 font-bold text-slate-600">~10.000 tokens</td>
-              <td class="p-5 font-medium text-slate-700">US$ 0,15<br /><span class="text-[10px] text-slate-400">por
+              <td class="p-5 font-bold text-slate-400">~10.000 tokens</td>
+              <td class="p-5 font-medium text-slate-300">US$ 0,15<br /><span class="text-[10px] text-slate-500">por
                   análise</span></td>
-              <td class="p-5 font-medium text-slate-700">US$ 0,035<br /><span class="text-[10px] text-slate-400">por
+              <td class="p-5 font-medium text-slate-300">US$ 0,035<br /><span class="text-[10px] text-slate-500">por
                   análise</span></td>
-              <td class="p-5 font-bold text-dona-600">US$ 0,005<br /><span class="text-[10px] text-dona-400">por
+              <td class="p-5 font-bold text-dona-400">US$ 0,005<br /><span class="text-[10px] text-dona-500">por
                   análise</span></td>
-              <td class="p-5 font-medium text-slate-700">US$ 0,001<br /><span class="text-[10px] text-slate-400">por
+              <td class="p-5 font-medium text-slate-300">US$ 0,001<br /><span class="text-[10px] text-slate-500">por
                   análise</span></td>
             </tr>
-            <tr class="hover:bg-slate-50 transition-colors">
+            <tr class="hover:bg-slate-800/50 transition-colors">
               <td class="p-5">
-                <div class="font-bold text-slate-800">Chamado no Chatbot (Atendimento)</div>
-                <div class="text-xs text-slate-500 font-medium">Interação lendo histórico + regras da empresa.</div>
+                <div class="font-bold text-white">Chamado no Chatbot (Atendimento)</div>
+                <div class="text-xs text-slate-400 font-medium">Interação lendo histórico + regras da empresa.</div>
               </td>
-              <td class="p-5 font-bold text-slate-600">~1.500 tokens</td>
-              <td class="p-5 font-medium text-slate-700">US$ 0,022<br /><span class="text-[10px] text-slate-400">por
+              <td class="p-5 font-bold text-slate-400">~1.500 tokens</td>
+              <td class="p-5 font-medium text-slate-300">US$ 0,022<br /><span class="text-[10px] text-slate-500">por
                   chamado</span></td>
-              <td class="p-5 font-medium text-slate-700">US$ 0,005<br /><span class="text-[10px] text-slate-400">por
+              <td class="p-5 font-medium text-slate-300">US$ 0,005<br /><span class="text-[10px] text-slate-500">por
                   chamado</span></td>
-              <td class="p-5 font-bold text-dona-600">US$ 0,0008<br /><span class="text-[10px] text-dona-400">por
+              <td class="p-5 font-bold text-dona-400">US$ 0,0008<br /><span class="text-[10px] text-dona-500">por
                   chamado</span></td>
-              <td class="p-5 font-bold text-emerald-600">US$ 0,0002<br /><span class="text-[10px] text-emerald-400">por
+              <td class="p-5 font-bold text-emerald-400">US$ 0,0002<br /><span class="text-[10px] text-emerald-500">por
                   chamado</span></td>
             </tr>
           </tbody>
         </table>
       </div>
-      <p class="text-center text-xs text-slate-400 mt-4 font-medium">Os valores são estimativas ilustrativas (baseadas
+      <p class="text-center text-xs text-slate-500 mt-4 font-medium">Os valores são estimativas ilustrativas (baseadas
         em input/output médio no mercado atual em USD). Como pode ver, a escolha da engenharia certa torna IAs
         massivamente viáveis.</p>
     </div>
   </section>
 
   <!-- DEPOIMENTOS -->
-  <section id="depoimentos" class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+  <!-- DEPOIMENTOS -->
+  <section data-aos="fade-up" id="depoimentos" class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
     <div class="text-center mb-16">
-      <h2 class="text-3xl lg:text-4xl font-extrabold text-slate-900 mb-4">Reconhecimento Corporativo</h2>
-      <p class="text-lg font-medium text-slate-600 max-w-2xl mx-auto">Resultados mensuráveis entregues a parceiros reais
+      <h2 class="text-3xl lg:text-4xl font-extrabold text-white mb-4">Reconhecimento Corporativo</h2>
+      <p class="text-lg font-medium text-slate-400 max-w-2xl mx-auto">Resultados mensuráveis entregues a parceiros reais
         de negócios em toda parte.</p>
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-      <div class="bento-card p-10 flex flex-col justify-between">
+      <div class="bento-card p-10 flex flex-col justify-between hover:border-dona-500 group">
         <div class="mb-8">
-          <div class="flex text-yellow-400 mb-6 gap-1">
+          <div class="flex text-dona-400 mb-6 gap-1 drop-shadow-[0_0_8px_rgba(79,70,229,0.5)]">
             <i data-lucide="star" class="w-5 h-5 fill-current"></i>
             <i data-lucide="star" class="w-5 h-5 fill-current"></i>
             <i data-lucide="star" class="w-5 h-5 fill-current"></i>
             <i data-lucide="star" class="w-5 h-5 fill-current"></i>
             <i data-lucide="star" class="w-5 h-5 fill-current"></i>
           </div>
-          <p class="text-slate-700 font-medium text-base leading-relaxed italic">"Nós tínhamos um pesadelo operacional.
+          <p class="text-slate-300 font-medium text-base leading-relaxed italic">"Nós tínhamos um pesadelo operacional.
             A Dona APP implementou um agente autônomo com LLM que resolve 60% das dúvidas dos nossos clientes sem tocar
             em um ser humano. Absolutamente revolucionário para o nosso balanço financeiro."</p>
         </div>
         <div class="flex items-center gap-4">
-          <div class="w-12 h-12 bg-slate-200 rounded-full flex items-center justify-center font-bold text-slate-500">MV
+          <div class="w-12 h-12 bg-slate-800 rounded-full flex items-center justify-center font-bold text-slate-400 border border-slate-700">MV
           </div>
           <div>
-            <h4 class="font-bold text-slate-900 text-base">Marcos V.</h4>
+            <h4 class="font-bold text-white text-base">Marcos V.</h4>
             <span class="text-xs font-bold text-slate-500 uppercase">Diretor de Operações</span>
           </div>
         </div>
       </div>
 
-      <div class="bento-card p-10 flex flex-col justify-between">
+      <div class="bento-card p-10 flex flex-col justify-between hover:border-dona-500 group">
         <div class="mb-8">
-          <div class="flex text-yellow-400 mb-6 gap-1">
+          <div class="flex text-dona-400 mb-6 gap-1 drop-shadow-[0_0_8px_rgba(79,70,229,0.5)]">
             <i data-lucide="star" class="w-5 h-5 fill-current"></i>
             <i data-lucide="star" class="w-5 h-5 fill-current"></i>
             <i data-lucide="star" class="w-5 h-5 fill-current"></i>
             <i data-lucide="star" class="w-5 h-5 fill-current"></i>
             <i data-lucide="star" class="w-5 h-5 fill-current"></i>
           </div>
-          <p class="text-slate-700 font-medium text-base leading-relaxed italic">"A equipe não foca só em código, foca
+          <p class="text-slate-300 font-medium text-base leading-relaxed italic">"A equipe não foca só em código, foca
             em resolver dores. Refatoraram todo o nosso ERP antigo e automatizaram fluxos complexos usando integrações
             com a OpenAI. Economizamos horas semanais da equipe."</p>
         </div>
         <div class="flex items-center gap-4">
-          <div class="w-12 h-12 bg-slate-200 rounded-full flex items-center justify-center font-bold text-slate-500">CM
+          <div class="w-12 h-12 bg-slate-800 rounded-full flex items-center justify-center font-bold text-slate-400 border border-slate-700">CM
           </div>
           <div>
-            <h4 class="font-bold text-slate-900 text-base">Dra. Claudia M.</h4>
+            <h4 class="font-bold text-white text-base">Dra. Claudia M.</h4>
             <span class="text-xs font-bold text-slate-500 uppercase">Sócia-Fundadora</span>
           </div>
         </div>
       </div>
 
-      <div class="bento-card p-10 flex flex-col justify-between">
+      <div class="bento-card p-10 flex flex-col justify-between hover:border-dona-500 group">
         <div class="mb-8">
-          <div class="flex text-yellow-400 mb-6 gap-1">
+          <div class="flex text-dona-400 mb-6 gap-1 drop-shadow-[0_0_8px_rgba(79,70,229,0.5)]">
             <i data-lucide="star" class="w-5 h-5 fill-current"></i>
             <i data-lucide="star" class="w-5 h-5 fill-current"></i>
             <i data-lucide="star" class="w-5 h-5 fill-current"></i>
             <i data-lucide="star" class="w-5 h-5 fill-current"></i>
             <i data-lucide="star" class="w-5 h-5 fill-current"></i>
           </div>
-          <p class="text-slate-700 font-medium text-base leading-relaxed italic">"Pagar por escopo fechado foi ótimo. A
+        <p class="text-slate-300 font-medium text-base leading-relaxed italic">"Pagar por escopo fechado foi ótimo. A
             estimativa em horas foi cumprida rigorosamente, a inteligência em nuvem roda sob nossa conta e o código
-            final é de altíssima elegância. Verdadeira engenharia de boutique."</p>
+            final é de altíssima elegância. Verdadeira engenharia de alto nível."</p>
         </div>
         <div class="flex items-center gap-4">
-          <div class="w-12 h-12 bg-slate-200 rounded-full flex items-center justify-center font-bold text-slate-500">RL
+          <div class="w-12 h-12 bg-slate-800 rounded-full flex items-center justify-center font-bold text-slate-400 border border-slate-700">RL
           </div>
           <div>
-            <h4 class="font-bold text-slate-900 text-base">Roberto L.</h4>
+            <h4 class="font-bold text-white text-base">Roberto L.</h4>
             <span class="text-xs font-bold text-slate-500 uppercase">CEO & Founder</span>
           </div>
         </div>
@@ -1184,135 +1287,191 @@
     </div>
   </section>
 
-  <!-- FAQ -->
-  <section id="faq" class="py-24 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
-    <div class="text-center mb-16">
-      <div
-        class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-100 text-slate-700 text-sm font-bold mb-4">
-        <i data-lucide="help-circle" class="w-4 h-4"></i>
-        Dúvidas Frequentes
+  <section data-aos="fade-up" id="faq" class="py-24 border-y border-slate-800/50 bg-slate-900/40 backdrop-blur-sm">
+    <div class="max-w-[720px] mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-[60px]">
+        <div
+          class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-dona-500/20 border border-dona-500/30 text-dona-400 text-xs font-bold mb-4 shadow-sm uppercase tracking-wider">
+          <i data-lucide="help-circle" class="w-4 h-4"></i>
+          PERGUNTAS FREQUENTES
+        </div>
+        <h2 class="text-4xl md:text-[44px] font-extrabold text-white tracking-tight leading-[1.15]">Dúvidas? A gente <span class="text-dona-500">responde</span></h2>
       </div>
-      <h2 class="text-3xl font-extrabold text-slate-900 mb-4">Perguntas Comuns</h2>
-      <p class="text-lg font-medium text-slate-600">Tudo o que você precisa saber antes de iniciarmos o seu projeto de
-        engenharia ou automação corporativa.</p>
-    </div>
 
-    <div class="space-y-4">
-      <!-- Item 1 -->
-      <details
-        class="group border border-slate-200 rounded-2xl bg-white hover:border-dona-300 transition-colors [&_summary::-webkit-details-marker]:hidden">
-        <summary class="flex cursor-pointer items-center justify-between gap-1.5 p-6 text-slate-900 font-bold">
-          <h2 class="text-lg">O código fonte será nosso?</h2>
-          <span
-            class="shrink-0 rounded-full bg-slate-50 p-2 text-slate-900 group-open:-rotate-180 transition-transform duration-300">
-            <i data-lucide="chevron-down" class="w-5 h-5"></i>
-          </span>
-        </summary>
-        <p class="px-6 pb-6 text-slate-600 font-medium leading-relaxed">
-          Sim. Caso você opte pelo modelo de contratação "Código Fonte" em vez do nosso SaaS (Mensalidade), após a
-          quitação do desenvolvimento, 100% da propriedade intelectual e do código-fonte da plataforma são transferidos
-          para a sua empresa.
-        </p>
-      </details>
+      <div class="flex flex-col gap-[12px] faq-list">
+        <!-- Item 1 -->
+        <div class="faq-item rounded-[12px] bg-[#0f0f13] border border-slate-800 overflow-hidden transition-colors duration-200">
+          <div class="faq-question flex items-center justify-between px-6 py-5 cursor-pointer text-[15px] font-semibold text-white hover:text-dona-400 transition-colors gap-4">
+            <span>O código fonte será nosso?</span>
+            <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-slate-500 transition-transform duration-300 shrink-0"></i>
+          </div>
+          <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300">
+            <div class="px-6 pb-5 text-[14px] text-slate-400 font-medium leading-[1.7]">
+              Sim. Caso você opte pelo modelo de contratação "Código Fonte" em vez do nosso SaaS (Mensalidade), após a
+              quitação do desenvolvimento, 100% da propriedade intelectual e do código-fonte da plataforma são transferidos
+              para a sua empresa.
+            </div>
+          </div>
+        </div>
 
-      <!-- Item 2 -->
-      <details
-        class="group border border-slate-200 rounded-2xl bg-white hover:border-dona-300 transition-colors [&_summary::-webkit-details-marker]:hidden">
-        <summary class="flex cursor-pointer items-center justify-between gap-1.5 p-6 text-slate-900 font-bold">
-          <h2 class="text-lg">Vocês assinam Acordo de Confidencialidade (NDA)?</h2>
-          <span
-            class="shrink-0 rounded-full bg-slate-50 p-2 text-slate-900 group-open:-rotate-180 transition-transform duration-300">
-            <i data-lucide="chevron-down" class="w-5 h-5"></i>
-          </span>
-        </summary>
-        <p class="px-6 pb-6 text-slate-600 font-medium leading-relaxed">
-          Absolutamente. Como lidamos com a inteligência e as regras de negócio core da sua empresa, iniciamos nossas
-          tratativas com a assinatura de um rigoroso NDA. Sua estratégia jamais será compartilhada ou vazada para
-          concorrentes.
-        </p>
-      </details>
+        <!-- Item 2 -->
+        <div class="faq-item rounded-[12px] bg-[#0f0f13] border border-slate-800 overflow-hidden transition-colors duration-200">
+          <div class="faq-question flex items-center justify-between px-6 py-5 cursor-pointer text-[15px] font-semibold text-white hover:text-dona-400 transition-colors gap-4">
+            <span>Vocês assinam Acordo de Confidencialidade (NDA)?</span>
+            <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-slate-500 transition-transform duration-300 shrink-0"></i>
+          </div>
+          <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300">
+            <div class="px-6 pb-5 text-[14px] text-slate-400 font-medium leading-[1.7]">
+              Absolutamente. Como lidamos com a inteligência e as regras de negócio core da sua empresa, iniciamos nossas
+              tratativas com a assinatura de um rigoroso NDA. Sua estratégia jamais será compartilhada ou vazada para
+              concorrentes.
+            </div>
+          </div>
+        </div>
 
-      <!-- Item 3 -->
-      <details
-        class="group border border-slate-200 rounded-2xl bg-white hover:border-dona-300 transition-colors [&_summary::-webkit-details-marker]:hidden">
-        <summary class="flex cursor-pointer items-center justify-between gap-1.5 p-6 text-slate-900 font-bold">
-          <h2 class="text-lg">Como funciona o custo de infraestrutura e tokens da IA?</h2>
-          <span
-            class="shrink-0 rounded-full bg-slate-50 p-2 text-slate-900 group-open:-rotate-180 transition-transform duration-300">
-            <i data-lucide="chevron-down" class="w-5 h-5"></i>
-          </span>
-        </summary>
-        <p class="px-6 pb-6 text-slate-600 font-medium leading-relaxed">
-          Nós não cobramos comissão ou ágio sobre o seu consumo em nuvem. O custo de "raciocínio" dos agentes de IA (os
-          tokens) ou da hospedagem dos servidores é faturado diretamente pelo provedor parceiro (OpenAI, Google Cloud,
-          AWS, Anthropic) no seu cartão de crédito corporativo, de acordo estritamente com o seu uso real.
-        </p>
-      </details>
+        <!-- Item 3 -->
+        <div class="faq-item rounded-[12px] bg-[#0f0f13] border border-slate-800 overflow-hidden transition-colors duration-200">
+          <div class="faq-question flex items-center justify-between px-6 py-5 cursor-pointer text-[15px] font-semibold text-white hover:text-dona-400 transition-colors gap-4">
+            <span>Como funciona o custo de infraestrutura e tokens da IA?</span>
+            <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-slate-500 transition-transform duration-300 shrink-0"></i>
+          </div>
+          <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300">
+            <div class="px-6 pb-5 text-[14px] text-slate-400 font-medium leading-[1.7]">
+              Nós não cobramos comissão ou ágio sobre o seu consumo em nuvem. O custo de "raciocínio" dos agentes de IA (os
+              tokens) ou da hospedagem dos servidores é faturado diretamente pelo provedor parceiro (OpenAI, Google Cloud,
+              AWS, Anthropic) no seu cartão de crédito corporativo, de acordo estritamente com o seu uso real.
+            </div>
+          </div>
+        </div>
 
-      <!-- Item 4 -->
-      <details
-        class="group border border-slate-200 rounded-2xl bg-white hover:border-dona-300 transition-colors [&_summary::-webkit-details-marker]:hidden">
-        <summary class="flex cursor-pointer items-center justify-between gap-1.5 p-6 text-slate-900 font-bold">
-          <h2 class="text-lg">Qual é o prazo médio de um projeto de software?</h2>
-          <span
-            class="shrink-0 rounded-full bg-slate-50 p-2 text-slate-900 group-open:-rotate-180 transition-transform duration-300">
-            <i data-lucide="chevron-down" class="w-5 h-5"></i>
-          </span>
-        </summary>
-        <p class="px-6 pb-6 text-slate-600 font-medium leading-relaxed">
-          Após o Kick-off, entregamos o primeiro Mockup Visual (Protótipo Navegável) em até 15 dias para alinhar
-          expectativas antes de programar o "motor" do sistema. Projetos de automação ou MVPs pontuais levam de 4 a 6
-          semanas de desenvolvimento real. Já plataformas core, ERPs ou ecossistemas complexos podem demandar de 3 a 6
-          meses de ciclo de engenharia intensa.
-        </p>
-      </details>
+        <!-- Item 4 -->
+        <div class="faq-item rounded-[12px] bg-[#0f0f13] border border-slate-800 overflow-hidden transition-colors duration-200">
+          <div class="faq-question flex items-center justify-between px-6 py-5 cursor-pointer text-[15px] font-semibold text-white hover:text-dona-400 transition-colors gap-4">
+            <span>Qual é o prazo médio de um projeto de software?</span>
+            <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-slate-500 transition-transform duration-300 shrink-0"></i>
+          </div>
+          <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300">
+            <div class="px-6 pb-5 text-[14px] text-slate-400 font-medium leading-[1.7]">
+              Após o Kick-off, entregamos o primeiro Mockup Visual (Protótipo Navegável) em até 15 dias para alinhar
+              expectativas antes de programar o "motor" do sistema. Projetos de automação ou MVPs pontuais levam de 4 a 6
+              semanas de desenvolvimento real. Já plataformas core, ERPs ou ecossistemas complexos podem demandar de 3 a 6
+              meses de ciclo de engenharia intensa.
+            </div>
+          </div>
+        </div>
 
-      <!-- Item 5 -->
-      <details
-        class="group border border-slate-200 rounded-2xl bg-white hover:border-dona-300 transition-colors [&_summary::-webkit-details-marker]:hidden">
-        <summary class="flex cursor-pointer items-center justify-between gap-1.5 p-6 text-slate-900 font-bold">
-          <h2 class="text-lg">A manutenção e suporte técnico estão inclusos?</h2>
-          <span
-            class="shrink-0 rounded-full bg-slate-50 p-2 text-slate-900 group-open:-rotate-180 transition-transform duration-300">
-            <i data-lucide="chevron-down" class="w-5 h-5"></i>
-          </span>
-        </summary>
-        <p class="px-6 pb-6 text-slate-600 font-medium leading-relaxed">
-          Se você optar por pagar através do formato "SaaS / Mensalidade", toda a evolução, suporte técnico e resolução
-          de bugs já estão blindados no seu plano mensal. Se você optou por pagar pelo formato "Código Fonte",
-          entregamos o sistema com 90 dias de garantia técnica contra vícios de software, e as manutenções pós-garantia
-          são orçadas sob demanda avulsa.
-        </p>
-      </details>
+        <!-- Item 5 -->
+        <div class="faq-item rounded-[12px] bg-[#0f0f13] border border-slate-800 overflow-hidden transition-colors duration-200">
+          <div class="faq-question flex items-center justify-between px-6 py-5 cursor-pointer text-[15px] font-semibold text-white hover:text-dona-400 transition-colors gap-4">
+            <span>A manutenção e suporte técnico estão inclusos?</span>
+            <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-slate-500 transition-transform duration-300 shrink-0"></i>
+          </div>
+          <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300">
+            <div class="px-6 pb-5 text-[14px] text-slate-400 font-medium leading-[1.7]">
+              Se você optar por pagar através do formato "SaaS / Mensalidade", toda a evolução, suporte técnico e resolução
+              de bugs já estão blindados no seu plano mensal. Se você optou por pagar pelo formato "Código Fonte",
+              entregamos o sistema com 90 dias de garantia técnica contra vícios de software, e as manutenções pós-garantia
+              são orçadas sob demanda avulsa.
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 6 -->
+        <div class="faq-item rounded-[12px] bg-[#0f0f13] border border-slate-800 overflow-hidden transition-colors duration-200">
+          <div class="faq-question flex items-center justify-between px-6 py-5 cursor-pointer text-[15px] font-semibold text-white hover:text-dona-400 transition-colors gap-4">
+            <span>Vocês desenvolvem aplicativos para iOS e Android?</span>
+            <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-slate-500 transition-transform duration-300 shrink-0"></i>
+          </div>
+          <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300">
+            <div class="px-6 pb-5 text-[14px] text-slate-400 font-medium leading-[1.7]">
+              Sim! Desenvolvemos aplicativos móveis de altíssima performance utilizando as tecnologias mais modernas do mercado, garantindo excelente experiência e fluidez tanto para iOS (Apple) quanto para Android.
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 7 -->
+        <div class="faq-item rounded-[12px] bg-[#0f0f13] border border-slate-800 overflow-hidden transition-colors duration-200">
+          <div class="faq-question flex items-center justify-between px-6 py-5 cursor-pointer text-[15px] font-semibold text-white hover:text-dona-400 transition-colors gap-4">
+            <span>Posso integrar a IA com o meu ERP ou sistema atual?</span>
+            <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-slate-500 transition-transform duration-300 shrink-0"></i>
+          </div>
+          <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300">
+            <div class="px-6 pb-5 text-[14px] text-slate-400 font-medium leading-[1.7]">
+              Com certeza. Construímos conectores personalizados para o seu ERP, CRM ou banco de dados legado. Dessa forma, nossos agentes de Inteligência Artificial conseguem ler, processar e interagir com as informações do seu negócio em tempo real.
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 8 -->
+        <div class="faq-item rounded-[12px] bg-[#0f0f13] border border-slate-800 overflow-hidden transition-colors duration-200">
+          <div class="faq-question flex items-center justify-between px-6 py-5 cursor-pointer text-[15px] font-semibold text-white hover:text-dona-400 transition-colors gap-4">
+            <span>Onde a nossa plataforma será hospedada?</span>
+            <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-slate-500 transition-transform duration-300 shrink-0"></i>
+          </div>
+          <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300">
+            <div class="px-6 pb-5 text-[14px] text-slate-400 font-medium leading-[1.7]">
+              Nós configuramos toda a infraestrutura na nuvem pública de sua preferência (AWS, Google Cloud ou Microsoft Azure), garantindo alta disponibilidade, estabilidade e segurança de dados a nível corporativo.
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 9 -->
+        <div class="faq-item rounded-[12px] bg-[#0f0f13] border border-slate-800 overflow-hidden transition-colors duration-200">
+          <div class="faq-question flex items-center justify-between px-6 py-5 cursor-pointer text-[15px] font-semibold text-white hover:text-dona-400 transition-colors gap-4">
+            <span>Vocês trabalham com escopo fechado ou banco de horas?</span>
+            <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-slate-500 transition-transform duration-300 shrink-0"></i>
+          </div>
+          <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300">
+            <div class="px-6 pb-5 text-[14px] text-slate-400 font-medium leading-[1.7]">
+              Trabalhamos nos dois modelos. Para projetos com requisitos bem definidos (ex: MVPs), operamos em modelo de Escopo Fechado. Para plataformas em evolução contínua, recomendamos o formato de alocação de Squads em banco de horas ou mensalidade (Retainer).
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 10 -->
+        <div class="faq-item rounded-[12px] bg-[#0f0f13] border border-slate-800 overflow-hidden transition-colors duration-200">
+          <div class="faq-question flex items-center justify-between px-6 py-5 cursor-pointer text-[15px] font-semibold text-white hover:text-dona-400 transition-colors gap-4">
+            <span>Como vou acompanhar o andamento do desenvolvimento?</span>
+            <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-slate-500 transition-transform duration-300 shrink-0"></i>
+          </div>
+          <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300">
+            <div class="px-6 pb-5 text-[14px] text-slate-400 font-medium leading-[1.7]">
+              Você terá visibilidade total do projeto. Disponibilizamos acesso ao nosso kanban de desenvolvimento online, além de realizarmos reuniões de alinhamento e demonstrações de progresso semanais ou quinzenais, validando cada entrega lado a lado com você.
+            </div>
+          </div>
+        </div>
+
+      </div>
     </div>
   </section>
 
-  <!-- RODAPÉ -->
-  <footer class="bg-slate-950 pt-20 pb-10 border-t border-slate-900">
+  <!-- FOOTER INLINE -->
+  <footer class="bg-slate-950 border-t border-slate-900 py-12">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex flex-col md:flex-row justify-between items-center gap-8 mb-16">
-
-        <div class="flex items-center gap-3">
-          <div class="w-12 h-12 bg-dona-600 rounded-xl flex items-center justify-center">
-            <i data-lucide="crown" class="text-white w-6 h-6"></i>
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+        
+        <!-- Logo -->
+        <a href="#" class="flex items-center gap-2 group">
+          <div class="w-8 h-8 bg-dona-600 rounded-lg flex items-center justify-center shadow-[0_0_10px_rgba(79,70,229,0.4)]">
+            <i data-lucide="crown" class="text-white w-4 h-4"></i>
           </div>
-          <span class="font-extrabold text-2xl text-white tracking-tight">Dona APP</span>
-        </div>
+          <span class="font-bold text-base tracking-tight text-white">Dona APP</span>
+        </a>
 
-        <div class="flex flex-wrap justify-center gap-8 text-slate-400 text-sm font-bold">
-          <button onclick="openModal('termosModal')" class="hover:text-white transition-colors">Termos de Uso</button>
-          <button onclick="openModal('privacidadeModal')" class="hover:text-white transition-colors">Política de
-            Privacidade</button>
+        <!-- Links -->
+        <div class="flex flex-wrap justify-center items-center gap-6 text-sm font-medium text-slate-400">
+          <a href="#" class="hover:text-white transition-colors" onclick="document.getElementById('termosModal').classList.remove('hidden')">Termos de Uso</a>
+          <a href="#" class="hover:text-white transition-colors" onclick="document.getElementById('privacidadeModal').classList.remove('hidden')">Política de Privacidade</a>
+          <a href="#" onclick="openWhatsApp('Olá! Vim pelo site da Dona APP e gostaria de agendar uma reunião técnica para discutir um projeto.')" class="hover:text-white transition-colors">Contato</a>
         </div>
-
       </div>
 
-      <div
-        class="flex flex-col md:flex-row justify-between items-center gap-6 pt-8 border-t border-slate-800 text-slate-500 text-sm font-medium">
-        <p>&copy; 2026 Dona APP Software e IA. Todos os direitos reservados.</p>
-        <a href="mailto:contato@donaapp.com.br"
-          class="hover:text-white flex items-center gap-2 font-bold bg-slate-900 px-5 py-2.5 rounded-lg transition-colors border border-slate-800">
-          <i data-lucide="mail" class="w-4 h-4"></i> contato@donaapp.com.br
+      <div class="mt-8 pt-8 border-t border-slate-800/50 flex flex-col items-center justify-center gap-4">
+        <p class="text-sm text-slate-500 text-center">
+          &copy; 2026 Dona APP &mdash; Todos os direitos reservados. Engenharia de Software & Inteligência Artificial.
+        </p>
+        <a href="mailto:contato@donaapp.com.br" class="inline-flex items-center gap-2 px-3 py-1.5 rounded-md bg-slate-900 border border-slate-800 text-slate-400 text-xs font-medium hover:bg-slate-800 hover:text-white transition-colors">
+          <i data-lucide="mail" class="w-3.5 h-3.5"></i> contato@donaapp.com.br
         </a>
       </div>
     </div>
@@ -1320,64 +1479,64 @@
 
   <!-- MODAIS JURÍDICOS -->
   <div id="termosModal" class="fixed inset-0 z-[100] hidden flex items-center justify-center p-4">
-    <div class="absolute inset-0 bg-slate-950/60 backdrop-blur-md" onclick="closeModal('termosModal')"></div>
-    <div class="relative w-full max-w-2xl bg-white rounded-3xl shadow-2xl p-8 md:p-10 max-h-[85vh] overflow-y-auto">
-      <div class="flex justify-between items-start mb-6 pb-6 border-b border-slate-100">
+    <div class="absolute inset-0 bg-slate-950/80 backdrop-blur-md" onclick="closeModal('termosModal')"></div>
+    <div class="relative w-full max-w-2xl bg-slate-900 border border-slate-800 rounded-3xl shadow-2xl p-8 md:p-10 max-h-[85vh] overflow-y-auto">
+      <div class="flex justify-between items-start mb-6 pb-6 border-b border-slate-800">
         <div>
-          <h2 class="text-2xl font-extrabold text-slate-900">Termos de Uso</h2>
+          <h2 class="text-2xl font-extrabold text-white">Termos de Uso</h2>
         </div>
-        <button onclick="closeModal('termosModal')" class="p-2 hover:bg-slate-100 rounded-full transition-colors">
-          <i data-lucide="x" class="w-6 h-6 text-slate-400"></i>
+        <button onclick="closeModal('termosModal')" class="p-2 hover:bg-slate-800 rounded-full transition-colors text-slate-400 hover:text-white">
+          <i data-lucide="x" class="w-6 h-6"></i>
         </button>
       </div>
-      <div class="prose prose-slate font-medium text-slate-600 max-w-none">
-        <h3 class="font-bold text-slate-900 text-lg mt-4 mb-2">1. Aceitação e Natureza</h3>
+      <div class="prose prose-invert font-medium text-slate-400 max-w-none">
+        <h3 class="font-bold text-white text-lg mt-4 mb-2">1. Aceitação e Natureza</h3>
         <p class="mb-5">O escopo exato de inteligência artificial, engenharia e infraestrutura será documentado
           formalmente em contrato assinado, com precificação baseada em estimativa de horas e recursos consumidos de
           nuvem.</p>
-        <h3 class="font-bold text-slate-900 text-lg mt-4 mb-2">2. Propriedade Intelectual do Código e dos Prompts</h3>
+        <h3 class="font-bold text-white text-lg mt-4 mb-2">2. Propriedade Intelectual do Código e dos Prompts</h3>
         <p class="mb-5">Após a quitação do desenvolvimento (milestones ou valor fixo), toda a propriedade intelectual da
           plataforma, bem como os prompts proprietários de IA desenhados para a regra do cliente, passam a ser do
           cliente.</p>
-        <h3 class="font-bold text-slate-900 text-lg mt-4 mb-2">3. Garantia e Refinamento de IA</h3>
+        <h3 class="font-bold text-white text-lg mt-4 mb-2">3. Garantia e Refinamento de IA</h3>
         <p>Garantimos a correção de falhas lógicas de software por 90 dias após a entrega. Note que modelos generativos
           (LLMs) podem gerar alucinações inerentes à tecnologia; nossos agentes são desenhados para mitigar riscos via
           *RAG* rigoroso.</p>
       </div>
-      <div class="mt-8 pt-6 border-t border-slate-100 text-right">
+      <div class="mt-8 pt-6 border-t border-slate-800 text-right">
         <button onclick="closeModal('termosModal')"
-          class="px-8 py-3 bg-slate-900 text-white font-bold rounded-full hover:bg-slate-800 transition-colors">Fechar</button>
+          class="px-8 py-3 bg-dona-600 text-white font-bold rounded-full hover:bg-dona-500 transition-colors shadow-[0_0_15px_rgba(79,70,229,0.4)]">Fechar</button>
       </div>
     </div>
   </div>
 
   <div id="privacidadeModal" class="fixed inset-0 z-[100] hidden flex items-center justify-center p-4">
-    <div class="absolute inset-0 bg-slate-950/60 backdrop-blur-md" onclick="closeModal('privacidadeModal')"></div>
-    <div class="relative w-full max-w-2xl bg-white rounded-3xl shadow-2xl p-8 md:p-10 max-h-[85vh] overflow-y-auto">
-      <div class="flex justify-between items-start mb-6 pb-6 border-b border-slate-100">
+    <div class="absolute inset-0 bg-slate-950/80 backdrop-blur-md" onclick="closeModal('privacidadeModal')"></div>
+    <div class="relative w-full max-w-2xl bg-slate-900 border border-slate-800 rounded-3xl shadow-2xl p-8 md:p-10 max-h-[85vh] overflow-y-auto">
+      <div class="flex justify-between items-start mb-6 pb-6 border-b border-slate-800">
         <div>
-          <h2 class="text-2xl font-extrabold text-slate-900">Política de Privacidade</h2>
+          <h2 class="text-2xl font-extrabold text-white">Política de Privacidade</h2>
         </div>
-        <button onclick="closeModal('privacidadeModal')" class="p-2 hover:bg-slate-100 rounded-full transition-colors">
-          <i data-lucide="x" class="w-6 h-6 text-slate-400"></i>
+        <button onclick="closeModal('privacidadeModal')" class="p-2 hover:bg-slate-800 rounded-full transition-colors text-slate-400 hover:text-white">
+          <i data-lucide="x" class="w-6 h-6"></i>
         </button>
       </div>
-      <div class="prose prose-slate font-medium text-slate-600 max-w-none">
-        <h3 class="font-bold text-slate-900 text-lg mt-4 mb-2">1. Proteção de Dados e LLMs</h3>
+      <div class="prose prose-invert font-medium text-slate-400 max-w-none">
+        <h3 class="font-bold text-white text-lg mt-4 mb-2">1. Proteção de Dados e LLMs</h3>
         <p class="mb-5">Quando implementamos Inteligência Artificial, asseguramos que o parceiro tecnológico (ex: OpenAI
           API corporativa, Azure OpenAI) **não utilize** seus dados privados e transacionais para treinar os modelos
           globais públicos. O sigilo da sua operação é soberano.</p>
-        <h3 class="font-bold text-slate-900 text-lg mt-4 mb-2">2. Sigilo Absoluto (NDA)</h3>
+        <h3 class="font-bold text-white text-lg mt-4 mb-2">2. Sigilo Absoluto (NDA)</h3>
         <p class="mb-5">Por padrão, assinamos um rigoroso Acordo de Confidencialidade (NDA) com todos os nossos clientes
           corporativos. Seus processos internos de automação jamais serão vazados ou reutilizados de forma concorrencial
           direta.</p>
-        <h3 class="font-bold text-slate-900 text-lg mt-4 mb-2">3. Segurança da Informação</h3>
+        <h3 class="font-bold text-white text-lg mt-4 mb-2">3. Segurança da Informação</h3>
         <p>Aplicações incorporam criptografia TLS 1.3. Hospedagem restrita aos backbones da AWS, Microsoft Azure e
           Google Cloud, mantendo arquiteturas de isolamento de dados fortes.</p>
       </div>
-      <div class="mt-8 pt-6 border-t border-slate-100 text-right">
+      <div class="mt-8 pt-6 border-t border-slate-800 text-right">
         <button onclick="closeModal('privacidadeModal')"
-          class="px-8 py-3 bg-slate-900 text-white font-bold rounded-full hover:bg-slate-800 transition-colors">Fechar</button>
+          class="px-8 py-3 bg-dona-600 text-white font-bold rounded-full hover:bg-dona-500 transition-colors shadow-[0_0_15px_rgba(79,70,229,0.4)]">Fechar</button>
       </div>
     </div>
   </div>
@@ -1463,22 +1622,22 @@
 
       html = `
         <div class="mb-5">
-          <h5 class="font-bold text-slate-800 text-base mb-1">Esforço Estimado de Engenharia</h5>
-          <p class="text-slate-600 text-sm font-medium leading-relaxed">${esforcoText}</p>
+          <h5 class="font-bold text-white text-base mb-1">Esforço Estimado de Engenharia</h5>
+          <p class="text-slate-400 text-sm font-medium leading-relaxed">${esforcoText}</p>
           ${iaText}
         </div>
         
         <div class="mb-6">
-          <h5 class="font-bold text-slate-800 text-base mb-1">Impacto de Manutenção</h5>
-          <p class="text-slate-600 text-sm font-medium leading-relaxed mb-1"><strong class="text-slate-700">Arquitetura de Dados:</strong> ${infraText}</p>
-          <p class="text-slate-600 text-sm font-medium leading-relaxed"><strong class="text-slate-700">Responsabilidade:</strong> ${mensalidadeText}</p>
+          <h5 class="font-bold text-white text-base mb-1">Impacto de Manutenção</h5>
+          <p class="text-slate-400 text-sm font-medium leading-relaxed mb-1"><strong class="text-slate-300">Arquitetura de Dados:</strong> ${infraText}</p>
+          <p class="text-slate-400 text-sm font-medium leading-relaxed"><strong class="text-slate-300">Responsabilidade:</strong> ${mensalidadeText}</p>
         </div>
 
-        <div class="pt-5 border-t border-slate-200">
-          <p class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-1">Estimativa de Investimento</p>
+        <div class="pt-5 border-t border-slate-800">
+          <p class="text-xs font-bold text-slate-500 uppercase tracking-widest mb-1">Estimativa de Investimento</p>
           <div class="flex items-baseline gap-2">
-            <span class="text-sm font-bold text-slate-500">${isSaas ? 'Mensalidade a partir de' : 'A partir de'}</span>
-            <span class="text-3xl font-extrabold text-slate-900">${priceFormatted}</span>
+            <span class="text-sm font-bold text-slate-400">${isSaas ? 'Mensalidade a partir de' : 'A partir de'}</span>
+            <span class="text-3xl font-extrabold text-white">${priceFormatted}</span>
           </div>
         </div>
       `;
@@ -1517,11 +1676,68 @@
 
       let priceLabel = isSaas ? 'Mensalidade Estimada' : 'Investimento do Projeto';
 
-      let msg = `Olá, Krystiano! Acabo de dimensionar meu escopo através do site da Dona APP.\n\n*Cenário Estimado:*\n- Volume: ${tMap[t]}\n- Tecnologia: ${iMap[i]}\n- Arquitetura: ${aMap[a]}\n- Contratação: ${mMap[m]}\n\n*${priceLabel}:* A partir de ${priceFormatted}\n\nGostaria de agendar uma reunião técnica de alinhamento para discutirmos os requisitos em detalhes.`;
+      let msg = `Olá! Vim pelo site da Dona APP e acabo de dimensionar meu escopo na calculadora.\n\n*Cenário Estimado:*\n- Volume: ${tMap[t]}\n- Tecnologia: ${iMap[i]}\n- Arquitetura: ${aMap[a]}\n- Contratação: ${mMap[m]}\n\n*${priceLabel}:* A partir de ${priceFormatted}\n\nGostaria de agendar uma reunião técnica para discutirmos os detalhes.`;
       openWhatsApp(msg);
     }
 
-    document.addEventListener('DOMContentLoaded', updateSimulator);
+    document.addEventListener('DOMContentLoaded', () => {
+      updateSimulator();
+
+      // Mobile Menu Toggle
+      const mobileBtn = document.getElementById('mobile-menu-btn');
+      const mobileMenu = document.getElementById('mobile-menu');
+      if (mobileBtn && mobileMenu) {
+        mobileBtn.addEventListener('click', () => {
+          mobileMenu.classList.toggle('hidden');
+        });
+
+        // Fechar ao clicar em um link
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+          link.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+          });
+        });
+      }
+
+      // FAQ Accordion
+      const faqItems = document.querySelectorAll('.faq-item');
+      faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+        question.addEventListener('click', () => {
+          const isActive = item.classList.contains('active');
+          const icon = item.querySelector('.faq-icon');
+          
+          // Close all
+          faqItems.forEach(i => {
+            i.classList.remove('active', 'border-dona-500/30');
+            i.querySelector('.faq-answer').style.maxHeight = null;
+            const iIcon = i.querySelector('.faq-icon');
+            iIcon.classList.remove('rotate-180', 'text-dona-500');
+            iIcon.classList.add('text-slate-500');
+          });
+
+          // Open if wasn't active
+          if (!isActive) {
+            item.classList.add('active', 'border-dona-500/30');
+            const answer = item.querySelector('.faq-answer');
+            answer.style.maxHeight = answer.scrollHeight + 'px';
+            icon.classList.add('rotate-180', 'text-dona-500');
+            icon.classList.remove('text-slate-500');
+          }
+        });
+      });
+    });
+  </script>
+
+  <!-- AOS Script -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 800,
+      once: true,
+      offset: 50,
+    });
   </script>
 </body>
 
