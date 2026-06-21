@@ -1,0 +1,123 @@
+body {
+  background-color: #020617; /* slate-950 */
+  color: #e2e8f0; /* slate-200 */
+  letter-spacing: -0.01em;
+  font-weight: 400;
+}
+
+/* Grid background from Dono da Oficina */
+.bg-grid {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 50px 50px;
+  z-index: -2;
+  pointer-events: none;
+}
+
+.bg-glow {
+  position: fixed;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(79, 70, 229, 0.15) 0%, rgba(0, 0, 0, 0) 70%);
+  top: -100px;
+  right: -100px;
+  z-index: -1;
+  pointer-events: none;
+  filter: blur(60px);
+}
+
+.bg-glow-2 {
+  position: fixed;
+  width: 800px;
+  height: 800px;
+  background: radial-gradient(circle, rgba(147, 51, 234, 0.1) 0%, rgba(0, 0, 0, 0) 70%);
+  bottom: -200px;
+  left: -200px;
+  z-index: -1;
+  pointer-events: none;
+  filter: blur(80px);
+}
+
+.glass-nav {
+  background: rgba(2, 6, 23, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(30, 41, 59, 0.6);
+}
+
+.bento-card {
+  background: #0f172a; /* slate-900 */
+  border: 1px solid rgba(30, 41, 59, 0.8);
+  border-radius: 1.25rem;
+  box-shadow: 0 4px 20px -3px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.bento-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px -5px rgba(0, 0, 0, 0.7);
+  border-color: rgba(79, 70, 229, 0.5); /* glow border on hover */
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #020617;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #334155;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #475569;
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #4f46e5 0%, #9333ea 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Estilização para os inputs invisíveis da calculadora */
+input[type="radio"]:checked+div {
+  border-color: #4f46e5;
+  background-color: rgba(79, 70, 229, 0.15);
+  box-shadow: 0 0 0 1px #4f46e5, 0 0 15px rgba(79, 70, 229, 0.3);
+}
+
+input[type="radio"]:checked+div .check-icon {
+  color: #4f46e5;
+  opacity: 1;
+}
+
+/* Linha do Tempo / Workflow */
+.workflow-line::after {
+  content: '';
+  position: absolute;
+  top: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 100%;
+  width: 2px;
+  background: #1e293b;
+  z-index: 0;
+}
+
+@media (min-width: 1024px) {
+  .workflow-line::after {
+    top: 3rem;
+    left: 0;
+    transform: none;
+    height: 2px;
+    width: 100%;
+  }
+}
