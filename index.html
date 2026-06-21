@@ -55,6 +55,13 @@
           },
           animation: {
             'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+            'marquee': 'marquee 30s linear infinite',
+          },
+          keyframes: {
+            marquee: {
+              '0%': { transform: 'translateX(0%)' },
+              '100%': { transform: 'translateX(-50%)' },
+            }
           }
         }
       }
@@ -194,17 +201,32 @@
   </section>
 
   <!-- SOBERANIA EM INFRAESTRUTURA -->
-  <section class="py-10 border-y border-slate-200 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+  <section class="py-10 border-y border-slate-200 bg-white overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative">
       <p class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-6">Nossos LLMs e sistemas rodam nos backbones mais robustos do planeta</p>
-      <div class="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-60 grayscale transition-all duration-500">
-        <div class="flex items-center gap-2 font-bold text-lg text-slate-800"><i data-lucide="cloud" class="w-6 h-6"></i> Microsoft Azure</div>
-        <div class="flex items-center gap-2 font-bold text-lg text-slate-800"><i data-lucide="server" class="w-6 h-6"></i> Google Cloud</div>
-        <div class="flex items-center gap-2 font-bold text-lg text-slate-800"><i data-lucide="database" class="w-6 h-6"></i> Amazon AWS</div>
-        <div class="flex items-center gap-2 font-bold text-lg text-slate-800"><i data-lucide="hard-drive" class="w-6 h-6"></i> Oracle Cloud</div>
-        <div class="flex items-center gap-2 font-bold text-lg text-slate-800"><i data-lucide="sparkles" class="w-6 h-6"></i> Gemini 3.1 Pro</div>
-        <div class="flex items-center gap-2 font-bold text-lg text-slate-800"><i data-lucide="cpu" class="w-6 h-6"></i> Claude OPUS 4.8</div>
-        <div class="flex items-center gap-2 font-bold text-lg text-slate-800"><i data-lucide="bot" class="w-6 h-6"></i> DeepSeek R1</div>
+      
+      <!-- Carrossel Marquee com Máscaras Laterais -->
+      <div class="relative w-full overflow-hidden before:absolute before:left-0 before:top-0 before:z-10 before:h-full before:w-16 before:bg-gradient-to-r before:from-white before:to-transparent after:absolute after:right-0 after:top-0 after:z-10 after:h-full after:w-16 after:bg-gradient-to-l after:from-white after:to-transparent">
+        
+        <!-- Track animada com o dobro de itens para loop infinito -->
+        <div class="flex w-max animate-marquee items-center gap-16 opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
+          <div class="flex items-center gap-2 font-bold text-lg text-slate-800"><i data-lucide="cloud" class="w-6 h-6"></i> Microsoft Azure</div>
+          <div class="flex items-center gap-2 font-bold text-lg text-slate-800"><i data-lucide="server" class="w-6 h-6"></i> Google Cloud</div>
+          <div class="flex items-center gap-2 font-bold text-lg text-slate-800"><i data-lucide="database" class="w-6 h-6"></i> Amazon AWS</div>
+          <div class="flex items-center gap-2 font-bold text-lg text-slate-800"><i data-lucide="hard-drive" class="w-6 h-6"></i> Oracle Cloud</div>
+          <div class="flex items-center gap-2 font-bold text-lg text-slate-800"><i data-lucide="sparkles" class="w-6 h-6"></i> Gemini 3.1 Pro</div>
+          <div class="flex items-center gap-2 font-bold text-lg text-slate-800"><i data-lucide="cpu" class="w-6 h-6"></i> Claude OPUS 4.8</div>
+          <div class="flex items-center gap-2 font-bold text-lg text-slate-800"><i data-lucide="bot" class="w-6 h-6"></i> DeepSeek R1</div>
+          
+          <!-- Duplicatas para o Loop -->
+          <div class="flex items-center gap-2 font-bold text-lg text-slate-800"><i data-lucide="cloud" class="w-6 h-6"></i> Microsoft Azure</div>
+          <div class="flex items-center gap-2 font-bold text-lg text-slate-800"><i data-lucide="server" class="w-6 h-6"></i> Google Cloud</div>
+          <div class="flex items-center gap-2 font-bold text-lg text-slate-800"><i data-lucide="database" class="w-6 h-6"></i> Amazon AWS</div>
+          <div class="flex items-center gap-2 font-bold text-lg text-slate-800"><i data-lucide="hard-drive" class="w-6 h-6"></i> Oracle Cloud</div>
+          <div class="flex items-center gap-2 font-bold text-lg text-slate-800"><i data-lucide="sparkles" class="w-6 h-6"></i> Gemini 3.1 Pro</div>
+          <div class="flex items-center gap-2 font-bold text-lg text-slate-800"><i data-lucide="cpu" class="w-6 h-6"></i> Claude OPUS 4.8</div>
+          <div class="flex items-center gap-2 font-bold text-lg text-slate-800"><i data-lucide="bot" class="w-6 h-6"></i> DeepSeek R1</div>
+        </div>
       </div>
     </div>
   </section>
