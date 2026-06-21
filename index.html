@@ -166,7 +166,7 @@
       </nav>
       
       <!-- Botão Secundário -->
-      <a href="#" onclick="openWhatsApp('Olá Krys, me interessei nas Automações de IA da Dona APP e gostaria de agendar uma reunião.')" class="hidden md:flex items-center gap-2 px-5 py-2.5 bg-slate-800 hover:bg-slate-900 text-white text-sm font-bold rounded-full transition-all shadow-sm hover:shadow-md">
+      <a href="#" onclick="openWhatsApp('Olá, Krystiano! Tenho interesse nas soluções de Engenharia de Software e Automação de IA da Dona APP. Podemos agendar uma reunião técnica?')" class="hidden md:flex items-center gap-2 px-5 py-2.5 bg-slate-800 hover:bg-slate-900 text-white text-sm font-bold rounded-full transition-all shadow-sm hover:shadow-md">
         Agendar Reunião
         <i data-lucide="arrow-right" class="w-4 h-4"></i>
       </a>
@@ -189,7 +189,7 @@
     </p>
     
     <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-      <button onclick="openWhatsApp('Olá Krys, me interessei em automatizar processos da minha empresa com IA. Gostaria de agendar uma reunião.')" class="group relative flex items-center justify-center gap-2 px-7 py-3.5 bg-dona-600 text-white text-base font-bold rounded-full hover:bg-dona-700 transition-all w-full sm:w-auto shadow-md">
+      <button onclick="openWhatsApp('Olá, Krystiano! Gostaria de discutir um projeto de automação corporativa com a engenharia da Dona APP. Como podemos agendar um kick-off técnico?')" class="group relative flex items-center justify-center gap-2 px-7 py-3.5 bg-dona-600 text-white text-base font-bold rounded-full hover:bg-dona-700 transition-all w-full sm:w-auto shadow-md">
         <i data-lucide="calendar-check" class="w-5 h-5"></i>
         Agendar Reunião Técnica
       </button>
@@ -1226,7 +1226,7 @@
       
       let priceLabel = isSaas ? 'Mensalidade Estimada' : 'Investimento do Projeto';
       
-      let msg = `Olá! Acabei de simular meu projeto no site da Dona APP.\n\n*Meu Cenário:*\n- Volume: ${tMap[t]}\n- Inteligência: ${iMap[i]}\n- Acesso e Infra: ${aMap[a]}\n- Modelo: ${mMap[m]}\n\n*${priceLabel}:* A partir de ${priceFormatted}\n\nGostaria de agendar uma reunião para iniciar o entendimento do meu projeto.`;
+      let msg = `Olá, Krystiano! Acabo de dimensionar meu escopo através do site da Dona APP.\n\n*Cenário Estimado:*\n- Volume: ${tMap[t]}\n- Tecnologia: ${iMap[i]}\n- Arquitetura: ${aMap[a]}\n- Contratação: ${mMap[m]}\n\n*${priceLabel}:* A partir de ${priceFormatted}\n\nGostaria de agendar uma reunião técnica de alinhamento para discutirmos os requisitos em detalhes.`;
       openWhatsApp(msg);
     }
 
