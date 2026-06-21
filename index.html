@@ -18,14 +18,12 @@
   <meta name="twitter:description" content="Transformamos regras de negócio complexas em software. Apps nativos e sistemas offline para sua empresa.">
   
   <!-- GTM Placeholder -->
-  <!-- Google Tag Manager -->
   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
   new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
   j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
   })(window,document,'script','dataLayer','GTM-XXXXXXX');</script>
-  <!-- End Google Tag Manager -->
-
+  
   <!-- Fonts: Plus Jakarta Sans -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -56,7 +54,8 @@
             }
           },
           boxShadow: {
-            'glow': '0 0 20px rgba(79, 70, 229, 0.4)',
+            'glow': '0 0 15px rgba(79, 70, 229, 0.3)',
+            'card': '0 8px 25px -8px rgba(226, 232, 240, 0.7)',
           },
           animation: {
             'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
@@ -72,30 +71,32 @@
   <style>
     body { 
       background-color: #F8FAFC; 
-      color: #0F172A; 
+      color: #1E293B; 
       letter-spacing: -0.01em;
+      font-weight: 400;
     }
     .glass-nav {
-      background: rgba(255, 255, 255, 0.75);
+      background: rgba(255, 255, 255, 0.9);
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+      border-bottom: 1px solid rgba(226, 232, 240, 0.6);
     }
     .bento-card {
       background: #FFFFFF;
       border: 1px solid rgba(226, 232, 240, 0.8);
-      border-radius: 1.5rem;
-      box-shadow: 0 10px 40px -10px rgba(226, 232, 240, 0.6);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border-radius: 1.25rem;
+      box-shadow: 0 4px 15px -3px rgba(226, 232, 240, 0.5);
+      transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
     }
     .bento-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 20px 40px -10px rgba(226, 232, 240, 0.9);
+      transform: translateY(-3px);
+      box-shadow: 0 12px 25px -5px rgba(226, 232, 240, 0.8);
+      border-color: rgba(203, 213, 225, 0.9);
     }
     
-    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar { width: 6px; }
     ::-webkit-scrollbar-track { background: #F8FAFC; }
-    ::-webkit-scrollbar-thumb { background: #CBD5E1; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb { background: #CBD5E1; border-radius: 3px; }
     ::-webkit-scrollbar-thumb:hover { background: #94A3B8; }
     
     .gradient-text {
@@ -103,38 +104,44 @@
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
+
+    /* Estilização para os inputs invisíveis da calculadora */
+    input[type="radio"]:checked + div {
+      border-color: #4f46e5;
+      background-color: #eef2ff;
+      box-shadow: 0 0 0 1px #4f46e5;
+    }
+    input[type="radio"]:checked + div .check-icon {
+      color: #4f46e5;
+      opacity: 1;
+    }
   </style>
 </head>
 <body class="antialiased">
-  <!-- Google Tag Manager (noscript) -->
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX"
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-  <!-- End Google Tag Manager (noscript) -->
 
   <!-- HEADER FLUTUANTE -->
   <header class="fixed w-full top-0 z-50 glass-nav transition-all duration-300">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
       
-      <!-- Logo inline SVG -->
+      <!-- Logo Padrão -->
       <a href="#" class="flex items-center gap-3 group">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" class="w-10 h-10 transition-transform group-hover:scale-105 shadow-glow rounded-xl">
-          <rect width="100" height="100" rx="22" fill="#4f46e5"/>
-          <path d="M25 65 L75 65" stroke="white" stroke-width="6" stroke-linecap="round"/>
-          <path d="M25 60 L20 35 L38 45 L50 25 L62 45 L80 35 L75 60 Z" fill="none" stroke="white" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/>
-        </svg>
-        <span class="font-extrabold text-xl tracking-tight text-slate-900">Dona APP</span>
+        <div class="w-10 h-10 bg-dona-600 rounded-xl flex items-center justify-center transition-transform group-hover:scale-105 shadow-md">
+          <i data-lucide="crown" class="text-white w-5 h-5"></i>
+        </div>
+        <span class="font-extrabold text-xl tracking-tight text-slate-800">Dona APP</span>
       </a>
       
       <!-- Navegação -->
-      <nav class="hidden md:flex items-center gap-8 font-medium text-sm text-slate-600">
-        <a href="#servicos" class="hover:text-dona-600 transition-colors">Serviços</a>
-        <a href="#ecossistema" class="hover:text-dona-600 transition-colors">Ecossistema</a>
-        <a href="#casos" class="hover:text-dona-600 transition-colors">Casos de Sucesso</a>
-        <a href="#depoimentos" class="hover:text-dona-600 transition-colors">Depoimentos</a>
+      <nav class="hidden md:flex items-center gap-8 font-semibold text-sm text-slate-600">
+        <a href="#servicos" class="hover:text-dona-600 transition-colors">Engenharia</a>
+        <a href="#ecossistema" class="hover:text-dona-600 transition-colors">Nosso SaaS</a>
+        <a href="#experiencia" class="hover:text-dona-600 transition-colors">Experiência Adquirida</a>
       </nav>
       
       <!-- Botão Secundário -->
-      <a href="#" onclick="openWhatsApp('Olá Krys, me interessei na Dona APP e gostaria de agendar uma reunião.')" class="hidden md:flex items-center gap-2 px-5 py-2.5 bg-slate-900 hover:bg-slate-800 text-white text-sm font-semibold rounded-full transition-all shadow-md hover:shadow-lg">
+      <a href="#" onclick="openWhatsApp('Olá Krys, me interessei na Dona APP e gostaria de agendar uma reunião.')" class="hidden md:flex items-center gap-2 px-5 py-2.5 bg-slate-800 hover:bg-slate-900 text-white text-sm font-bold rounded-full transition-all shadow-sm hover:shadow-md">
         Agendar Reunião
         <i data-lucide="arrow-right" class="w-4 h-4"></i>
       </a>
@@ -142,347 +149,423 @@
   </header>
 
   <!-- HERO SECTION -->
-  <section class="pt-40 pb-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto text-center">
-    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-dona-50 border border-dona-100 text-dona-700 text-sm font-semibold mb-8">
-      <i data-lucide="sparkles" class="w-4 h-4 text-dona-600"></i>
-      Engenharia de Software sob Demanda
+  <section class="pt-36 pb-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto text-center">
+    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-dona-200 text-dona-700 text-xs font-bold shadow-sm mb-8">
+      <i data-lucide="code-2" class="w-3.5 h-3.5 text-dona-600"></i>
+      A Software House da Elite
     </div>
     
-    <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight text-slate-900 mb-6 max-w-5xl mx-auto leading-tight">
-      Nós transformamos regras de negócio complexas em <span class="gradient-text">software de elite.</span>
+    <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 mb-6 max-w-4xl mx-auto leading-tight">
+      Transformamos regras de negócio complexas em <span class="gradient-text">software de alta performance.</span>
     </h1>
     
-    <p class="text-lg md:text-xl text-slate-600 mb-10 max-w-3xl mx-auto leading-relaxed">
-      Do aplicativo nativo na palma da mão ao sistema Windows desktop 100% offline. Você foca na sua operação, a Dona APP assume o código.
+    <p class="text-lg md:text-xl text-slate-600 mb-10 max-w-2xl mx-auto font-medium leading-relaxed">
+      Do aplicativo nativo na palma da mão ao sistema Windows desktop offline. Você foca na sua operação, a Dona APP assume a engenharia pesada.
     </p>
     
     <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-      <button onclick="openWhatsApp('Olá Krys, me interessei na Dona APP e gostaria de agendar uma reunião.')" class="group relative flex items-center justify-center gap-2 px-8 py-4 bg-dona-600 text-white text-base font-semibold rounded-full hover:bg-dona-700 transition-all w-full sm:w-auto shadow-glow animate-pulse-slow">
-        <i data-lucide="calendar" class="w-5 h-5"></i>
-        Agendar Reunião com o Tech Lead
+      <button onclick="openWhatsApp('Olá Krys, me interessei na Dona APP e gostaria de agendar uma reunião.')" class="group relative flex items-center justify-center gap-2 px-7 py-3.5 bg-dona-600 text-white text-base font-bold rounded-full hover:bg-dona-700 transition-all w-full sm:w-auto shadow-md">
+        <i data-lucide="calendar-check" class="w-5 h-5"></i>
+        Agendar Reunião Técnica
       </button>
-      <a href="#simulador" class="flex items-center justify-center gap-2 px-8 py-4 bg-white text-slate-700 border border-slate-200 text-base font-semibold rounded-full hover:bg-slate-50 transition-all w-full sm:w-auto shadow-sm">
+      <a href="#simulador" class="flex items-center justify-center gap-2 px-7 py-3.5 bg-white text-slate-700 border border-slate-200 text-base font-bold rounded-full hover:bg-slate-50 transition-all w-full sm:w-auto shadow-sm">
         <i data-lucide="calculator" class="w-5 h-5"></i>
-        Simular meu Projeto
+        Fazer Orçamento
       </a>
     </div>
   </section>
 
   <!-- SOBERANIA EM INFRAESTRUTURA -->
-  <section class="py-12 border-y border-slate-200 bg-white">
+  <section class="py-10 border-y border-slate-200 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <p class="text-sm font-semibold text-slate-500 uppercase tracking-widest mb-8">Hospedado nos backbones mais seguros do planeta</p>
-      <div class="flex flex-wrap justify-center items-center gap-10 md:gap-20 opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
-        <div class="flex items-center gap-2 font-bold text-xl text-slate-800"><i data-lucide="cloud" class="w-7 h-7"></i> Microsoft Azure</div>
-        <div class="flex items-center gap-2 font-bold text-xl text-slate-800"><i data-lucide="server" class="w-7 h-7"></i> Google Cloud</div>
-        <div class="flex items-center gap-2 font-bold text-xl text-slate-800"><i data-lucide="database" class="w-7 h-7"></i> Amazon AWS</div>
-        <div class="flex items-center gap-2 font-bold text-xl text-slate-800"><i data-lucide="hard-drive" class="w-7 h-7"></i> Oracle Cloud</div>
+      <p class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-6">Nossos sistemas rodam nos backbones mais seguros do planeta</p>
+      <div class="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-60 grayscale transition-all duration-500">
+        <div class="flex items-center gap-2 font-bold text-lg text-slate-800"><i data-lucide="cloud" class="w-6 h-6"></i> Microsoft Azure</div>
+        <div class="flex items-center gap-2 font-bold text-lg text-slate-800"><i data-lucide="server" class="w-6 h-6"></i> Google Cloud</div>
+        <div class="flex items-center gap-2 font-bold text-lg text-slate-800"><i data-lucide="database" class="w-6 h-6"></i> Amazon AWS</div>
+        <div class="flex items-center gap-2 font-bold text-lg text-slate-800"><i data-lucide="hard-drive" class="w-6 h-6"></i> Oracle Cloud</div>
       </div>
     </div>
   </section>
 
   <!-- BENTO GRID DE SERVIÇOS -->
-  <section id="servicos" class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-    <div class="text-center mb-16">
-      <h2 class="text-4xl font-bold text-slate-900 mb-4">Nossa Engenharia</h2>
-      <p class="text-lg text-slate-600">A tecnologia certa para a escala do seu negócio.</p>
+  <section id="servicos" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl font-extrabold text-slate-900 mb-3">Capacidade de Engenharia</h2>
+      <p class="text-lg font-medium text-slate-600">A arquitetura perfeita para o estágio e o ambiente do seu negócio.</p>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 auto-rows-[280px]">
+    <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 auto-rows-[260px]">
       
       <!-- Bloco 1 (Grande/Destaque) -->
-      <div class="bento-card col-span-1 md:col-span-2 lg:col-span-2 row-span-2 p-10 flex flex-col justify-between relative overflow-hidden group">
-        <div class="absolute top-0 right-0 -mr-16 -mt-16 w-64 h-64 bg-dona-100 rounded-full blur-3xl opacity-50 group-hover:opacity-70 transition-opacity"></div>
-        <div>
-          <div class="w-14 h-14 bg-dona-100 rounded-2xl flex items-center justify-center mb-6 text-dona-600">
-            <i data-lucide="smartphone" class="w-8 h-8"></i>
+      <div class="bento-card col-span-1 md:col-span-2 lg:col-span-2 row-span-2 p-8 flex flex-col justify-between relative overflow-hidden group">
+        <div class="absolute top-0 right-0 -mr-16 -mt-16 w-64 h-64 bg-dona-50 rounded-full blur-3xl opacity-60 transition-opacity"></div>
+        <div class="z-10">
+          <div class="w-14 h-14 bg-dona-100 rounded-xl flex items-center justify-center mb-6 text-dona-600">
+            <i data-lucide="smartphone" class="w-7 h-7"></i>
           </div>
-          <h3 class="text-3xl font-bold text-slate-900 mb-4">Apps Nativos</h3>
-          <p class="text-slate-600 text-lg leading-relaxed">Desenvolvimento premium para iOS e Android. Performance de alto nível, animações fluidas a 60fps e integração profunda com o hardware do dispositivo (câmera, GPS, biometria e sensores). Cuidamos da publicação nas lojas (App Store e Play Store).</p>
+          <h3 class="text-2xl font-bold text-slate-900 mb-3">Aplicativos Nativos</h3>
+          <p class="text-slate-600 font-medium text-base leading-relaxed">Desenvolvimento premium para iOS e Android. Performance de alto nível, animações fluidas e integração profunda com o hardware (câmera, biometria e sensores). Cuidamos do envio para as lojas oficiais.</p>
         </div>
-        <div class="mt-8 flex gap-3 flex-wrap">
-          <span class="px-3 py-1 bg-slate-100 text-slate-700 rounded-full text-sm font-semibold">Swift</span>
-          <span class="px-3 py-1 bg-slate-100 text-slate-700 rounded-full text-sm font-semibold">Kotlin</span>
-          <span class="px-3 py-1 bg-slate-100 text-slate-700 rounded-full text-sm font-semibold">React Native</span>
+        <div class="mt-6 flex gap-2 flex-wrap z-10">
+          <span class="px-3 py-1 bg-white border border-slate-200 text-slate-700 rounded-md text-xs font-bold shadow-sm">Swift</span>
+          <span class="px-3 py-1 bg-white border border-slate-200 text-slate-700 rounded-md text-xs font-bold shadow-sm">Kotlin</span>
+          <span class="px-3 py-1 bg-white border border-slate-200 text-slate-700 rounded-md text-xs font-bold shadow-sm">React Native</span>
         </div>
       </div>
 
       <!-- Bloco 2 (Horizontal) -->
-      <div class="bento-card col-span-1 md:col-span-2 lg:col-span-2 row-span-1 p-8 flex flex-col justify-center">
-        <div class="flex items-start gap-6">
-          <div class="w-14 h-14 shrink-0 bg-slate-900 rounded-xl flex items-center justify-center text-white">
-            <i data-lucide="monitor" class="w-7 h-7"></i>
+      <div class="bento-card col-span-1 md:col-span-2 lg:col-span-2 row-span-1 p-8 flex flex-col justify-center bg-slate-900 text-white border-none shadow-lg">
+        <div class="flex items-start gap-5">
+          <div class="w-12 h-12 shrink-0 bg-slate-800 rounded-xl flex items-center justify-center text-white border border-slate-700">
+            <i data-lucide="monitor" class="w-6 h-6"></i>
           </div>
           <div>
-            <h3 class="text-2xl font-bold text-slate-900 mb-3">Sistemas Desktop Windows Offline</h3>
-            <p class="text-slate-600 leading-relaxed">A soberania de rodar localmente sem depender de internet. Perfeito para operações críticas como chão de fábrica, frente de caixa (PDV) e fazendas remotas onde a nuvem não alcança.</p>
+            <h3 class="text-xl font-bold text-white mb-2">Sistemas Windows Offline</h3>
+            <p class="text-slate-300 text-sm font-medium leading-relaxed">Soberania de rodar localmente sem internet. Perfeito para operações críticas como chãos de fábrica, PDVs e fazendas remotas onde a nuvem não alcança.</p>
           </div>
         </div>
       </div>
 
       <!-- Bloco 3 -->
       <div class="bento-card col-span-1 md:col-span-1 lg:col-span-1 row-span-1 p-8 flex flex-col">
-        <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mb-5 text-blue-600 shrink-0">
+        <div class="w-12 h-12 bg-blue-50 border border-blue-100 rounded-xl flex items-center justify-center mb-4 text-blue-600 shrink-0">
           <i data-lucide="globe" class="w-6 h-6"></i>
         </div>
-        <h3 class="text-xl font-bold text-slate-900 mb-2">Sistemas Web de Alta Escala</h3>
-        <p class="text-slate-600 text-sm flex-grow">Arquiteturas resilientes na nuvem, preparadas para picos de tráfego milionários e integrações complexas de APIs.</p>
+        <h3 class="text-lg font-bold text-slate-900 mb-2">Sistemas Web</h3>
+        <p class="text-slate-600 font-medium text-sm flex-grow">Arquiteturas resilientes na nuvem, desenhadas para altíssima concorrência e integrações complexas.</p>
       </div>
 
       <!-- Bloco 4 -->
       <div class="bento-card col-span-1 md:col-span-1 lg:col-span-1 row-span-1 p-8 flex flex-col">
-        <div class="w-12 h-12 bg-emerald-100 rounded-xl flex items-center justify-center mb-5 text-emerald-600 shrink-0">
+        <div class="w-12 h-12 bg-emerald-50 border border-emerald-100 rounded-xl flex items-center justify-center mb-4 text-emerald-600 shrink-0">
           <i data-lucide="layout-template" class="w-6 h-6"></i>
         </div>
-        <h3 class="text-xl font-bold text-slate-900 mb-2">Plataformas e LPs</h3>
-        <p class="text-slate-600 text-sm flex-grow">Landing pages ultra-rápidas focadas em conversão (CRO) e plataformas de gestão de conteúdo blindadas e otimizadas para SEO.</p>
-      </div>
-      
-      <!-- Bloco 5 -->
-      <div class="bento-card col-span-1 md:col-span-2 lg:col-span-4 row-span-1 p-8 flex flex-col md:flex-row items-center justify-between bg-slate-900 text-white overflow-hidden relative">
-        <div class="absolute right-0 top-0 w-1/2 h-full bg-gradient-to-l from-dona-600/40 to-transparent pointer-events-none"></div>
-        <div class="z-10 max-w-2xl">
-          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-white text-xs font-semibold mb-4 backdrop-blur-sm">
-            <i data-lucide="trending-up" class="w-4 h-4"></i>
-            Acelerador de Clientes
-          </div>
-          <h3 class="text-2xl md:text-3xl font-bold mb-3">Estratégia de Tráfego Pago e Gratuito</h3>
-          <p class="text-slate-300 text-lg">Não basta construir o melhor software do mundo, os usuários precisam encontrá-lo. Estruturamos campanhas de aquisição no Google, Meta e TikTok que trazem ROI positivo e escalam sua operação desde o Dia 1 de lançamento.</p>
-        </div>
-        <div class="z-10 mt-6 md:mt-0">
-          <button onclick="openWhatsApp('Olá Krys, quero entender mais sobre a estratégia de tráfego associada ao desenvolvimento.')" class="px-6 py-3 bg-white text-slate-900 font-bold rounded-full hover:bg-slate-100 transition-colors">
-            Falar sobre Tração
-          </button>
-        </div>
+        <h3 class="text-lg font-bold text-slate-900 mb-2">Plataformas & LPs</h3>
+        <p class="text-slate-600 font-medium text-sm flex-grow">Landing pages ultra-rápidas focadas em conversão (CRO) e gestão de conteúdo SEO.</p>
       </div>
       
     </div>
   </section>
 
-  <!-- KILLER FEATURE: SIMULADOR INTERATIVO -->
+  <!-- ECOSSISTEMA DONA APP -->
+  <section id="ecossistema" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto bg-white rounded-3xl border border-slate-200 shadow-sm mb-20">
+    <div class="flex flex-col lg:flex-row items-center gap-14 p-4">
+      <div class="lg:w-1/2">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-50 border border-orange-200 text-orange-700 text-xs font-bold mb-4">
+          <i data-lucide="cpu" class="w-3.5 h-3.5"></i>
+          SaaS Proprietário
+        </div>
+        <h2 class="text-3xl lg:text-4xl font-extrabold text-slate-900 mb-6 leading-tight">Ecossistema: <br/><span class="text-orange-600">Dono da Oficina</span></h2>
+        
+        <p class="text-lg font-semibold text-slate-700 mb-6 leading-relaxed">
+          A Dona APP não é apenas uma consultoria técnica; nós respiramos software operando nossos próprios sistemas diariamente.
+        </p>
+        <p class="text-base font-medium text-slate-600 mb-8 leading-relaxed">
+          O <strong>Dono da Oficina</strong> é nosso software de gestão automotiva, onde validamos na prática a estabilidade, retenção e o UX refinado que aplicaremos no seu projeto.
+        </p>
+        
+        <ul class="space-y-4 mb-8">
+          <li class="flex items-center gap-3">
+            <div class="w-6 h-6 rounded-md bg-orange-100 text-orange-600 flex items-center justify-center shrink-0">
+              <i data-lucide="check" class="w-4 h-4"></i>
+            </div>
+            <span class="text-slate-800 text-base font-bold">Centenas de oficinas ativas pelo Brasil.</span>
+          </li>
+          <li class="flex items-center gap-3">
+            <div class="w-6 h-6 rounded-md bg-orange-100 text-orange-600 flex items-center justify-center shrink-0">
+              <i data-lucide="check" class="w-4 h-4"></i>
+            </div>
+            <span class="text-slate-800 text-base font-bold">Uptime blindado e integração fluida.</span>
+          </li>
+        </ul>
+        
+        <a href="https://donodaoficina.com.br" target="_blank" class="inline-flex items-center gap-2 px-6 py-3 bg-white border-2 border-slate-200 text-slate-800 font-bold rounded-full hover:border-orange-600 hover:text-orange-600 transition-colors shadow-sm">
+          Acessar a Plataforma
+          <i data-lucide="external-link" class="w-4 h-4"></i>
+        </a>
+      </div>
+      
+      <div class="lg:w-1/2 w-full">
+        <!-- Mockup de Navegador Elegante para o GIF -->
+        <div class="relative mx-auto w-full max-w-[550px] rounded-xl shadow-2xl overflow-hidden border border-slate-300 bg-white">
+          <!-- Fake Browser Header -->
+          <div class="h-10 bg-slate-100 flex items-center px-4 border-b border-slate-200">
+            <div class="flex gap-2">
+              <div class="w-3 h-3 rounded-full bg-red-400"></div>
+              <div class="w-3 h-3 rounded-full bg-amber-400"></div>
+              <div class="w-3 h-3 rounded-full bg-emerald-400"></div>
+            </div>
+            <div class="mx-auto w-1/2 h-5 bg-white rounded flex items-center justify-center opacity-50">
+              <span class="text-[10px] font-bold text-slate-500">donodaoficina.com.br</span>
+            </div>
+          </div>
+          <!-- GIF -->
+          <img src="images/hero-dashboard.gif" alt="Dashboard do Dono da Oficina Operando" class="w-full h-auto block" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIÊNCIA ADQUIRIDA (PROJETOS) -->
+  <section id="experiencia" class="py-24 bg-slate-50 border-t border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl font-extrabold text-slate-900 mb-4">Experiência Adquirida</h2>
+        <p class="text-lg font-medium text-slate-600 max-w-3xl mx-auto">
+          Exemplos do nosso refinamento técnico. Estes sistemas <strong>não são comercializados em formato SaaS</strong>; eles representam nossa capacidade de execução e o know-how obtido através do desenvolvimento sob demanda.
+        </p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        
+        <!-- Projeto 1 -->
+        <div class="bento-card p-6 flex flex-col h-full hover:border-dona-300 group">
+          <div class="flex items-center gap-4 mb-4">
+            <div class="w-12 h-12 rounded-xl bg-teal-50 text-teal-600 flex items-center justify-center shrink-0 group-hover:bg-teal-600 group-hover:text-white transition-colors">
+              <i data-lucide="file-check-2" class="w-6 h-6"></i>
+            </div>
+            <h3 class="text-lg font-bold text-slate-900">Gestão de Reembolsos Médicos</h3>
+          </div>
+          <p class="text-slate-600 text-sm font-medium leading-relaxed mb-6 flex-grow">Auditoria automatizada de guias médicas processando milhares de regras TISS/TUSS e validações complexas em frações de segundo no servidor.</p>
+          <div class="flex gap-2">
+            <span class="px-2 py-1 bg-slate-100 text-slate-600 text-[10px] font-bold rounded">Next.js</span>
+            <span class="px-2 py-1 bg-slate-100 text-slate-600 text-[10px] font-bold rounded">PostgreSQL</span>
+          </div>
+        </div>
+
+        <!-- Projeto 2 -->
+        <div class="bento-card p-6 flex flex-col h-full hover:border-dona-300 group">
+          <div class="flex items-center gap-4 mb-4">
+            <div class="w-12 h-12 rounded-xl bg-indigo-50 text-indigo-600 flex items-center justify-center shrink-0 group-hover:bg-indigo-600 group-hover:text-white transition-colors">
+              <i data-lucide="map-pin" class="w-6 h-6"></i>
+            </div>
+            <h3 class="text-lg font-bold text-slate-900">Controle de Frotas Offline</h3>
+          </div>
+          <p class="text-slate-600 text-sm font-medium leading-relaxed mb-6 flex-grow">Aplicativo iOS/Android para vistoria de caminhões em pátios sem sinal. Sincroniza fotos em alta resolução e assinaturas biométricas em background assim que a conexão retorna.</p>
+          <div class="flex gap-2">
+            <span class="px-2 py-1 bg-slate-100 text-slate-600 text-[10px] font-bold rounded">React Native</span>
+            <span class="px-2 py-1 bg-slate-100 text-slate-600 text-[10px] font-bold rounded">SQLite</span>
+          </div>
+        </div>
+
+        <!-- Projeto 3 -->
+        <div class="bento-card p-6 flex flex-col h-full hover:border-dona-300 group">
+          <div class="flex items-center gap-4 mb-4">
+            <div class="w-12 h-12 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center shrink-0 group-hover:bg-emerald-600 group-hover:text-white transition-colors">
+              <i data-lucide="tractor" class="w-6 h-6"></i>
+            </div>
+            <h3 class="text-lg font-bold text-slate-900">ERP Agrícola Desktop</h3>
+          </div>
+          <p class="text-slate-600 text-sm font-medium leading-relaxed mb-6 flex-grow">Sistema nativo Windows para fazendas no interior remoto. Controle integral de safra, insumos e RH rodando direto na máquina local, garantindo soberania total.</p>
+          <div class="flex gap-2">
+            <span class="px-2 py-1 bg-slate-100 text-slate-600 text-[10px] font-bold rounded">Electron</span>
+            <span class="px-2 py-1 bg-slate-100 text-slate-600 text-[10px] font-bold rounded">LocalDB</span>
+          </div>
+        </div>
+
+        <!-- Projeto 4 -->
+        <div class="bento-card p-6 flex flex-col h-full hover:border-dona-300 group">
+          <div class="flex items-center gap-4 mb-4">
+            <div class="w-12 h-12 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center shrink-0 group-hover:bg-blue-600 group-hover:text-white transition-colors">
+              <i data-lucide="credit-card" class="w-6 h-6"></i>
+            </div>
+            <h3 class="text-lg font-bold text-slate-900">Gateway de Pagamentos Customizado</h3>
+          </div>
+          <p class="text-slate-600 text-sm font-medium leading-relaxed mb-6 flex-grow">Motor de processamento de transações com split de pagamentos em tempo real, prevenção à fraude e conciliação bancária.</p>
+          <div class="flex gap-2">
+            <span class="px-2 py-1 bg-slate-100 text-slate-600 text-[10px] font-bold rounded">Node.js</span>
+            <span class="px-2 py-1 bg-slate-100 text-slate-600 text-[10px] font-bold rounded">Redis</span>
+          </div>
+        </div>
+
+        <!-- Projeto 5 -->
+        <div class="bento-card p-6 flex flex-col h-full hover:border-dona-300 group">
+          <div class="flex items-center gap-4 mb-4">
+            <div class="w-12 h-12 rounded-xl bg-orange-50 text-orange-600 flex items-center justify-center shrink-0 group-hover:bg-orange-600 group-hover:text-white transition-colors">
+              <i data-lucide="graduation-cap" class="w-6 h-6"></i>
+            </div>
+            <h3 class="text-lg font-bold text-slate-900">Plataforma EAD Corporativa</h3>
+          </div>
+          <p class="text-slate-600 text-sm font-medium leading-relaxed mb-6 flex-grow">Sistema de treinamentos internos com streaming de vídeo otimizado para não gargalar redes corporativas, gamificação e controle de acesso rígido.</p>
+          <div class="flex gap-2">
+            <span class="px-2 py-1 bg-slate-100 text-slate-600 text-[10px] font-bold rounded">React Web</span>
+            <span class="px-2 py-1 bg-slate-100 text-slate-600 text-[10px] font-bold rounded">AWS S3/CDN</span>
+          </div>
+        </div>
+
+        <!-- Projeto 6 -->
+        <div class="bento-card p-6 flex flex-col h-full hover:border-dona-300 group">
+          <div class="flex items-center gap-4 mb-4">
+            <div class="w-12 h-12 rounded-xl bg-purple-50 text-purple-600 flex items-center justify-center shrink-0 group-hover:bg-purple-600 group-hover:text-white transition-colors">
+              <i data-lucide="route" class="w-6 h-6"></i>
+            </div>
+            <h3 class="text-lg font-bold text-slate-900">Roteirização Logística</h3>
+          </div>
+          <p class="text-slate-600 text-sm font-medium leading-relaxed mb-6 flex-grow">Algoritmo matemático de otimização de rotas para transportadoras com múltiplos pontos de parada, reduzindo custos de combustível e tempo logístico.</p>
+          <div class="flex gap-2">
+            <span class="px-2 py-1 bg-slate-100 text-slate-600 text-[10px] font-bold rounded">Python</span>
+            <span class="px-2 py-1 bg-slate-100 text-slate-600 text-[10px] font-bold rounded">Google Maps API</span>
+          </div>
+        </div>
+
+        <!-- Projeto 7 -->
+        <div class="bento-card p-6 flex flex-col h-full hover:border-dona-300 group">
+          <div class="flex items-center gap-4 mb-4">
+            <div class="w-12 h-12 rounded-xl bg-rose-50 text-rose-600 flex items-center justify-center shrink-0 group-hover:bg-rose-600 group-hover:text-white transition-colors">
+              <i data-lucide="building" class="w-6 h-6"></i>
+            </div>
+            <h3 class="text-lg font-bold text-slate-900">CRM Imobiliário Avançado</h3>
+          </div>
+          <p class="text-slate-600 text-sm font-medium leading-relaxed mb-6 flex-grow">Gestão de funil de vendas, geração automática de contratos digitais integrados e cruzamento inteligente de perfis de clientes versus carteira de imóveis.</p>
+          <div class="flex gap-2">
+            <span class="px-2 py-1 bg-slate-100 text-slate-600 text-[10px] font-bold rounded">Vue.js</span>
+            <span class="px-2 py-1 bg-slate-100 text-slate-600 text-[10px] font-bold rounded">Firebase</span>
+          </div>
+        </div>
+
+        <!-- Projeto 8 -->
+        <div class="bento-card p-6 flex flex-col h-full hover:border-dona-300 group">
+          <div class="flex items-center gap-4 mb-4">
+            <div class="w-12 h-12 rounded-xl bg-sky-50 text-sky-600 flex items-center justify-center shrink-0 group-hover:bg-sky-600 group-hover:text-white transition-colors">
+              <i data-lucide="stethoscope" class="w-6 h-6"></i>
+            </div>
+            <h3 class="text-lg font-bold text-slate-900">Prontuário de Telemedicina</h3>
+          </div>
+          <p class="text-slate-600 text-sm font-medium leading-relaxed mb-6 flex-grow">Consultas por vídeo seguras (HIPAA-compliant), emissão de prescrições validadas digitalmente e histórico unificado do paciente.</p>
+          <div class="flex gap-2">
+            <span class="px-2 py-1 bg-slate-100 text-slate-600 text-[10px] font-bold rounded">WebRTC</span>
+            <span class="px-2 py-1 bg-slate-100 text-slate-600 text-[10px] font-bold rounded">MongoDB</span>
+          </div>
+        </div>
+
+        <!-- Projeto 9 -->
+        <div class="bento-card p-6 flex flex-col h-full hover:border-dona-300 group">
+          <div class="flex items-center gap-4 mb-4">
+            <div class="w-12 h-12 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center shrink-0 group-hover:bg-amber-600 group-hover:text-white transition-colors">
+              <i data-lucide="boxes" class="w-6 h-6"></i>
+            </div>
+            <h3 class="text-lg font-bold text-slate-900">Gestão de Estoque Multi-CD</h3>
+          </div>
+          <p class="text-slate-600 text-sm font-medium leading-relaxed mb-6 flex-grow">Sincronização rigorosa de inventário entre múltiplos centros de distribuição e matriz, projetado para evitar furos de estoque em campanhas de alta escala.</p>
+          <div class="flex gap-2">
+            <span class="px-2 py-1 bg-slate-100 text-slate-600 text-[10px] font-bold rounded">Go</span>
+            <span class="px-2 py-1 bg-slate-100 text-slate-600 text-[10px] font-bold rounded">PostgreSQL</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- KILLER FEATURE: SIMULADOR DE ORÇAMENTO -->
   <section id="simulador" class="py-24 px-4 sm:px-6 lg:px-8 bg-white border-y border-slate-200">
     <div class="max-w-4xl mx-auto">
       <div class="text-center mb-16">
-        <h2 class="text-4xl font-bold text-slate-900 mb-4">Simulador de Contratação</h2>
-        <p class="text-lg text-slate-600">Descubra a modalidade financeira e a infraestrutura ideal para o seu momento de negócio atual.</p>
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-100 text-slate-700 text-sm font-bold mb-4">
+          <i data-lucide="cpu" class="w-4 h-4"></i>
+          Montador de Arquitetura
+        </div>
+        <h2 class="text-3xl lg:text-4xl font-extrabold text-slate-900 mb-4">Simulador de Projeto</h2>
+        <p class="text-lg font-medium text-slate-600">Descubra qual estrutura técnica e financeira atende melhor o seu cenário hoje.</p>
       </div>
       
-      <div class="bento-card p-8 md:p-12 shadow-2xl shadow-slate-200/50">
-        <!-- Pergunta 1 -->
+      <div class="bg-white border border-slate-200 rounded-3xl p-6 md:p-10 shadow-2xl shadow-slate-200/50">
+        
+        <!-- Passo 1 -->
         <div class="mb-10">
-          <label class="block text-xl font-bold text-slate-900 mb-6">1. Qual o perfil do seu caixa para este projeto?</label>
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <label class="relative flex cursor-pointer rounded-xl border border-slate-200 bg-white p-6 shadow-sm focus:outline-none has-[:checked]:border-dona-600 has-[:checked]:bg-dona-50/50 has-[:checked]:ring-1 has-[:checked]:ring-dona-600 transition-all hover:bg-slate-50">
-              <input type="radio" name="perfilCaixa" value="diluir" class="sr-only" onchange="updateSimulator()">
-              <div class="flex flex-col">
-                <span class="text-lg font-bold text-slate-900 mb-1">Quero diluir o custo suavemente</span>
-                <span class="text-sm text-slate-600">Sem grande investimento inicial. Mensalidade previsível.</span>
+          <div class="flex items-center gap-3 mb-6">
+            <div class="w-8 h-8 rounded-full bg-slate-900 text-white flex items-center justify-center font-bold text-sm">1</div>
+            <h3 class="text-xl font-bold text-slate-900">O que você precisa construir?</h3>
+          </div>
+          
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <label class="relative cursor-pointer">
+              <input type="radio" name="plataforma" value="web" class="sr-only" onchange="updateSimulator()" checked>
+              <div class="border-2 border-slate-200 rounded-2xl p-5 hover:border-dona-300 transition-all text-center h-full flex flex-col items-center justify-center relative">
+                <i data-lucide="check-circle-2" class="w-6 h-6 absolute top-3 right-3 text-dona-600 opacity-0 transition-opacity check-icon"></i>
+                <i data-lucide="globe" class="w-8 h-8 mb-3 text-slate-400"></i>
+                <span class="block font-bold text-slate-800 text-base">Sistema Web</span>
+                <span class="block text-xs font-medium text-slate-500 mt-1">Nuvem (Browser)</span>
               </div>
             </label>
-            <label class="relative flex cursor-pointer rounded-xl border border-slate-200 bg-white p-6 shadow-sm focus:outline-none has-[:checked]:border-dona-600 has-[:checked]:bg-dona-50/50 has-[:checked]:ring-1 has-[:checked]:ring-dona-600 transition-all hover:bg-slate-50">
-              <input type="radio" name="perfilCaixa" value="capital" class="sr-only" onchange="updateSimulator()" checked>
-              <div class="flex flex-col">
-                <span class="text-lg font-bold text-slate-900 mb-1">Tenho capital para escopo fechado</span>
-                <span class="text-sm text-slate-600">Pronto para bancar o desenvolvimento completo e deter o código.</span>
+            
+            <label class="relative cursor-pointer">
+              <input type="radio" name="plataforma" value="mobile" class="sr-only" onchange="updateSimulator()">
+              <div class="border-2 border-slate-200 rounded-2xl p-5 hover:border-dona-300 transition-all text-center h-full flex flex-col items-center justify-center relative">
+                <i data-lucide="check-circle-2" class="w-6 h-6 absolute top-3 right-3 text-dona-600 opacity-0 transition-opacity check-icon"></i>
+                <i data-lucide="smartphone" class="w-8 h-8 mb-3 text-slate-400"></i>
+                <span class="block font-bold text-slate-800 text-base">Aplicativo Mobile</span>
+                <span class="block text-xs font-medium text-slate-500 mt-1">iOS e Android</span>
+              </div>
+            </label>
+
+            <label class="relative cursor-pointer">
+              <input type="radio" name="plataforma" value="desktop" class="sr-only" onchange="updateSimulator()">
+              <div class="border-2 border-slate-200 rounded-2xl p-5 hover:border-dona-300 transition-all text-center h-full flex flex-col items-center justify-center relative">
+                <i data-lucide="check-circle-2" class="w-6 h-6 absolute top-3 right-3 text-dona-600 opacity-0 transition-opacity check-icon"></i>
+                <i data-lucide="monitor" class="w-8 h-8 mb-3 text-slate-400"></i>
+                <span class="block font-bold text-slate-800 text-base">Desktop Offline</span>
+                <span class="block text-xs font-medium text-slate-500 mt-1">Windows Nativo</span>
               </div>
             </label>
           </div>
         </div>
 
-        <!-- Pergunta 2 -->
+        <!-- Passo 2 -->
         <div class="mb-12">
-          <label class="block text-xl font-bold text-slate-900 mb-6">2. Onde o sistema vai rodar prioritariamente?</label>
+          <div class="flex items-center gap-3 mb-6">
+            <div class="w-8 h-8 rounded-full bg-slate-900 text-white flex items-center justify-center font-bold text-sm">2</div>
+            <h3 class="text-xl font-bold text-slate-900">Qual o seu modelo de investimento?</h3>
+          </div>
+          
           <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <label class="relative flex cursor-pointer rounded-xl border border-slate-200 bg-white p-6 shadow-sm focus:outline-none has-[:checked]:border-dona-600 has-[:checked]:bg-dona-50/50 has-[:checked]:ring-1 has-[:checked]:ring-dona-600 transition-all hover:bg-slate-50">
-              <input type="radio" name="plataforma" value="nuvem" class="sr-only" onchange="updateSimulator()" checked>
-              <div class="flex flex-col">
-                <span class="text-lg font-bold text-slate-900 mb-1">Navegador / Nuvem</span>
-                <span class="text-sm text-slate-600">Acessível de qualquer lugar, via browser ou celular.</span>
+            <label class="relative cursor-pointer">
+              <input type="radio" name="modelo" value="assinatura" class="sr-only" onchange="updateSimulator()">
+              <div class="border-2 border-slate-200 rounded-2xl p-6 hover:border-dona-300 transition-all relative flex flex-col justify-center">
+                <i data-lucide="check-circle-2" class="w-6 h-6 absolute top-4 right-4 text-dona-600 opacity-0 transition-opacity check-icon"></i>
+                <span class="block font-bold text-slate-800 text-lg mb-1">Assinatura Mensal</span>
+                <span class="block text-sm font-medium text-slate-500">Zero custo inicial pesado. Fica na nuvem e infraestrutura da Dona APP como serviço.</span>
               </div>
             </label>
-            <label class="relative flex cursor-pointer rounded-xl border border-slate-200 bg-white p-6 shadow-sm focus:outline-none has-[:checked]:border-dona-600 has-[:checked]:bg-dona-50/50 has-[:checked]:ring-1 has-[:checked]:ring-dona-600 transition-all hover:bg-slate-50">
-              <input type="radio" name="plataforma" value="windows" class="sr-only" onchange="updateSimulator()">
-              <div class="flex flex-col">
-                <span class="text-lg font-bold text-slate-900 mb-1">Windows (Local / Offline)</span>
-                <span class="text-sm text-slate-600">Soberania total sem depender de internet para funcionar.</span>
+            
+            <label class="relative cursor-pointer">
+              <input type="radio" name="modelo" value="unico" class="sr-only" onchange="updateSimulator()" checked>
+              <div class="border-2 border-slate-200 rounded-2xl p-6 hover:border-dona-300 transition-all relative flex flex-col justify-center">
+                <i data-lucide="check-circle-2" class="w-6 h-6 absolute top-4 right-4 text-dona-600 opacity-0 transition-opacity check-icon"></i>
+                <span class="block font-bold text-slate-800 text-lg mb-1">Pagamento Único</span>
+                <span class="block text-sm font-medium text-slate-500">Desenvolvimento de escopo fechado. Você detém a propriedade intelectual do código.</span>
               </div>
             </label>
           </div>
         </div>
         
-        <!-- Resultado Dinâmico -->
-        <div id="simulatorResult" class="bg-slate-50 rounded-2xl p-8 border border-slate-200 mb-8 transition-all duration-300">
-          <!-- Conteúdo Injetado via JavaScript -->
+        <!-- Parecer Técnico -->
+        <div class="bg-slate-50 rounded-2xl p-6 md:p-8 border border-slate-200 mb-8">
+          <h4 class="text-sm font-bold text-slate-400 uppercase tracking-wider mb-4 border-b border-slate-200 pb-2">Parecer Técnico e Comercial</h4>
+          <div id="simulatorResult" class="transition-all duration-300 min-h-[140px]">
+            <!-- Renderizado via JS -->
+          </div>
         </div>
 
-        <button onclick="submitSimulator()" class="w-full flex items-center justify-center gap-3 px-8 py-4 bg-dona-600 text-white text-lg font-bold rounded-xl hover:bg-dona-700 transition-all shadow-glow">
+        <button onclick="submitSimulator()" class="w-full flex items-center justify-center gap-3 px-8 py-4 bg-dona-600 text-white text-lg font-bold rounded-xl hover:bg-dona-700 transition-all shadow-md">
           <i data-lucide="message-circle" class="w-6 h-6"></i>
-          Levar esta simulação para o WhatsApp
+          Solicitar Orçamento no WhatsApp
         </button>
       </div>
     </div>
   </section>
 
-  <!-- ECOSSISTEMA DONA APP -->
-  <section id="ecossistema" class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-    <div class="flex flex-col lg:flex-row items-center gap-16">
-      <div class="lg:w-1/2">
-        <h2 class="text-4xl font-bold text-slate-900 mb-6">Nosso Ecossistema Próprio: <br/><span class="text-orange-600">Dono da Oficina</span></h2>
-        <p class="text-lg text-slate-600 mb-8 leading-relaxed">Nós não somos apenas uma fábrica de software prestando serviços, somos operadores no campo de batalha. O <strong>"Dono da Oficina"</strong> é o nosso principal produto de SaaS proprietário. Com ele, validamos na prática e diariamente as metodologias de alta conversão, a infraestrutura resiliente e o UX refinado que aplicaremos também no seu negócio.</p>
-        
-        <ul class="space-y-5 mb-10">
-          <li class="flex items-start gap-4">
-            <div class="mt-1 w-8 h-8 rounded-full bg-orange-100 text-orange-600 flex items-center justify-center shrink-0">
-              <i data-lucide="check" class="w-5 h-5"></i>
-            </div>
-            <span class="text-slate-700 font-semibold text-lg">Mais de 300 oficinas ativas operando no Brasil.</span>
-          </li>
-          <li class="flex items-start gap-4">
-            <div class="mt-1 w-8 h-8 rounded-full bg-orange-100 text-orange-600 flex items-center justify-center shrink-0">
-              <i data-lucide="check" class="w-5 h-5"></i>
-            </div>
-            <span class="text-slate-700 font-semibold text-lg">Integração nativa com WhatsApp e Prefeituras.</span>
-          </li>
-          <li class="flex items-start gap-4">
-            <div class="mt-1 w-8 h-8 rounded-full bg-orange-100 text-orange-600 flex items-center justify-center shrink-0">
-              <i data-lucide="check" class="w-5 h-5"></i>
-            </div>
-            <span class="text-slate-700 font-semibold text-lg">Zero downtime reportado nos últimos 12 meses.</span>
-          </li>
-        </ul>
-        
-        <a href="https://donodaoficina.com.br" target="_blank" class="inline-flex items-center gap-2 px-6 py-3 border-2 border-slate-200 text-slate-900 font-bold rounded-full hover:border-orange-600 hover:text-orange-600 transition-colors">
-          Explorar a plataforma Dono da Oficina
-          <i data-lucide="external-link" class="w-5 h-5"></i>
-        </a>
-      </div>
-      
-      <div class="lg:w-1/2 w-full">
-        <!-- Premium CSS Mockup do Sistema -->
-        <div class="relative mx-auto border-gray-800 bg-gray-800 border-[8px] rounded-t-2xl h-[340px] w-full max-w-[600px] shadow-2xl overflow-hidden transition-transform hover:scale-105 duration-500">
-          <div class="rounded-lg overflow-hidden h-full bg-white flex flex-col">
-            <!-- Header do Mockup -->
-            <div class="h-14 bg-[#ea580c] flex items-center px-5 text-white gap-3 shadow-sm z-10">
-              <div class="w-7 h-7 border-2 border-white rounded-md flex items-center justify-center"><div class="w-3 h-3 bg-white rounded-sm"></div></div>
-              <span class="font-bold text-lg tracking-wide">Dono da Oficina</span>
-            </div>
-            <!-- Body do Mockup -->
-            <div class="p-5 flex gap-5 h-full bg-slate-50">
-              <!-- Sidebar Fake -->
-              <div class="w-48 flex-shrink-0 flex flex-col gap-3">
-                <div class="h-10 bg-slate-200 rounded-lg w-full animate-pulse"></div>
-                <div class="h-10 bg-slate-200 rounded-lg w-full animate-pulse"></div>
-                <div class="h-10 bg-[#ea580c]/20 rounded-lg w-full flex items-center px-3 border-l-4 border-[#ea580c]">
-                  <span class="w-full h-3 bg-[#ea580c]/50 rounded-sm"></span>
-                </div>
-                <div class="h-10 bg-slate-200 rounded-lg w-full animate-pulse delay-75"></div>
-                <div class="h-10 bg-slate-200 rounded-lg w-full animate-pulse delay-150"></div>
-              </div>
-              <!-- Dashboard Content Fake -->
-              <div class="flex-grow flex flex-col gap-5">
-                <div class="flex gap-4">
-                  <div class="h-28 flex-1 bg-white border border-slate-200 rounded-xl shadow-sm p-4 flex flex-col justify-between">
-                    <div class="w-20 h-4 bg-slate-200 rounded-sm"></div>
-                    <div class="w-28 h-8 bg-green-500 rounded-md"></div>
-                  </div>
-                  <div class="h-28 flex-1 bg-white border border-slate-200 rounded-xl shadow-sm p-4 flex flex-col justify-between">
-                    <div class="w-20 h-4 bg-slate-200 rounded-sm"></div>
-                    <div class="w-24 h-8 bg-blue-500 rounded-md"></div>
-                  </div>
-                </div>
-                <div class="flex-grow bg-white border border-slate-200 rounded-xl shadow-sm p-5 flex flex-col gap-4">
-                  <div class="w-full h-5 bg-slate-100 rounded-sm"></div>
-                  <div class="w-full h-5 bg-slate-100 rounded-sm"></div>
-                  <div class="w-4/5 h-5 bg-slate-100 rounded-sm"></div>
-                  <div class="w-2/3 h-5 bg-slate-100 rounded-sm"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="relative mx-auto bg-gray-900 rounded-b-xl rounded-t-sm h-[20px] max-w-[600px] shadow-xl">
-          <div class="absolute left-1/2 top-0 -translate-x-1/2 rounded-b-xl w-[80px] h-[6px] md:w-[120px] md:h-[8px] bg-gray-800"></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- PROJETOS SOB MEDIDA -->
-  <section id="casos" class="py-24 bg-white border-t border-slate-200">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-16">
-        <h2 class="text-4xl font-bold text-slate-900 mb-4">Projetos Sob Medida</h2>
-        <p class="text-lg text-slate-600">Amostra do nosso poder de engenharia e arquitetura limpa em projetos corporativos de grande porte.</p>
-      </div>
-      
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        
-        <!-- Case 1 -->
-        <div class="bento-card overflow-hidden group">
-          <div class="h-56 bg-gradient-to-br from-teal-500 to-teal-800 p-8 flex flex-col justify-end text-white relative">
-            <i data-lucide="activity" class="absolute top-6 right-6 w-16 h-16 text-teal-300 opacity-20 group-hover:scale-110 transition-transform duration-500"></i>
-            <h3 class="text-3xl font-extrabold mb-1">HealthFlow</h3>
-            <p class="text-teal-100 font-medium">Gestão de Reembolsos SUS/Planos</p>
-          </div>
-          <div class="p-8">
-            <p class="text-slate-600 text-base leading-relaxed mb-6">Plataforma web escalável que processa milhares de guias de reembolso diariamente. Motor de regras integrado com TISS e TUSS, com auditoria automatizada ocorrendo em milissegundos na nuvem.</p>
-            <div class="flex flex-wrap gap-2">
-              <span class="px-3 py-1 bg-slate-100 text-slate-700 text-xs font-bold rounded-md">Next.js</span>
-              <span class="px-3 py-1 bg-slate-100 text-slate-700 text-xs font-bold rounded-md">PostgreSQL</span>
-              <span class="px-3 py-1 bg-slate-100 text-slate-700 text-xs font-bold rounded-md">AWS</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Case 2 -->
-        <div class="bento-card overflow-hidden group">
-          <div class="h-56 bg-gradient-to-br from-indigo-600 to-blue-900 p-8 flex flex-col justify-end text-white relative">
-            <i data-lucide="car-front" class="absolute top-6 right-6 w-16 h-16 text-indigo-300 opacity-20 group-hover:scale-110 transition-transform duration-500"></i>
-            <h3 class="text-3xl font-extrabold mb-1">AutoPonto</h3>
-            <p class="text-indigo-100 font-medium">Controle de Pátio e Frotas</p>
-          </div>
-          <div class="p-8">
-            <p class="text-slate-600 text-base leading-relaxed mb-6">App nativo iOS/Android para vistoria de frota. O grande trunfo é funcionar 100% offline em pátios sem sinal, sincronizando fotos em alta resolução e assinaturas biométricas silenciosamente quando a conexão retorna.</p>
-            <div class="flex flex-wrap gap-2">
-              <span class="px-3 py-1 bg-slate-100 text-slate-700 text-xs font-bold rounded-md">React Native</span>
-              <span class="px-3 py-1 bg-slate-100 text-slate-700 text-xs font-bold rounded-md">SQLite</span>
-              <span class="px-3 py-1 bg-slate-100 text-slate-700 text-xs font-bold rounded-md">Firebase</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Case 3 -->
-        <div class="bento-card overflow-hidden group">
-          <div class="h-56 bg-gradient-to-br from-emerald-600 to-emerald-900 p-8 flex flex-col justify-end text-white relative">
-            <i data-lucide="tractor" class="absolute top-6 right-6 w-16 h-16 text-emerald-300 opacity-20 group-hover:scale-110 transition-transform duration-500"></i>
-            <h3 class="text-3xl font-extrabold mb-1">AgroSovereign</h3>
-            <p class="text-emerald-100 font-medium">ERP Offline para Fazendas</p>
-          </div>
-          <div class="p-8">
-            <p class="text-slate-600 text-base leading-relaxed mb-6">Sistema Windows Desktop projetado para o interior agrícola profundo. Controle de safra, rastreio de insumos e folha de pagamento processados localmente. Sincronização sob demanda via internet via satélite ou pendrive encriptado.</p>
-            <div class="flex flex-wrap gap-2">
-              <span class="px-3 py-1 bg-slate-100 text-slate-700 text-xs font-bold rounded-md">Electron</span>
-              <span class="px-3 py-1 bg-slate-100 text-slate-700 text-xs font-bold rounded-md">Node.js</span>
-              <span class="px-3 py-1 bg-slate-100 text-slate-700 text-xs font-bold rounded-md">LocalDB</span>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- SOCIAL PROOF / DEPOIMENTOS -->
+  <!-- DEPOIMENTOS -->
   <section id="depoimentos" class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
     <div class="text-center mb-16">
-      <h2 class="text-4xl font-bold text-slate-900 mb-4">A Palavra de Quem Decidiu Certo</h2>
-      <p class="text-lg text-slate-600">Nossa reputação é blindada pelos nossos clientes.</p>
+      <h2 class="text-3xl lg:text-4xl font-extrabold text-slate-900 mb-4">Reconhecimento Corporativo</h2>
+      <p class="text-lg font-medium text-slate-600 max-w-2xl mx-auto">Resultados mensuráveis e prazos rigorosamente cumpridos com parceiros reais de negócios.</p>
     </div>
     
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-      <!-- Depoimento 1 -->
       <div class="bento-card p-10 flex flex-col justify-between">
-        <div>
+        <div class="mb-8">
           <div class="flex text-yellow-400 mb-6 gap-1">
             <i data-lucide="star" class="w-5 h-5 fill-current"></i>
             <i data-lucide="star" class="w-5 h-5 fill-current"></i>
@@ -490,20 +573,19 @@
             <i data-lucide="star" class="w-5 h-5 fill-current"></i>
             <i data-lucide="star" class="w-5 h-5 fill-current"></i>
           </div>
-          <p class="text-slate-700 mb-8 italic text-lg leading-relaxed">"A equipe da Dona APP entendeu nossa dor logística em 10 minutos de reunião. A entrega ocorreu rigorosamente no prazo estabelecido no contrato, e o banco de dados tem uma estabilidade absurda. Nunca mais sofremos com quedas nos horários de pico."</p>
+          <p class="text-slate-700 font-medium text-base leading-relaxed italic">"O refinamento técnico foi perceptível logo no início. Entregaram a estrutura de banco de dados robusta no prazo estabelecido, sem sobressaltos e sem usar jargões técnicos para justificar problemas."</p>
         </div>
         <div class="flex items-center gap-4">
-          <div class="w-14 h-14 bg-slate-200 rounded-full flex items-center justify-center font-bold text-xl text-slate-500">MV</div>
+          <div class="w-12 h-12 bg-slate-200 rounded-full flex items-center justify-center font-bold text-slate-500">MV</div>
           <div>
-            <h4 class="font-bold text-slate-900 text-lg">Marcos V.</h4>
-            <span class="text-sm font-medium text-slate-500 uppercase tracking-wide">Diretor de Operações</span>
+            <h4 class="font-bold text-slate-900 text-base">Marcos V.</h4>
+            <span class="text-xs font-bold text-slate-500 uppercase">Diretor de Operações</span>
           </div>
         </div>
       </div>
 
-      <!-- Depoimento 2 -->
       <div class="bento-card p-10 flex flex-col justify-between">
-        <div>
+        <div class="mb-8">
           <div class="flex text-yellow-400 mb-6 gap-1">
             <i data-lucide="star" class="w-5 h-5 fill-current"></i>
             <i data-lucide="star" class="w-5 h-5 fill-current"></i>
@@ -511,20 +593,19 @@
             <i data-lucide="star" class="w-5 h-5 fill-current"></i>
             <i data-lucide="star" class="w-5 h-5 fill-current"></i>
           </div>
-          <p class="text-slate-700 mb-8 italic text-lg leading-relaxed">"Havíamos tentado com duas software houses antes e gastado muito tempo e dinheiro. Ambas falharam no escopo. A Dona APP assumiu o projeto, refatorou a arquitetura antiga e nos entregou o MVP sem um único bug na fase de implantação. Profissionalismo de nível internacional."</p>
+          <p class="text-slate-700 font-medium text-base leading-relaxed italic">"Sofremos com outras empresas no passado. A Dona APP assumiu nossa base legada, refatorou tudo com muita delicadeza e subiu nosso MVP em produção praticamente sem bugs reportados."</p>
         </div>
         <div class="flex items-center gap-4">
-          <div class="w-14 h-14 bg-slate-200 rounded-full flex items-center justify-center font-bold text-xl text-slate-500">CM</div>
+          <div class="w-12 h-12 bg-slate-200 rounded-full flex items-center justify-center font-bold text-slate-500">CM</div>
           <div>
-            <h4 class="font-bold text-slate-900 text-lg">Dra. Claudia M.</h4>
-            <span class="text-sm font-medium text-slate-500 uppercase tracking-wide">Sócia-Fundadora</span>
+            <h4 class="font-bold text-slate-900 text-base">Dra. Claudia M.</h4>
+            <span class="text-xs font-bold text-slate-500 uppercase">Sócia-Fundadora</span>
           </div>
         </div>
       </div>
 
-      <!-- Depoimento 3 -->
       <div class="bento-card p-10 flex flex-col justify-between">
-        <div>
+        <div class="mb-8">
           <div class="flex text-yellow-400 mb-6 gap-1">
             <i data-lucide="star" class="w-5 h-5 fill-current"></i>
             <i data-lucide="star" class="w-5 h-5 fill-current"></i>
@@ -532,13 +613,13 @@
             <i data-lucide="star" class="w-5 h-5 fill-current"></i>
             <i data-lucide="star" class="w-5 h-5 fill-current"></i>
           </div>
-          <p class="text-slate-700 mb-8 italic text-lg leading-relaxed">"O diferencial da Dona APP é a clareza. Não há enrolação técnica ou jargões para justificar atrasos. Escolhemos a modalidade de pagamento único, o código ficou conosco desde o início, e a performance do aplicativo nativo surpreendeu positivamente até o nosso conselho de acionistas."</p>
+          <p class="text-slate-700 font-medium text-base leading-relaxed italic">"Optamos pelo escopo fechado e pagamento único. A propriedade do código estar clara no contrato desde o dia 1 nos deu a paz mental necessária para investir pesadamente no marketing do app."</p>
         </div>
         <div class="flex items-center gap-4">
-          <div class="w-14 h-14 bg-slate-200 rounded-full flex items-center justify-center font-bold text-xl text-slate-500">RL</div>
+          <div class="w-12 h-12 bg-slate-200 rounded-full flex items-center justify-center font-bold text-slate-500">RL</div>
           <div>
-            <h4 class="font-bold text-slate-900 text-lg">Roberto L.</h4>
-            <span class="text-sm font-medium text-slate-500 uppercase tracking-wide">CEO & Founder</span>
+            <h4 class="font-bold text-slate-900 text-base">Roberto L.</h4>
+            <span class="text-xs font-bold text-slate-500 uppercase">CEO & Founder</span>
           </div>
         </div>
       </div>
@@ -548,25 +629,25 @@
   <!-- RODAPÉ -->
   <footer class="bg-slate-950 pt-20 pb-10 border-t border-slate-900">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex flex-col md:flex-row justify-between items-center gap-10 mb-16">
+      <div class="flex flex-col md:flex-row justify-between items-center gap-8 mb-16">
         
-        <div class="flex items-center gap-4">
+        <div class="flex items-center gap-3">
           <div class="w-12 h-12 bg-dona-600 rounded-xl flex items-center justify-center">
-            <i data-lucide="crown" class="text-white w-7 h-7"></i>
+            <i data-lucide="crown" class="text-white w-6 h-6"></i>
           </div>
-          <span class="font-extrabold text-3xl text-white tracking-tight">Dona APP</span>
+          <span class="font-extrabold text-2xl text-white tracking-tight">Dona APP</span>
         </div>
         
-        <div class="flex flex-wrap justify-center gap-6 md:gap-10 text-slate-400 font-medium">
+        <div class="flex flex-wrap justify-center gap-8 text-slate-400 text-sm font-bold">
           <button onclick="openModal('termosModal')" class="hover:text-white transition-colors">Termos de Uso</button>
           <button onclick="openModal('privacidadeModal')" class="hover:text-white transition-colors">Política de Privacidade</button>
         </div>
         
       </div>
       
-      <div class="flex flex-col md:flex-row justify-between items-center gap-6 pt-10 border-t border-slate-800 text-slate-500 text-sm">
-        <p>&copy; 2026 Dona APP Engenharia de Software. Todos os direitos reservados. CNPJ sob consulta.</p>
-        <a href="mailto:contato@donaapp.com.br" class="hover:text-white flex items-center gap-2 font-medium bg-slate-900 px-4 py-2 rounded-lg transition-colors">
+      <div class="flex flex-col md:flex-row justify-between items-center gap-6 pt-8 border-t border-slate-800 text-slate-500 text-sm font-medium">
+        <p>&copy; 2026 Dona APP Engenharia. CNPJ sob consulta. Todos os direitos reservados.</p>
+        <a href="mailto:contato@donaapp.com.br" class="hover:text-white flex items-center gap-2 font-bold bg-slate-900 px-5 py-2.5 rounded-lg transition-colors border border-slate-800">
           <i data-lucide="mail" class="w-4 h-4"></i> contato@donaapp.com.br
         </a>
       </div>
@@ -574,199 +655,146 @@
   </footer>
 
   <!-- MODAIS JURÍDICOS -->
-  <!-- Modal Termos de Uso -->
   <div id="termosModal" class="fixed inset-0 z-[100] hidden flex items-center justify-center p-4">
-    <div class="absolute inset-0 bg-slate-950/70 backdrop-blur-md" onclick="closeModal('termosModal')"></div>
-    <div class="relative w-full max-w-3xl bg-white rounded-3xl shadow-2xl p-8 md:p-12 max-h-[85vh] overflow-y-auto transform transition-all">
-      <div class="flex justify-between items-start mb-8 border-b border-slate-100 pb-6">
+    <div class="absolute inset-0 bg-slate-950/60 backdrop-blur-md" onclick="closeModal('termosModal')"></div>
+    <div class="relative w-full max-w-2xl bg-white rounded-3xl shadow-2xl p-8 md:p-10 max-h-[85vh] overflow-y-auto">
+      <div class="flex justify-between items-start mb-6 pb-6 border-b border-slate-100">
         <div>
-          <h2 class="text-3xl font-extrabold text-slate-900 mb-2">Termos de Uso</h2>
-          <p class="text-slate-500">Última atualização: 21 de Junho de 2026</p>
+          <h2 class="text-2xl font-extrabold text-slate-900">Termos de Uso</h2>
         </div>
-        <button onclick="closeModal('termosModal')" class="p-3 hover:bg-slate-100 rounded-full transition-colors">
-          <i data-lucide="x" class="w-6 h-6 text-slate-500"></i>
+        <button onclick="closeModal('termosModal')" class="p-2 hover:bg-slate-100 rounded-full transition-colors">
+          <i data-lucide="x" class="w-6 h-6 text-slate-400"></i>
         </button>
       </div>
-      <div class="prose prose-slate prose-lg text-slate-600 max-w-none">
-        <h3 class="font-bold text-slate-900 text-xl mb-4 mt-6">1. Aceitação e Natureza dos Serviços</h3>
-        <p class="mb-6 leading-relaxed">Ao contratar os serviços da Dona APP Engenharia de Software, o Contratante concorda com estes termos. Somos uma software house focada exclusivamente em engenharia de alto padrão. O escopo exato do projeto, os cronogramas de entrega, as metas estabelecidas e as responsabilidades técnicas de ambas as partes estarão documentados formalmente em contrato assinado, com validade jurídica, antes de iniciar o desenvolvimento.</p>
-        
-        <h3 class="font-bold text-slate-900 text-xl mb-4 mt-8">2. Modalidades de Contratação e Licenciamento</h3>
-        <p class="mb-6 leading-relaxed">Oferecemos arquiteturas flexíveis de contratação. O cliente pode optar pela modalidade de <strong>Diluição Financeira (Baixo Custo Mensal)</strong>, onde a mensalidade cobre o desenvolvimento contínuo, a infraestrutura (hospedagem) e a manutenção, mantendo a propriedade do código-fonte com a Dona APP (modelo SaaS). Alternativamente, na modalidade de <strong>Pagamento Único (Capital Fechado)</strong>, o cliente arca com os custos de desenvolvimento baseados em horas de engenharia e, após a quitação total dos pagamentos estipulados no cronograma, a propriedade intelectual do código-fonte é integralmente transferida para o cliente.</p>
-        
-        <h3 class="font-bold text-slate-900 text-xl mb-4 mt-8">3. Propriedade Intelectual</h3>
-        <p class="mb-6 leading-relaxed">Como exposto no item 2, na modalidade de Pagamento Único, os direitos patrimoniais da aplicação sob medida passam a ser do cliente. No entanto, a Dona APP reserva-se o direito de reaproveitar bibliotecas genéricas, helpers e funções de utilidade pública (código não ligado às regras de negócios específicas do cliente) em outros projetos, a fim de garantir velocidade de desenvolvimento.</p>
-        
-        <h3 class="font-bold text-slate-900 text-xl mb-4 mt-8">4. Garantia e Resolução de Bugs</h3>
-        <p class="leading-relaxed">Na Dona APP, bugs de desenvolvimento não são tolerados. Garantimos a correção imediata de qualquer falha estrutural ou de lógica oriunda de nossa autoria sem custos adicionais por 90 dias úteis após a entrega oficial do sistema, conforme preconiza o Código de Defesa do Consumidor. Para clientes no modelo de assinatura, a correção de falhas e a otimização de performance são contínuas durante toda a vigência contratual ativa.</p>
+      <div class="prose prose-slate font-medium text-slate-600 max-w-none">
+        <h3 class="font-bold text-slate-900 text-lg mt-4 mb-2">1. Aceitação e Natureza</h3>
+        <p class="mb-5">O escopo exato, os cronogramas de entrega e as responsabilidades técnicas de ambas as partes estarão documentados formalmente em contrato assinado, com validade jurídica, antes de iniciar o desenvolvimento.</p>
+        <h3 class="font-bold text-slate-900 text-lg mt-4 mb-2">2. Modalidades</h3>
+        <p class="mb-5">Na <strong>Assinatura Mensal</strong>, a infraestrutura (hospedagem) e a manutenção são suportadas pela Dona APP (modelo SaaS). No <strong>Pagamento Único</strong>, a propriedade intelectual do código-fonte é integralmente transferida para o cliente após a quitação total do cronograma de pagamentos.</p>
+        <h3 class="font-bold text-slate-900 text-lg mt-4 mb-2">3. Garantia</h3>
+        <p>Garantimos a correção imediata de qualquer falha estrutural de nossa autoria sem custos adicionais por 90 dias úteis após a entrega oficial do sistema. Para clientes de assinatura mensal, a correção é contínua.</p>
       </div>
-      <div class="mt-10 pt-6 border-t border-slate-100 text-right">
-        <button onclick="closeModal('termosModal')" class="px-8 py-3 bg-slate-900 text-white font-bold rounded-full hover:bg-slate-800 transition-colors">
-          Compreendido
-        </button>
+      <div class="mt-8 pt-6 border-t border-slate-100 text-right">
+        <button onclick="closeModal('termosModal')" class="px-8 py-3 bg-slate-900 text-white font-bold rounded-full hover:bg-slate-800 transition-colors">Fechar</button>
       </div>
     </div>
   </div>
 
-  <!-- Modal Política de Privacidade -->
   <div id="privacidadeModal" class="fixed inset-0 z-[100] hidden flex items-center justify-center p-4">
-    <div class="absolute inset-0 bg-slate-950/70 backdrop-blur-md" onclick="closeModal('privacidadeModal')"></div>
-    <div class="relative w-full max-w-3xl bg-white rounded-3xl shadow-2xl p-8 md:p-12 max-h-[85vh] overflow-y-auto transform transition-all">
-      <div class="flex justify-between items-start mb-8 border-b border-slate-100 pb-6">
+    <div class="absolute inset-0 bg-slate-950/60 backdrop-blur-md" onclick="closeModal('privacidadeModal')"></div>
+    <div class="relative w-full max-w-2xl bg-white rounded-3xl shadow-2xl p-8 md:p-10 max-h-[85vh] overflow-y-auto">
+      <div class="flex justify-between items-start mb-6 pb-6 border-b border-slate-100">
         <div>
-          <h2 class="text-3xl font-extrabold text-slate-900 mb-2">Política de Privacidade</h2>
-          <p class="text-slate-500">Última atualização: 21 de Junho de 2026</p>
+          <h2 class="text-2xl font-extrabold text-slate-900">Política de Privacidade</h2>
         </div>
-        <button onclick="closeModal('privacidadeModal')" class="p-3 hover:bg-slate-100 rounded-full transition-colors">
-          <i data-lucide="x" class="w-6 h-6 text-slate-500"></i>
+        <button onclick="closeModal('privacidadeModal')" class="p-2 hover:bg-slate-100 rounded-full transition-colors">
+          <i data-lucide="x" class="w-6 h-6 text-slate-400"></i>
         </button>
       </div>
-      <div class="prose prose-slate prose-lg text-slate-600 max-w-none">
-        <h3 class="font-bold text-slate-900 text-xl mb-4 mt-6">1. Coleta e Uso de Dados no Site</h3>
-        <p class="mb-6 leading-relaxed">Nossa página institucional tem um princípio claro: coletamos apenas o essencial. O simulador de contratação não salva os dados do visitante em bancos de dados. As escolhas feitas na calculadora são apenas transportadas para o link do WhatsApp para agilizar o contato comercial. Utilizamos tags de ferramentas de Analytics (como Google Analytics e Pixel da Meta) de forma anônima e agregada, focando puramente na melhora de nossa taxa de conversão (CRO) e experiência de usuário, operando em total conformidade com a Lei Geral de Proteção de Dados (LGPD).</p>
-        
-        <h3 class="font-bold text-slate-900 text-xl mb-4 mt-8">2. Sigilo Absoluto de Projeto (NDA)</h3>
-        <p class="mb-6 leading-relaxed">A espinha dorsal da Dona APP é a engenharia de regras de negócio complexas. Nós entendemos que o seu diferencial competitivo mora nos detalhes do seu processo. Portanto, por padrão, assinamos um rigoroso Acordo de Confidencialidade (NDA - Non-Disclosure Agreement) com todos os nossos clientes corporativos. Sua ideia inovadora, o core do seu modelo de negócios e seus dados transacionais sensíveis jamais serão expostos, comentados externamente ou reutilizados de forma concorrencial.</p>
-        
-        <h3 class="font-bold text-slate-900 text-xl mb-4 mt-8">3. Segurança da Informação (Data Security)</h3>
-        <p class="leading-relaxed">Nós hospedamos os sistemas desenvolvidos apenas nos backbones mais resilientes e certificados do planeta, como AWS, Microsoft Azure e Google Cloud Platform. Nossas aplicações nativamente incorporam criptografia SHA-256 ou superior para dados em trânsito (HTTPS/TLS 1.3) e em repouso. Além disso, sempre que aplicável a modelos SaaS, adotamos uma arquitetura rígida de isolamento de dados (multi-tenant com separação lógica ou física) para garantir que o dado de um cliente nunca vaze para outro banco.</p>
+      <div class="prose prose-slate font-medium text-slate-600 max-w-none">
+        <h3 class="font-bold text-slate-900 text-lg mt-4 mb-2">1. Coleta de Dados</h3>
+        <p class="mb-5">Nossa página institucional não salva os dados do visitante em bancos de dados (ex: no simulador). As ferramentas de Analytics operam de forma anônima e agregada, focando puramente na experiência de usuário (LGPD).</p>
+        <h3 class="font-bold text-slate-900 text-lg mt-4 mb-2">2. Sigilo Absoluto (NDA)</h3>
+        <p class="mb-5">Por padrão, assinamos um rigoroso Acordo de Confidencialidade (NDA) com todos os nossos clientes corporativos. A sua ideia, core do negócio e dados jamais serão expostos.</p>
+        <h3 class="font-bold text-slate-900 text-lg mt-4 mb-2">3. Segurança da Informação</h3>
+        <p>Aplicações incorporam criptografia moderna (TLS 1.3) para dados em trânsito e em repouso. Hospedagem restrita aos backbones da AWS, Microsoft Azure e Google Cloud, mantendo arquiteturas com rígido isolamento de dados.</p>
       </div>
-      <div class="mt-10 pt-6 border-t border-slate-100 text-right">
-        <button onclick="closeModal('privacidadeModal')" class="px-8 py-3 bg-slate-900 text-white font-bold rounded-full hover:bg-slate-800 transition-colors">
-          Compreendido
-        </button>
+      <div class="mt-8 pt-6 border-t border-slate-100 text-right">
+        <button onclick="closeModal('privacidadeModal')" class="px-8 py-3 bg-slate-900 text-white font-bold rounded-full hover:bg-slate-800 transition-colors">Fechar</button>
       </div>
     </div>
   </div>
 
-  <!-- SCRIPTS FUNCIONAIS -->
   <script>
-    // 1. Inicializa Ícones Lucide
     lucide.createIcons();
 
-    // 2. Função Base do WhatsApp (Injeção de Contexto)
     function openWhatsApp(text) {
       const phone = '5527997003999';
-      const encodedText = encodeURIComponent(text);
-      window.open(`https://api.whatsapp.com/send?phone=${phone}&text=${encodedText}`, '_blank');
+      window.open(`https://api.whatsapp.com/send?phone=${phone}&text=${encodeURIComponent(text)}`, '_blank');
     }
 
-    // 3. Funções de Controle de Modal com Prevenção de Scroll
     function openModal(id) {
-      const modal = document.getElementById(id);
-      modal.classList.remove('hidden');
-      // Força um pequeno reflow para a transição
-      void modal.offsetWidth;
+      const m = document.getElementById(id);
+      m.classList.remove('hidden');
       document.body.style.overflow = 'hidden';
     }
     
     function closeModal(id) {
-      const modal = document.getElementById(id);
-      modal.classList.add('hidden');
+      const m = document.getElementById(id);
+      m.classList.add('hidden');
       document.body.style.overflow = '';
     }
 
-    // Fecha modal clicando na tecla ESC
-    document.addEventListener('keydown', function(event) {
-      if (event.key === 'Escape') {
-        document.querySelectorAll('[id$="Modal"]').forEach(modal => {
-          if (!modal.classList.contains('hidden')) {
-            modal.classList.add('hidden');
-            document.body.style.overflow = '';
-          }
-        });
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') {
+        ['termosModal', 'privacidadeModal'].forEach(id => closeModal(id));
       }
     });
 
-    // 4. Lógica Interativa do Simulador (KILLER FEATURE)
     function updateSimulator() {
-      // Captura de escolhas
-      const perfilCaixaInputs = document.querySelectorAll('input[name="perfilCaixa"]');
-      const plataformaInputs = document.querySelectorAll('input[name="plataforma"]');
-      
-      let perfilCaixa = 'capital';
-      let plataforma = 'nuvem';
-      
-      perfilCaixaInputs.forEach(input => { if (input.checked) perfilCaixa = input.value; });
-      plataformaInputs.forEach(input => { if (input.checked) plataforma = input.value; });
-
+      let plataforma = document.querySelector('input[name="plataforma"]:checked')?.value || 'web';
+      let modelo = document.querySelector('input[name="modelo"]:checked')?.value || 'unico';
       const resultCard = document.getElementById('simulatorResult');
       
       let html = '';
       
-      // Lógica de Renderização Baseada na Escolha
-      if (perfilCaixa === 'diluir') {
+      let textoPlataforma = '';
+      if (plataforma === 'web') textoPlataforma = "Sua aplicação ficará disponível via navegador (nuvem), acessível de qualquer dispositivo de forma instantânea.";
+      if (plataforma === 'mobile') textoPlataforma = "Construiremos um aplicativo nativo distribuído através da App Store (Apple) e Google Play.";
+      if (plataforma === 'desktop') textoPlataforma = "O sistema rodará internamente em computadores Windows, garantindo operação 100% offline e à prova de quedas de internet.";
+
+      if (modelo === 'assinatura') {
         html = `
-          <div class="flex items-center gap-3 mb-5">
-            <div class="w-12 h-12 bg-dona-100 text-dona-600 rounded-xl flex items-center justify-center shadow-sm">
-              <i data-lucide="activity" class="w-6 h-6"></i>
-            </div>
-            <h3 class="text-2xl font-extrabold text-dona-700">Modalidade Baixo Custo Inicial</h3>
+          <div class="flex items-center gap-3 mb-3">
+            <i data-lucide="activity" class="w-6 h-6 text-dona-600"></i>
+            <h3 class="text-xl font-extrabold text-dona-700">Desenvolvimento Contínuo (SaaS)</h3>
           </div>
-          <p class="text-slate-700 font-bold mb-3 text-lg">Parecer da Engenharia:</p>
-          <p class="text-slate-600 mb-6 leading-relaxed text-lg">Você optou por focar na operação e deixar a tecnologia com a gente num formato de serviço contínuo. Entraremos num fluxo de desenvolvimento ágil onde a <strong>Dona APP assume 100% dos custos pesados de servidores cloud, manutenção de rotina e evolução do código</strong>. O pagamento é via mensalidade previsível, sem sustos ou necessidade de levantar grande capital inicial para criar o software.</p>
-          
-          <div class="bg-white rounded-xl p-5 border border-slate-200">
-            <h4 class="font-bold text-slate-800 mb-3 uppercase text-sm tracking-wider">O que está incluso nesta modalidade:</h4>
-            <ul class="space-y-3 text-base text-slate-600 font-medium">
-              <li class="flex items-start gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-emerald-500 shrink-0 mt-0.5"></i> Zero investimento milionário de setup inicial. Você paga a assinatura.</li>
-              <li class="flex items-start gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-emerald-500 shrink-0 mt-0.5"></i> Resolução de bugs e correções preventivas totalmente inclusas no plano.</li>
-              <li class="flex items-start gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-emerald-500 shrink-0 mt-0.5"></i> Sistema construído de forma otimizada para rodar ${plataforma === 'nuvem' ? 'na nossa nuvem escalável, com SLA de 99.9%' : 'no seu ambiente local/Windows, com nossa gestão remota para updates de segurança'}.</li>
-            </ul>
-          </div>
+          <p class="text-slate-600 font-medium leading-relaxed mb-3">
+            <strong>Recomendação:</strong> Ideal para quem quer focar exclusivamente na operação do negócio e delegar a engenharia e a infraestrutura pesada. A Dona APP desenvolve, hospeda e mantém o sistema no ar.
+          </p>
+          <ul class="text-sm font-semibold text-slate-500 space-y-2 pl-2 border-l-2 border-dona-200 mt-4">
+            <li>• Zero investimento milionário de setup inicial.</li>
+            <li>• Custo de servidores e manutenção já cobertos na mensalidade.</li>
+            <li>• ${textoPlataforma}</li>
+          </ul>
         `;
       } else {
         html = `
-          <div class="flex items-center gap-3 mb-5">
-            <div class="w-12 h-12 bg-dona-100 text-dona-600 rounded-xl flex items-center justify-center shadow-sm">
-              <i data-lucide="briefcase" class="w-6 h-6"></i>
-            </div>
-            <h3 class="text-2xl font-extrabold text-dona-700">Modalidade Pagamento Único</h3>
+          <div class="flex items-center gap-3 mb-3">
+            <i data-lucide="briefcase" class="w-6 h-6 text-dona-600"></i>
+            <h3 class="text-xl font-extrabold text-dona-700">Aquisição de Software (Escopo Fechado)</h3>
           </div>
-          <p class="text-slate-700 font-bold mb-3 text-lg">Parecer da Engenharia:</p>
-          <p class="text-slate-600 mb-6 leading-relaxed text-lg">Você tem capital para investir pesado e prefere deter o ativo tecnológico final. Realizaremos o levantamento de requisitos para fechar o escopo exato. O modelo financeiro maduro adotado pelo mercado e por nós é <strong>30% no kick-off e 70% apenas na entrega do sistema 100% funcional</strong>. A infraestrutura (contas AWS/Google) é sua e a propriedade intelectual do código-fonte será transferida para a sua empresa.</p>
-          
-          <div class="bg-white rounded-xl p-5 border border-slate-200">
-            <h4 class="font-bold text-slate-800 mb-3 uppercase text-sm tracking-wider">O que está garantido nesta modalidade:</h4>
-            <ul class="space-y-3 text-base text-slate-600 font-medium">
-              <li class="flex items-start gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-emerald-500 shrink-0 mt-0.5"></i> Escopo rigorosamente fechado com cronograma e milestones de entrega.</li>
-              <li class="flex items-start gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-emerald-500 shrink-0 mt-0.5"></i> Transferência completa da Propriedade Intelectual (código-fonte) ao quitar o contrato.</li>
-              <li class="flex items-start gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-emerald-500 shrink-0 mt-0.5"></i> A arquitetura será concebida e instalada ${plataforma === 'nuvem' ? 'na sua própria infraestrutura de Nuvem, dando-lhe soberania.' : 'para rodar nativamente Offline no Windows da sua operação local, imune a quedas de internet.'}</li>
-            </ul>
-          </div>
+          <p class="text-slate-600 font-medium leading-relaxed mb-3">
+            <strong>Recomendação:</strong> O caminho para quem precisa de soberania total sobre o ativo tecnológico (código-fonte). Projeto desenvolvido sob medida com pagamentos atrelados a entregas e metas.
+          </p>
+          <ul class="text-sm font-semibold text-slate-500 space-y-2 pl-2 border-l-2 border-dona-200 mt-4">
+            <li>• Pagamento único (dividido em milestones).</li>
+            <li>• Transferência de PI (Propriedade Intelectual) após a quitação.</li>
+            <li>• ${textoPlataforma}</li>
+          </ul>
         `;
       }
       
-      // Animação de transição suave
       resultCard.style.opacity = 0;
       setTimeout(() => {
         resultCard.innerHTML = html;
-        lucide.createIcons(); // Recria ícones dentro do innerHTML injetado
+        lucide.createIcons();
         resultCard.style.opacity = 1;
       }, 150);
     }
     
-    // Função acionada pelo Botão do Simulador
     function submitSimulator() {
-      // Re-valida estados
-      const perfilCaixaInputs = document.querySelectorAll('input[name="perfilCaixa"]');
-      const plataformaInputs = document.querySelectorAll('input[name="plataforma"]');
+      const p = document.querySelector('input[name="plataforma"]:checked')?.value;
+      const m = document.querySelector('input[name="modelo"]:checked')?.value;
       
-      let perfilCaixa = 'capital';
-      let plataforma = 'nuvem';
+      let sysMap = { 'web': 'Sistema Web', 'mobile': 'App Mobile', 'desktop': 'Sistema Offline' };
+      let modMap = { 'assinatura': 'Assinatura (SaaS)', 'unico': 'Pagamento Único (Código Próprio)' };
       
-      perfilCaixaInputs.forEach(input => { if (input.checked) perfilCaixa = input.value; });
-      plataformaInputs.forEach(input => { if (input.checked) plataforma = input.value; });
-      
-      const tipoSistema = plataforma === 'nuvem' ? 'Web/Cloud' : 'Windows Offline';
-      const tipoModalidade = perfilCaixa === 'diluir' ? 'Baixo Custo Mensal (SaaS)' : 'Pagamento Único (Escopo Fechado)';
-      
-      const text = `Olá Krys, fiz a simulação no site da Dona APP. Tenho um projeto e interesse em criar um sistema *[${tipoSistema}]* na modalidade de *[${tipoModalidade}]*. Podemos agendar uma reunião técnica para eu apresentar minhas regras de negócio?`;
-      
-      openWhatsApp(text);
+      const sys = sysMap[p];
+      const mod = modMap[m];
+      openWhatsApp(`Olá, utilizei o simulador. Tenho interesse em construir um [${sys}] na modalidade de [${mod}]. Como podemos avançar?`);
     }
 
-    // Inicializa o simulador na carga inicial
     document.addEventListener('DOMContentLoaded', updateSimulator);
   </script>
 </body>
