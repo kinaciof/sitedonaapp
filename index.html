@@ -933,33 +933,82 @@
     </div>
   </section>
 
-  <!-- CURIOSIDADE: SAAS PROPRIETÁRIO -->
-  <section class="py-16 px-4 sm:px-6 lg:px-8 border-t border-slate-200 bg-slate-50">
-    <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-12">
-      <div class="md:w-1/2">
-        <div class="inline-flex items-center gap-2 px-3 py-1 bg-slate-200 text-slate-600 text-[10px] font-bold rounded uppercase tracking-wider mb-6">
-          <i data-lucide="code-2" class="w-3 h-3"></i> Experiência Prática: Nosso SaaS
-        </div>
-        
-        <div class="mb-6">
-          <img src="images/dono-da-oficina-logo.png" alt="Dono da Oficina" class="h-8 w-auto grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all cursor-default">
-        </div>
-        
-        <p class="text-slate-500 text-sm font-medium leading-relaxed mb-4">
-          A Dona APP não é apenas uma consultoria técnica; nós respiramos código operando nossos próprios sistemas diariamente. 
-        </p>
-        <p class="text-slate-500 text-sm font-medium leading-relaxed mb-6">
-          Esta plataforma acima é o nosso produto de gestão automotiva, onde validamos na prática automações, integrações de IA e fluxos em nuvem de alto tráfego antes de aplicar essa mesma tecnologia em projetos B2B.
-        </p>
-
-        <a href="https://donodaoficina.com.br" target="_blank" class="inline-flex items-center gap-1.5 text-xs font-bold text-slate-400 hover:text-dona-600 transition-colors uppercase tracking-wide">
-          Visitar Plataforma <i data-lucide="external-link" class="w-3 h-3"></i>
-        </a>
+  <!-- FAQ -->
+  <section id="faq" class="py-24 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
+    <div class="text-center mb-16">
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-100 text-slate-700 text-sm font-bold mb-4">
+        <i data-lucide="help-circle" class="w-4 h-4"></i>
+        Dúvidas Frequentes
       </div>
+      <h2 class="text-3xl font-extrabold text-slate-900 mb-4">Perguntas Comuns</h2>
+      <p class="text-lg font-medium text-slate-600">Tudo o que você precisa saber antes de iniciarmos o seu projeto de engenharia ou automação corporativa.</p>
+    </div>
 
-      <div class="md:w-1/2 flex md:justify-end w-full">
-        <img src="images/hero-dashboard.gif" alt="Interface Dono da Oficina" class="rounded-xl shadow-sm border border-slate-200 w-full max-w-sm h-auto opacity-80 hover:opacity-100 transition-opacity">
-      </div>
+    <div class="space-y-4">
+      <!-- Item 1 -->
+      <details class="group border border-slate-200 rounded-2xl bg-white hover:border-dona-300 transition-colors [&_summary::-webkit-details-marker]:hidden">
+        <summary class="flex cursor-pointer items-center justify-between gap-1.5 p-6 text-slate-900 font-bold">
+          <h2 class="text-lg">O código fonte será nosso?</h2>
+          <span class="shrink-0 rounded-full bg-slate-50 p-2 text-slate-900 group-open:-rotate-180 transition-transform duration-300">
+            <i data-lucide="chevron-down" class="w-5 h-5"></i>
+          </span>
+        </summary>
+        <p class="px-6 pb-6 text-slate-600 font-medium leading-relaxed">
+          Sim. Caso você opte pelo modelo de contratação "Código Fonte" em vez do nosso SaaS (Mensalidade), após a quitação do desenvolvimento, 100% da propriedade intelectual e do código-fonte da plataforma são transferidos para a sua empresa.
+        </p>
+      </details>
+
+      <!-- Item 2 -->
+      <details class="group border border-slate-200 rounded-2xl bg-white hover:border-dona-300 transition-colors [&_summary::-webkit-details-marker]:hidden">
+        <summary class="flex cursor-pointer items-center justify-between gap-1.5 p-6 text-slate-900 font-bold">
+          <h2 class="text-lg">Vocês assinam Acordo de Confidencialidade (NDA)?</h2>
+          <span class="shrink-0 rounded-full bg-slate-50 p-2 text-slate-900 group-open:-rotate-180 transition-transform duration-300">
+            <i data-lucide="chevron-down" class="w-5 h-5"></i>
+          </span>
+        </summary>
+        <p class="px-6 pb-6 text-slate-600 font-medium leading-relaxed">
+          Absolutamente. Como lidamos com a inteligência e as regras de negócio core da sua empresa, iniciamos nossas tratativas com a assinatura de um rigoroso NDA. Sua estratégia jamais será compartilhada ou vazada para concorrentes.
+        </p>
+      </details>
+
+      <!-- Item 3 -->
+      <details class="group border border-slate-200 rounded-2xl bg-white hover:border-dona-300 transition-colors [&_summary::-webkit-details-marker]:hidden">
+        <summary class="flex cursor-pointer items-center justify-between gap-1.5 p-6 text-slate-900 font-bold">
+          <h2 class="text-lg">Como funciona o custo de infraestrutura e tokens da IA?</h2>
+          <span class="shrink-0 rounded-full bg-slate-50 p-2 text-slate-900 group-open:-rotate-180 transition-transform duration-300">
+            <i data-lucide="chevron-down" class="w-5 h-5"></i>
+          </span>
+        </summary>
+        <p class="px-6 pb-6 text-slate-600 font-medium leading-relaxed">
+          Nós não cobramos comissão ou ágio sobre o seu consumo em nuvem. O custo de "raciocínio" dos agentes de IA (os tokens) ou da hospedagem dos servidores é faturado diretamente pelo provedor parceiro (OpenAI, Google Cloud, AWS, Anthropic) no seu cartão de crédito corporativo, de acordo estritamente com o seu uso real.
+        </p>
+      </details>
+
+      <!-- Item 4 -->
+      <details class="group border border-slate-200 rounded-2xl bg-white hover:border-dona-300 transition-colors [&_summary::-webkit-details-marker]:hidden">
+        <summary class="flex cursor-pointer items-center justify-between gap-1.5 p-6 text-slate-900 font-bold">
+          <h2 class="text-lg">Qual é o prazo médio de um projeto de software?</h2>
+          <span class="shrink-0 rounded-full bg-slate-50 p-2 text-slate-900 group-open:-rotate-180 transition-transform duration-300">
+            <i data-lucide="chevron-down" class="w-5 h-5"></i>
+          </span>
+        </summary>
+        <p class="px-6 pb-6 text-slate-600 font-medium leading-relaxed">
+          Após o Kick-off, entregamos o primeiro Mockup Visual (Protótipo Navegável) em até 15 dias para alinhar expectativas antes de programar o "motor" do sistema. Projetos de automação ou MVPs pontuais levam de 4 a 6 semanas de desenvolvimento real. Já plataformas core, ERPs ou ecossistemas complexos podem demandar de 3 a 6 meses de ciclo de engenharia intensa.
+        </p>
+      </details>
+
+      <!-- Item 5 -->
+      <details class="group border border-slate-200 rounded-2xl bg-white hover:border-dona-300 transition-colors [&_summary::-webkit-details-marker]:hidden">
+        <summary class="flex cursor-pointer items-center justify-between gap-1.5 p-6 text-slate-900 font-bold">
+          <h2 class="text-lg">A manutenção e suporte técnico estão inclusos?</h2>
+          <span class="shrink-0 rounded-full bg-slate-50 p-2 text-slate-900 group-open:-rotate-180 transition-transform duration-300">
+            <i data-lucide="chevron-down" class="w-5 h-5"></i>
+          </span>
+        </summary>
+        <p class="px-6 pb-6 text-slate-600 font-medium leading-relaxed">
+          Se você optar por pagar através do formato "SaaS / Mensalidade", toda a evolução, suporte técnico e resolução de bugs já estão blindados no seu plano mensal. Se você optou por pagar pelo formato "Código Fonte", entregamos o sistema com 90 dias de garantia técnica contra vícios de software, e as manutenções pós-garantia são orçadas sob demanda avulsa.
+        </p>
+      </details>
     </div>
   </section>
 
