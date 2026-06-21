@@ -111,6 +111,28 @@
       color: #4f46e5;
       opacity: 1;
     }
+
+    /* Linha do Tempo / Workflow */
+    .workflow-line::after {
+      content: '';
+      position: absolute;
+      top: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      height: 100%;
+      width: 2px;
+      background: #e2e8f0;
+      z-index: 0;
+    }
+    @media (min-width: 1024px) {
+      .workflow-line::after {
+        top: 3rem;
+        left: 0;
+        transform: none;
+        height: 2px;
+        width: 100%;
+      }
+    }
   </style>
 </head>
 <body class="antialiased">
@@ -132,7 +154,7 @@
       <!-- Navegação -->
       <nav class="hidden md:flex items-center gap-8 font-semibold text-sm text-slate-600">
         <a href="#servicos" class="hover:text-dona-600 transition-colors">Automação de IA</a>
-        <a href="#ecossistema" class="hover:text-dona-600 transition-colors">Nosso SaaS</a>
+        <a href="#workflow" class="hover:text-dona-600 transition-colors">Como Trabalhamos</a>
         <a href="#experiencia" class="hover:text-dona-600 transition-colors">Experiência Adquirida</a>
       </nav>
       
@@ -249,8 +271,71 @@
     </div>
   </section>
 
+  <!-- WORKFLOW / COMO TRABALHAMOS -->
+  <section id="workflow" class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto bg-slate-50 border-y border-slate-200">
+    <div class="text-center mb-16">
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-200 text-slate-700 text-sm font-bold mb-4">
+        <i data-lucide="git-merge" class="w-4 h-4"></i>
+        O Processo Dona APP
+      </div>
+      <h2 class="text-3xl font-extrabold text-slate-900 mb-4">Como Funciona o Nosso Trabalho</h2>
+      <p class="text-lg font-medium text-slate-600 max-w-2xl mx-auto">
+        Processo claro e transparente. Você acompanha cada etapa visual e estratégica antes mesmo de qualquer código ser escrito ou contrato ser assinado.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-4 gap-8 relative workflow-line">
+      
+      <!-- Passo 1 -->
+      <div class="relative z-10 bg-white rounded-3xl p-8 border border-slate-200 shadow-sm flex flex-col items-center text-center">
+        <div class="w-16 h-16 bg-slate-900 rounded-2xl flex items-center justify-center text-white font-extrabold text-xl shadow-lg mb-6 ring-8 ring-slate-50">
+          1
+        </div>
+        <h3 class="text-lg font-bold text-slate-900 mb-3">Reunião de Diagnóstico</h3>
+        <p class="text-sm font-medium text-slate-600">
+          Fazemos uma reunião imersiva inicial. Mergulhamos no seu fluxo de trabalho, entendemos as dores operacionais e mapeamos onde a Inteligência Artificial e a automação trarão mais valor e retorno.
+        </p>
+      </div>
+
+      <!-- Passo 2 -->
+      <div class="relative z-10 bg-white rounded-3xl p-8 border border-slate-200 shadow-sm flex flex-col items-center text-center">
+        <div class="w-16 h-16 bg-dona-100 rounded-2xl flex items-center justify-center text-dona-600 font-extrabold text-xl shadow-sm mb-6 ring-8 ring-slate-50">
+          <i data-lucide="pen-tool" class="w-7 h-7"></i>
+        </div>
+        <h3 class="text-lg font-bold text-slate-900 mb-3">Mockup em 15 Dias</h3>
+        <p class="text-sm font-medium text-slate-600">
+          Apresentamos um <strong>protótipo visual completo</strong> do seu projeto em até 15 dias. São telas de navegação simulada (sem lógica e sem banco de dados) para alinhar a expectativa estritamente no visual e no UX.
+        </p>
+      </div>
+
+      <!-- Passo 3 -->
+      <div class="relative z-10 bg-white rounded-3xl p-8 border border-slate-200 shadow-sm flex flex-col items-center text-center">
+        <div class="w-16 h-16 bg-amber-100 rounded-2xl flex items-center justify-center text-amber-600 font-extrabold text-xl shadow-sm mb-6 ring-8 ring-slate-50">
+          <i data-lucide="scale" class="w-7 h-7"></i>
+        </div>
+        <h3 class="text-lg font-bold text-slate-900 mb-3">Escopo e Precificação</h3>
+        <p class="text-sm font-medium text-slate-600">
+          Com o Mockup validado por você, fechamos a engenharia exata necessária e apresentamos as opções de negócios ideais: <strong>Mensalidade (SaaS)</strong> ou <strong>Projeto Fechado (Código Fonte Próprio)</strong>.
+        </p>
+      </div>
+
+      <!-- Passo 4 -->
+      <div class="relative z-10 bg-white rounded-3xl p-8 border border-dona-200 shadow-md flex flex-col items-center text-center ring-1 ring-dona-600">
+        <div class="w-16 h-16 bg-dona-600 rounded-2xl flex items-center justify-center text-white font-extrabold text-xl shadow-lg shadow-dona-600/30 mb-6 ring-8 ring-slate-50">
+          <i data-lucide="file-signature" class="w-7 h-7"></i>
+        </div>
+        <h3 class="text-lg font-bold text-slate-900 mb-3">Proposta e Kick-off</h3>
+        <div class="text-sm font-medium text-slate-600 text-left w-full space-y-3 border-t border-slate-100 pt-3 mt-1">
+          <p><span class="font-bold text-slate-800 block">🔹 Modelo Mensalidade:</span> Primeira paga na aprovação e a cada 30 dias continuamente (reajustes anuais negociáveis).</p>
+          <p><span class="font-bold text-slate-800 block">🔹 Projeto Fechado:</span> Entrada de 30% no start técnico, e o saldo integral faturado apenas na entrega final do código.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
   <!-- ECOSSISTEMA DONA APP -->
-  <section id="ecossistema" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto bg-white rounded-3xl border border-slate-200 shadow-sm mb-20">
+  <section id="ecossistema" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto bg-white rounded-3xl border border-slate-200 shadow-sm my-20">
     <div class="flex flex-col lg:flex-row items-center gap-14 p-4">
       <div class="lg:w-1/2">
         <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-50 border border-orange-200 text-orange-700 text-xs font-bold mb-4">
