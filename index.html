@@ -569,7 +569,7 @@
 
   <!-- KILLER FEATURE: SIMULADOR DE ORÇAMENTO INTELIGENTE -->
   <section id="simulador" class="py-24 px-4 sm:px-6 lg:px-8 bg-white border-y border-slate-200">
-    <div class="max-w-5xl mx-auto">
+    <div class="max-w-6xl mx-auto">
       <div class="text-center mb-16">
         <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-100 text-slate-700 text-sm font-bold mb-4">
           <i data-lucide="calculator" class="w-4 h-4"></i>
@@ -584,101 +584,97 @@
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
           
           <!-- ESQUERDA: PERGUNTAS -->
-          <div class="space-y-10">
+          <div class="flex flex-col gap-8">
             <!-- Passo 1: Tamanho do Projeto -->
             <div>
               <div class="flex items-center gap-3 mb-4">
                 <div class="w-7 h-7 rounded-full bg-dona-600 text-white flex items-center justify-center font-bold text-xs">1</div>
                 <h3 class="text-lg font-bold text-slate-900">Qual é o volume de desenvolvimento?</h3>
               </div>
-              <div class="space-y-3">
+              <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
                 <label class="relative block cursor-pointer">
                   <input type="radio" name="tamanho" value="simples" class="sr-only" onchange="updateSimulator()">
-                  <div class="border border-slate-200 rounded-xl p-4 hover:border-dona-300 transition-all flex items-center gap-4 relative">
-                    <i data-lucide="check-circle-2" class="w-5 h-5 absolute top-4 right-4 text-dona-600 opacity-0 transition-opacity check-icon"></i>
-                    <i data-lucide="zap" class="w-6 h-6 text-slate-400 shrink-0"></i>
-                    <div>
-                      <span class="block font-bold text-slate-800 text-sm">Ideia Simples / Automação Pontual</span>
-                      <span class="block text-xs font-medium text-slate-500">Estimativa base: ~80h a 160h de trabalho.</span>
-                    </div>
+                  <div class="border border-slate-200 rounded-xl p-4 hover:border-dona-300 transition-all flex flex-col items-center text-center h-full relative">
+                    <i data-lucide="check-circle-2" class="w-5 h-5 absolute top-3 right-3 text-dona-600 opacity-0 transition-opacity check-icon"></i>
+                    <i data-lucide="zap" class="w-6 h-6 text-slate-400 mb-2"></i>
+                    <span class="block font-bold text-slate-800 text-sm leading-tight">Ideia Simples / Automação Pontual</span>
+                    <span class="block text-[11px] font-medium text-slate-500 mt-2">Estimativa base: ~80h a 160h.</span>
                   </div>
                 </label>
                 <label class="relative block cursor-pointer">
                   <input type="radio" name="tamanho" value="plataforma" class="sr-only" onchange="updateSimulator()" checked>
-                  <div class="border border-slate-200 rounded-xl p-4 hover:border-dona-300 transition-all flex items-center gap-4 relative">
-                    <i data-lucide="check-circle-2" class="w-5 h-5 absolute top-4 right-4 text-dona-600 opacity-0 transition-opacity check-icon"></i>
-                    <i data-lucide="layers" class="w-6 h-6 text-slate-400 shrink-0"></i>
-                    <div>
-                      <span class="block font-bold text-slate-800 text-sm">Plataforma Core / MVP Robusto</span>
-                      <span class="block text-xs font-medium text-slate-500">Estimativa base: ~200h a 400h. Módulos integrados.</span>
-                    </div>
+                  <div class="border border-slate-200 rounded-xl p-4 hover:border-dona-300 transition-all flex flex-col items-center text-center h-full relative">
+                    <i data-lucide="check-circle-2" class="w-5 h-5 absolute top-3 right-3 text-dona-600 opacity-0 transition-opacity check-icon"></i>
+                    <i data-lucide="layers" class="w-6 h-6 text-slate-400 mb-2"></i>
+                    <span class="block font-bold text-slate-800 text-sm leading-tight">Plataforma Core / MVP Robusto</span>
+                    <span class="block text-[11px] font-medium text-slate-500 mt-2">Estimativa: ~200h a 400h. Módulos integrados.</span>
                   </div>
                 </label>
                 <label class="relative block cursor-pointer">
                   <input type="radio" name="tamanho" value="ecossistema" class="sr-only" onchange="updateSimulator()">
-                  <div class="border border-slate-200 rounded-xl p-4 hover:border-dona-300 transition-all flex items-center gap-4 relative">
-                    <i data-lucide="check-circle-2" class="w-5 h-5 absolute top-4 right-4 text-dona-600 opacity-0 transition-opacity check-icon"></i>
-                    <i data-lucide="boxes" class="w-6 h-6 text-slate-400 shrink-0"></i>
-                    <div>
-                      <span class="block font-bold text-slate-800 text-sm">Ecossistema Complexo</span>
-                      <span class="block text-xs font-medium text-slate-500">Estimativa base: +500h. Sistemas interconectados.</span>
+                  <div class="border border-slate-200 rounded-xl p-4 hover:border-dona-300 transition-all flex flex-col items-center text-center h-full relative">
+                    <i data-lucide="check-circle-2" class="w-5 h-5 absolute top-3 right-3 text-dona-600 opacity-0 transition-opacity check-icon"></i>
+                    <i data-lucide="boxes" class="w-6 h-6 text-slate-400 mb-2"></i>
+                    <span class="block font-bold text-slate-800 text-sm leading-tight">Ecossistema Complexo</span>
+                    <span class="block text-[11px] font-medium text-slate-500 mt-2">Estimativa: +500h. Sistemas interconectados.</span>
+                  </div>
+                </label>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <!-- Passo 2: IA -->
+              <div>
+                <div class="flex items-center gap-3 mb-4">
+                  <div class="w-7 h-7 rounded-full bg-dona-600 text-white flex items-center justify-center font-bold text-xs">2</div>
+                  <h3 class="text-base font-bold text-slate-900">Camada de Inteligência?</h3>
+                </div>
+                <div class="grid grid-cols-2 gap-3">
+                  <label class="relative cursor-pointer">
+                    <input type="radio" name="inteligencia" value="nenhuma" class="sr-only" onchange="updateSimulator()" checked>
+                    <div class="border border-slate-200 rounded-xl p-3 text-center hover:border-dona-300 transition-all h-full relative">
+                      <i data-lucide="check-circle-2" class="w-4 h-4 absolute top-2 right-2 text-dona-600 opacity-0 transition-opacity check-icon"></i>
+                      <span class="block font-bold text-slate-800 text-xs mt-2 leading-tight">Engenharia Pura</span>
+                      <span class="block text-[10px] font-medium text-slate-500 mt-1">Sem IA</span>
                     </div>
-                  </div>
-                </label>
+                  </label>
+                  <label class="relative cursor-pointer">
+                    <input type="radio" name="inteligencia" value="ia" class="sr-only" onchange="updateSimulator()">
+                    <div class="border border-slate-200 rounded-xl p-3 text-center hover:border-dona-300 transition-all h-full relative">
+                      <i data-lucide="check-circle-2" class="w-4 h-4 absolute top-2 right-2 text-dona-600 opacity-0 transition-opacity check-icon"></i>
+                      <span class="block font-bold text-slate-800 text-xs mt-2 leading-tight">Com Automação IA</span>
+                      <span class="block text-[10px] font-medium text-slate-500 mt-1">Agentes Treinados</span>
+                    </div>
+                  </label>
+                </div>
               </div>
-            </div>
 
-            <!-- Passo 2: IA -->
-            <div>
-              <div class="flex items-center gap-3 mb-4">
-                <div class="w-7 h-7 rounded-full bg-dona-600 text-white flex items-center justify-center font-bold text-xs">2</div>
-                <h3 class="text-lg font-bold text-slate-900">Camada de Inteligência?</h3>
-              </div>
-              <div class="grid grid-cols-2 gap-3">
-                <label class="relative cursor-pointer">
-                  <input type="radio" name="inteligencia" value="nenhuma" class="sr-only" onchange="updateSimulator()" checked>
-                  <div class="border border-slate-200 rounded-xl p-4 text-center hover:border-dona-300 transition-all h-full relative">
-                    <i data-lucide="check-circle-2" class="w-5 h-5 absolute top-2 right-2 text-dona-600 opacity-0 transition-opacity check-icon"></i>
-                    <span class="block font-bold text-slate-800 text-sm mt-2">Engenharia Pura</span>
-                    <span class="block text-[11px] font-medium text-slate-500 mt-1">Sem integração com IA</span>
-                  </div>
-                </label>
-                <label class="relative cursor-pointer">
-                  <input type="radio" name="inteligencia" value="ia" class="sr-only" onchange="updateSimulator()">
-                  <div class="border border-slate-200 rounded-xl p-4 text-center hover:border-dona-300 transition-all h-full relative">
-                    <i data-lucide="check-circle-2" class="w-5 h-5 absolute top-2 right-2 text-dona-600 opacity-0 transition-opacity check-icon"></i>
-                    <span class="block font-bold text-slate-800 text-sm mt-2">Automação com IA</span>
-                    <span class="block text-[11px] font-medium text-slate-500 mt-1">Agentes e LLMs treinados</span>
-                  </div>
-                </label>
-              </div>
-            </div>
-
-            <!-- Passo 3: Perfil de Acesso -->
-            <div>
-              <div class="flex items-center gap-3 mb-4">
-                <div class="w-7 h-7 rounded-full bg-dona-600 text-white flex items-center justify-center font-bold text-xs">3</div>
-                <h3 class="text-lg font-bold text-slate-900">Perfil de Acesso e Infra</h3>
-              </div>
-              <div class="grid grid-cols-2 gap-3">
-                <label class="relative cursor-pointer">
-                  <input type="radio" name="acesso" value="privado" class="sr-only" onchange="updateSimulator()" checked>
-                  <div class="border border-slate-200 rounded-xl p-4 hover:border-dona-300 transition-all text-center h-full relative">
-                    <i data-lucide="check-circle-2" class="w-5 h-5 absolute top-2 right-2 text-dona-600 opacity-0 transition-opacity check-icon"></i>
-                    <i data-lucide="lock" class="w-5 h-5 mx-auto text-slate-400 mb-2"></i>
-                    <span class="block font-bold text-slate-800 text-sm">Privado / Interno</span>
-                    <span class="block text-[11px] font-medium text-slate-500">Segurança rígida. Carga baixa.</span>
-                  </div>
-                </label>
-                <label class="relative cursor-pointer">
-                  <input type="radio" name="acesso" value="publico" class="sr-only" onchange="updateSimulator()">
-                  <div class="border border-slate-200 rounded-xl p-4 hover:border-dona-300 transition-all text-center h-full relative">
-                    <i data-lucide="check-circle-2" class="w-5 h-5 absolute top-2 right-2 text-dona-600 opacity-0 transition-opacity check-icon"></i>
-                    <i data-lucide="users-2" class="w-5 h-5 mx-auto text-slate-400 mb-2"></i>
-                    <span class="block font-bold text-slate-800 text-sm">Público / B2C</span>
-                    <span class="block text-[11px] font-medium text-slate-500">Muitos usuários. Carga alta.</span>
-                  </div>
-                </label>
+              <!-- Passo 3: Perfil de Acesso -->
+              <div>
+                <div class="flex items-center gap-3 mb-4">
+                  <div class="w-7 h-7 rounded-full bg-dona-600 text-white flex items-center justify-center font-bold text-xs">3</div>
+                  <h3 class="text-base font-bold text-slate-900">Perfil de Acesso e Infra</h3>
+                </div>
+                <div class="grid grid-cols-2 gap-3">
+                  <label class="relative cursor-pointer">
+                    <input type="radio" name="acesso" value="privado" class="sr-only" onchange="updateSimulator()" checked>
+                    <div class="border border-slate-200 rounded-xl p-3 text-center hover:border-dona-300 transition-all h-full relative">
+                      <i data-lucide="check-circle-2" class="w-4 h-4 absolute top-2 right-2 text-dona-600 opacity-0 transition-opacity check-icon"></i>
+                      <i data-lucide="lock" class="w-4 h-4 mx-auto text-slate-400 mb-1 mt-1"></i>
+                      <span class="block font-bold text-slate-800 text-xs leading-tight">Privado/Interno</span>
+                      <span class="block text-[10px] font-medium text-slate-500 mt-1">Segurança e Carga leve</span>
+                    </div>
+                  </label>
+                  <label class="relative cursor-pointer">
+                    <input type="radio" name="acesso" value="publico" class="sr-only" onchange="updateSimulator()">
+                    <div class="border border-slate-200 rounded-xl p-3 text-center hover:border-dona-300 transition-all h-full relative">
+                      <i data-lucide="check-circle-2" class="w-4 h-4 absolute top-2 right-2 text-dona-600 opacity-0 transition-opacity check-icon"></i>
+                      <i data-lucide="users-2" class="w-4 h-4 mx-auto text-slate-400 mb-1 mt-1"></i>
+                      <span class="block font-bold text-slate-800 text-xs leading-tight">Público/B2C</span>
+                      <span class="block text-[10px] font-medium text-slate-500 mt-1">Alta concorrência</span>
+                    </div>
+                  </label>
+                </div>
               </div>
             </div>
 
@@ -693,18 +689,22 @@
                   <input type="radio" name="modelo" value="saas" class="sr-only" onchange="updateSimulator()" checked>
                   <div class="border border-slate-200 rounded-xl p-4 hover:border-dona-300 transition-all h-full relative">
                     <i data-lucide="check-circle-2" class="w-5 h-5 absolute top-3 right-3 text-dona-600 opacity-0 transition-opacity check-icon"></i>
-                    <i data-lucide="cloud-cog" class="w-6 h-6 text-slate-400 mb-2"></i>
-                    <span class="block font-bold text-slate-800 text-sm">SaaS / Nuvem</span>
-                    <span class="block text-xs font-medium text-slate-500 mt-1">Infraestrutura, suporte e evoluções inclusos na mensalidade.</span>
+                    <div class="flex items-center gap-3 mb-2">
+                      <i data-lucide="cloud-cog" class="w-5 h-5 text-slate-400"></i>
+                      <span class="font-bold text-slate-800 text-sm">SaaS / Nuvem</span>
+                    </div>
+                    <span class="block text-xs font-medium text-slate-500">Infraestrutura, suporte e evoluções inclusos na mensalidade.</span>
                   </div>
                 </label>
                 <label class="relative cursor-pointer">
                   <input type="radio" name="modelo" value="codigo" class="sr-only" onchange="updateSimulator()">
                   <div class="border border-slate-200 rounded-xl p-4 hover:border-dona-300 transition-all h-full relative">
                     <i data-lucide="check-circle-2" class="w-5 h-5 absolute top-3 right-3 text-dona-600 opacity-0 transition-opacity check-icon"></i>
-                    <i data-lucide="code" class="w-6 h-6 text-slate-400 mb-2"></i>
-                    <span class="block font-bold text-slate-800 text-sm">Código Fonte</span>
-                    <span class="block text-xs font-medium text-slate-500 mt-1">Hospedagem, suporte e evoluções por sua própria conta.</span>
+                    <div class="flex items-center gap-3 mb-2">
+                      <i data-lucide="code" class="w-5 h-5 text-slate-400"></i>
+                      <span class="font-bold text-slate-800 text-sm">Código Fonte</span>
+                    </div>
+                    <span class="block text-xs font-medium text-slate-500">Hospedagem, suporte e evoluções por sua própria conta.</span>
                   </div>
                 </label>
               </div>
