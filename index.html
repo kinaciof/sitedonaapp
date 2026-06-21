@@ -699,7 +699,7 @@
 
             <button onclick="submitSimulator()" class="w-full mt-6 flex items-center justify-center gap-3 px-8 py-4 bg-slate-900 text-white text-base font-bold rounded-xl hover:bg-slate-800 transition-all shadow-md">
               <i data-lucide="message-circle" class="w-5 h-5"></i>
-              Discutir Cotação de Horas no WhatsApp
+              Iniciar Entendimento via WhatsApp
             </button>
           </div>
 
@@ -889,6 +889,19 @@
       let acesso = document.querySelector('input[name="acesso"]:checked')?.value || 'privado';
       const resultCard = document.getElementById('simulatorResult');
       
+      // Cálculo de Preço Estimado
+      let basePrice = 0;
+      if(tamanho === 'simples') basePrice = 18000;
+      if(tamanho === 'plataforma') basePrice = 45000;
+      if(tamanho === 'ecossistema') basePrice = 90000;
+      
+      let multiplier = 1;
+      if(inteligencia === 'ia') multiplier += 0.3; // +30% complexidade com IA
+      if(acesso === 'publico') multiplier += 0.2; // +20% overhead de escala/segurança
+
+      let finalPrice = basePrice * multiplier;
+      let priceFormatted = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL', maximumFractionDigits: 0 }).format(finalPrice);
+
       let html = '';
       
       // Construção do Parecer
@@ -921,10 +934,18 @@
           ${iaText}
         </div>
         
-        <div>
+        <div class="mb-6">
           <h5 class="font-bold text-slate-800 text-base mb-1">Impacto na Manutenção & Infra (Mensalidade)</h5>
           <p class="text-slate-600 text-sm font-medium leading-relaxed mb-1"><strong class="text-slate-700">Arquitetura de Dados:</strong> ${infraText}</p>
           <p class="text-slate-600 text-sm font-medium leading-relaxed"><strong class="text-slate-700">O que a Dona APP assume:</strong> ${mensalidadeText}</p>
+        </div>
+
+        <div class="pt-5 border-t border-slate-200">
+          <p class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-1">Estimativa de Investimento do Projeto</p>
+          <div class="flex items-baseline gap-2">
+            <span class="text-sm font-bold text-slate-500">A partir de</span>
+            <span class="text-3xl font-extrabold text-slate-900">${priceFormatted}</span>
+          </div>
         </div>
       `;
       
@@ -941,11 +962,22 @@
       const i = document.querySelector('input[name="inteligencia"]:checked')?.value;
       const a = document.querySelector('input[name="acesso"]:checked')?.value;
       
-      let tMap = { 'simples': 'Automação Pontual', 'plataforma': 'Plataforma Core', 'ecossistema': 'Ecossistema Enterprise' };
-      let iMap = { 'nenhuma': 'Engenharia Tradicional', 'ia': 'Com Integração de Agentes Autônomos (IA)' };
-      let aMap = { 'privado': 'Uso Interno', 'publico': 'Público em Larga Escala' };
+      let basePrice = 0;
+      if(t === 'simples') basePrice = 18000;
+      if(t === 'plataforma') basePrice = 45000;
+      if(t === 'ecossistema') basePrice = 90000;
+      let multiplier = 1;
+      if(i === 'ia') multiplier += 0.3;
+      if(a === 'publico') multiplier += 0.2;
+      let finalPrice = basePrice * multiplier;
+      let priceFormatted = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL', maximumFractionDigits: 0 }).format(finalPrice);
+
+      let tMap = { 'simples': 'Ideia Simples / MVP', 'plataforma': 'Plataforma Core', 'ecossistema': 'Ecossistema Complexo' };
+      let iMap = { 'nenhuma': 'Engenharia Tradicional', 'ia': 'Automação com IA' };
+      let aMap = { 'privado': 'Uso Interno/Privado', 'publico': 'Público/B2C' };
       
-      openWhatsApp(`Olá, fiz o diagnóstico técnico. A ideia da minha empresa é um software do tipo [${tMap[t]}], ${iMap[i]}, focado para [${aMap[a]}]. Quantas horas de trabalho e qual o investimento mensal aproximado?`);
+      let msg = `Olá! Acabei de simular meu projeto no site da Dona APP.\n\n*Meu Cenário:*\n- Volume: ${tMap[t]}\n- Inteligência: ${iMap[i]}\n- Acesso e Infra: ${aMap[a]}\n\n*Estimativa:* A partir de ${priceFormatted}\n\nGostaria de agendar uma reunião para iniciar o entendimento do meu projeto.`;
+      openWhatsApp(msg);
     }
 
     document.addEventListener('DOMContentLoaded', updateSimulator);
