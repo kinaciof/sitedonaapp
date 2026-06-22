@@ -78,7 +78,7 @@ function updateSimulator() {
 
   html = `
     <div class="mb-5">
-      <h5 class="font-bold text-white text-base mb-1">Esforço Estimado de Engenharia</h5>
+      <h5 class="font-bold text-white text-base mb-1">Esforço Estimado de Engenharia de Software</h5>
       <p class="text-slate-400 text-sm font-medium leading-relaxed">${esforcoText}</p>
       ${iaText}
     </div>
@@ -126,7 +126,7 @@ function submitSimulator() {
   let priceFormatted = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL', maximumFractionDigits: 0 }).format(displayPrice);
 
   let tMap = { 'simples': 'Ideia Simples / MVP', 'plataforma': 'Plataforma Core', 'ecossistema': 'Ecossistema Complexo' };
-  let iMap = { 'nenhuma': 'Engenharia Tradicional', 'ia': 'Automação com IA' };
+  let iMap = { 'nenhuma': 'Engenharia de Software Tradicional', 'ia': 'Automação com IA' };
   let aMap = { 'privado': 'Uso Interno/Privado', 'publico': 'Público/B2C' };
   let mMap = { 'saas': 'SaaS (Infra Dona APP)', 'codigo': 'Código Fonte' };
 
